@@ -1057,28 +1057,74 @@ header{
     <input type="text" id="clienteGarcom" placeholder="Nome do cliente">
 
     <label>Selecionar Produto</label>
-    <select id="produtoGarcom">
-        <optgroup label="Jantinhas">
-            <option value="Jantinha Completa|20">Jantinha Completa - R$20,00</option>
-        </optgroup>
-        <optgroup label="Espetos & Medalhões">
-            <option value="Cafta|6">Cafta - R$6,00</option>
-            <option value="Carne|6">Carne - R$6,00</option>
-            <option value="Codiguim|6">Codiguim - R$6,00</option>
-            <option value="Coração|8">Coração - R$8,00</option>
-            <option value="Costela|6">Costela - R$6,00</option>
-            <option value="Medalhão Mandioca|7">Medalhão Mandioca - R$7,00</option>
-            <option value="Medalhão Frango|7">Medalhão Frango - R$7,00</option>
-            <option value="Pão de Alho|4">Pão de Alho - R$4,00</option>
-            <option value="Queijo|7">Queijo - R$7,00</option>
-        </optgroup>
-        <optgroup label="Bebidas Mais Vendidas">
-            <option value="Coca-Cola Lata|5">Coca-Cola Lata - R$5,00</option>
-            <option value="Skol Romarinho|4">Skol Romarinho - R$4,00</option>
-            <option value="Heineken 600ml|14">Heineken 600ml - R$14,00</option>
-            <option value="Água Mineral|3">Água Mineral - R$3,00</option>
-            </optgroup>
-    </select>
+   <select id="produtoGarcom">
+    <optgroup label="Jantinhas (Seg a Qui - R$ 20,00)">
+        <option value="Jantinha c/ Carne|20">Jantinha c/ Carne - R$ 20,00</option>
+        <option value="Jantinha c/ Cafta|20">Jantinha c/ Cafta - R$ 20,00</option>
+        <option value="Jantinha c/ Costela|20">Jantinha c/ Costela - R$ 20,00</option>
+        <option value="Jantinha c/ Linguiça|20">Jantinha c/ Linguiça - R$ 20,00</option>
+        <option value="Jantinha c/ Codeguim|20">Jantinha c/ Codeguim - R$ 20,00</option>
+    </optgroup>
+
+    <optgroup label="Espetos & Diversos">
+        <option value="Cafta|6">Cafta - R$ 6,00</option>
+        <option value="Carne|6">Carne - R$ 6,00</option>
+        <option value="Codiguim|6">Codiguim - R$ 6,00</option>
+        <option value="Coração|8">Coração - R$ 8,00</option>
+        <option value="Costela|6">Costela - R$ 6,00</option>
+        <option value="Kibe com Queijo|9">Kibe com Queijo - R$ 9,00</option>
+        <option value="Linguiça com Rúcula e Queijo|6">Linguiça com Rúcula e Queijo - R$ 6,00</option>
+        <option value="Panceta|6">Panceta - R$ 6,00</option>
+        <option value="Pão de Alho|4">Pão de Alho - R$ 4,00</option>
+        <option value="Queijo|7">Queijo - R$ 7,00</option>
+        <option value="Tulipa|7">Tulipa - R$ 7,00</option>
+    </optgroup>
+
+    <optgroup label="Medalhões">
+        <option value="Medalhão Mandioca com Bacon|7">Medalhão Mandioca com Bacon - R$ 7,00</option>
+        <option value="Medalhão Frango com Bacon|7">Medalhão Frango com Bacon - R$ 7,00</option>
+        <option value="Medalhão Romeu e Julieta|9">Medalhão Romeu e Julieta - R$ 9,00</option>
+        <option value="Medalhão Batata c/ Cheddar|9">Medalhão de Batata c/ Cheddar e Bacon - R$ 9,00</option>
+    </optgroup>
+
+    <optgroup label="Refrigerantes (Lata)">
+        <option value="Coca Lata|5">Coca Lata - R$ 5,00</option>
+        <option value="Sprite Lata|5">Sprite Lata - R$ 5,00</option>
+        <option value="Fanta Lata|5">Fanta Lata - R$ 5,00</option>
+        <option value="Schweppes Lata|5">Schweppes Lata - R$ 5,00</option>
+        <option value="Guaraná Antártica Lata|5">Guaraná Antártica Lata - R$ 5,00</option>
+        <option value="Coca Zero Lata|5">Coca Zero Lata - R$ 5,00</option>
+    </optgroup>
+
+    <optgroup label="Água, Sucos e Outros">
+        <option value="Água|3">Água - R$ 3,00</option>
+        <option value="Refrigerante Mini|3">Refrigerante Mini - R$ 3,00</option>
+        <option value="Coca KS|5">Coca KS - R$ 5,00</option>
+        <option value="Coca 600ml|7.50">Coca 600ml - R$ 7,50</option>
+        <option value="Coca Zero 600ml|7.50">Coca Zero 600ml - R$ 7,50</option>
+        <option value="Antártica Zero 600ml|7.50">Antártica Zero 600ml - R$ 7,50</option>
+        <option value="Suco Laranja 900ml|12">Suco Laranja 900ml - R$ 12,00</option>
+        <option value="Suco Caju 900ml|10">Suco Caju 900ml - R$ 10,00</option>
+    </optgroup>
+
+    <optgroup label="Cervejas (Lata / Latão)">
+        <option value="Skol Lata|5">Skol Lata - R$ 5,00</option>
+        <option value="Boa Lata|5">Boa Lata - R$ 5,00</option>
+        <option value="Brahma Lata|5">Brahma Lata - R$ 5,00</option>
+        <option value="Amstel Lata|5">Amstel Lata - R$ 5,00</option>
+        <option value="Império Ultra Lata|5">Império Ultra Lata - R$ 5,00</option>
+        <option value="Kaiser Latão|6">Kaiser Latão - R$ 6,00</option>
+    </optgroup>
+
+    <optgroup label="Cervejas (Romarinho / 600ml)">
+        <option value="Skol Romarinho|4">Skol Romarinho - R$ 4,00</option>
+        <option value="Boa Romarinho|4">Boa Romarinho - R$ 4,00</option>
+        <option value="Brahma Romarinho|4">Brahma Romarinho - R$ 4,00</option>
+        <option value="Budweiser Romarinho|4.50">Budweiser Romarinho - R$ 4,50</option>
+        <option value="Original Romarinho|4.50">Original Romarinho - R$ 4,50</option>
+        <option value="Heineken 600ml|14">Heineken 600ml - R$ 14,00</option>
+    </optgroup>
+</select>
 
     <button class="add-garcom" onclick="addPedidoGarcom()">+ Adicionar Item</button>
 
@@ -1099,11 +1145,11 @@ header{
 </div>
 
 <script>
-
 let carrinho = [];
 let pedidosGarcom = [];
 
-/* CLIENTE */
+/* ================== CLIENTE ================== */
+
 function addCarrinho(nome, preco){
     let item = carrinho.find(p => p.nome === nome);
     if(item){
@@ -1117,16 +1163,15 @@ function addCarrinho(nome, preco){
 
 function atualizarCarrinho(){
     let div = document.getElementById("itensCarrinho");
-    div.innerHTML = "";
-
+    let htmlTemp = ""; 
     let total = 0;
     let quantidade = 0;
 
-    carrinho.forEach((item,index)=>{
+    carrinho.forEach((item, index)=>{
         quantidade += item.qtd;
         total += item.preco * item.qtd;
 
-        div.innerHTML += `
+        htmlTemp += `
         <div class="item">
             <div class="item-top">
                 <strong>${item.nome}</strong>
@@ -1141,10 +1186,12 @@ function atualizarCarrinho(){
         `;
     });
 
+    div.innerHTML = htmlTemp;
+
     document.getElementById("cartCount").innerHTML = quantidade;
 
     let tipo = document.getElementById("tipoPedido").value;
-    if(tipo === "delivery"){ total += 5; } // Taxa de entrega mantida
+    if(tipo === "delivery"){ total += 5; } 
 
     document.getElementById("total").innerHTML = `Total: R$ ${total.toFixed(2)}`;
 }
@@ -1180,45 +1227,70 @@ function mostrarCampos(){
 
 function finalizarPedido(){
     let tipo = document.getElementById("tipoPedido").value;
-    let cliente = document.getElementById("cliente").value;
+    let cliente = document.getElementById("cliente").value.trim();
     let pagamento = document.getElementById("pagamento").value;
-    let endereco = document.getElementById("endereco").value;
-    let mesa = document.getElementById("mesa").value;
+    let endereco = document.getElementById("endereco").value.trim();
+    let mesa = document.getElementById("mesa").value.trim();
 
+    // Validações
     if(carrinho.length <= 0){
         alert("Seu carrinho está vazio.");
         return;
     }
+    if(cliente === ""){
+        alert("Por favor, informe seu nome.");
+        return;
+    }
+    if(tipo === "delivery" && endereco === ""){
+        alert("Por favor, preencha o endereço de entrega.");
+        return;
+    }
+    if(tipo === "local" && mesa === ""){
+        alert("Por favor, informe o número da sua mesa.");
+        return;
+    }
 
     let total = 0;
-    let mensagem = `🍢 *NOVO PEDIDO - CANTINHO DOS ESPETOS*%0A%0A`;
+    
+    // Construção da mensagem formatada e limpa
+    let mensagem = `🍢 *NOVO PEDIDO - CANTINHO DOS ESPETOS*\n\n`;
+    mensagem += `👤 *Cliente:* ${cliente}\n`;
+    mensagem += `📦 *Modo:* ${tipo.toUpperCase()}\n`;
 
-    mensagem += `👤 Cliente: ${cliente}%0A`;
-    mensagem += `📦 Modo: ${tipo}%0A`;
+    if(tipo === "delivery"){ mensagem += `📍 *Endereço:* ${endereco}\n`; }
+    if(tipo === "local"){ mensagem += `🪑 *Mesa:* ${mesa}\n`; }
 
-    if(tipo === "delivery"){ mensagem += `📍 Endereço: ${endereco}%0A`; }
-    if(tipo === "local"){ mensagem += `🪑 Mesa: ${mesa}%0A`; }
+    mensagem += `💳 *Pagto:* ${pagamento}\n\n`;
+    mensagem += `📋 *RESUMO DOS ITENS*\n`;
 
-    mensagem += `💳 Pagto: ${pagamento}%0A%0A`;
-    mensagem += `📋 *RESUMO DOS ITENS*%0A`;
-
-    carrinho.forEach(item=>{
+    carrinho.forEach(item => {
         total += item.preco * item.qtd;
-        mensagem += `${item.qtd}x ${item.nome} (R$ ${item.preco.toFixed(2)})%0A`;
+        mensagem += `▫️ ${item.qtd}x ${item.nome} (R$ ${item.preco.toFixed(2)})\n`;
     });
 
-    if(tipo === "delivery"){ total += 5; }
+    if(tipo === "delivery"){ 
+        total += 5; 
+        mensagem += `\n🚚 *Taxa Delivery:* R$ 5.00\n`;
+    }
 
-    mensagem += `%0A🚚 Taxa Delivery: R$ ${(tipo === "delivery" ? 5 : 0).toFixed(2)}`;
-    mensagem += `%0A💰 *TOTAL A PAGAR:* R$ ${total.toFixed(2)}`;
+    mensagem += `\n💰 *TOTAL A PAGAR:* R$ ${total.toFixed(2)}\n\n`;
 
-    // NOVO NÚMERO DE WHATSAPP ATUALIZADO
+    // Preparação do link de impressão seguro
+    let urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+    let dadosParaImprimir = encodeURIComponent(mensagem);
+    let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
+
+    mensagem += `🖨️ *CLIQUE AQUI PARA IMPRIMIR:*\n${linkImpressao}`;
+
+    // Codifica toda a mensagem para envio no WhatsApp
+    let textoWhatsApp = encodeURIComponent(mensagem);
     let numero = "5517991421893"; 
-
-    window.open(`https://wa.me/${numero}?text=${mensagem}`);
+    
+    window.open(`https://wa.me/${numero}?text=${textoWhatsApp}`);
 }
 
-/* GARÇOM */
+/* ================== GARÇOM ================== */
+
 function abrirLogin(){ document.getElementById("modal").style.display = "flex"; }
 function fecharLogin(){
     document.getElementById("modal").style.display = "none";
@@ -1254,12 +1326,12 @@ function addPedidoGarcom(){
 
 function atualizarGarcom(){
     let div = document.getElementById("listaGarcom");
-    div.innerHTML = "";
+    let htmlTemp = ""; 
     let total = 0;
 
-    pedidosGarcom.forEach((item,index)=>{
+    pedidosGarcom.forEach((item, index)=>{
         total += item.preco;
-        div.innerHTML += `
+        htmlTemp += `
         <div class="item">
             <div class="item-top">
                 <strong>${item.nome}</strong>
@@ -1270,6 +1342,8 @@ function atualizarGarcom(){
             </div>
         </div>`;
     });
+    
+    div.innerHTML = htmlTemp;
     document.getElementById("totalGarcom").innerHTML = `Total da Comanda: R$ ${total.toFixed(2)}`;
 }
 
@@ -1284,34 +1358,44 @@ function enviarPedidoGarcom(){
         return;
     }
 
-    let mesa = document.getElementById("mesaGarcom").value;
-    let cliente = document.getElementById("clienteGarcom").value;
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    let cliente = document.getElementById("clienteGarcom").value.trim();
     let pagamento = document.getElementById("pagamentoGarcom").value;
-    let total = 0;
-
-    let mensagem = `🛎️ *COMANDA DE MESA*%0A%0A`;
-    mensagem += `🪑 Número da Mesa: ${mesa}%0A`;
-    if(cliente) { mensagem += `👤 Cliente: ${cliente}%0A`; }
     
-    mensagem += `💳 Status: ${pagamento}%0A%0A`;
-    mensagem += `📋 *ITENS LANÇADOS*%0A`;
+    if(mesa === ""){
+        alert("Informe o número da mesa antes de enviar a comanda.");
+        return;
+    }
 
-    pedidosGarcom.forEach(item=>{
+    let total = 0;
+    
+    // Construção formatada da mensagem do Garçom
+    let mensagem = `🛎️ *COMANDA DE MESA*\n\n`;
+    mensagem += `🪑 *Número da Mesa:* ${mesa}\n`;
+    if(cliente) { mensagem += `👤 *Cliente:* ${cliente}\n`; }
+    
+    mensagem += `💳 *Status:* ${pagamento}\n\n`;
+    mensagem += `📋 *ITENS LANÇADOS*\n`;
+
+    pedidosGarcom.forEach(item => {
         total += item.preco;
-        mensagem += `• ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`;
+        mensagem += `▫️ ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
     });
 
-    mensagem += `%0A💰 *TOTAL DA MESA:* R$ ${total.toFixed(2)}`;
+    mensagem += `\n💰 *TOTAL DA MESA:* R$ ${total.toFixed(2)}`;
 
+    // Codifica para a URL do WhatsApp
+    let textoWhatsApp = encodeURIComponent(mensagem);
     let numero = "5517991421893";
-    window.open(`https://wa.me/${numero}?text=${mensagem}`);
+    
+    window.open(`https://wa.me/${numero}?text=${textoWhatsApp}`);
 
+    // Limpa a comanda após envio
     pedidosGarcom = [];
     atualizarGarcom();
     document.getElementById("mesaGarcom").value = "";
     document.getElementById("clienteGarcom").value = "";
 }
-
 </script>
 
 </body>
