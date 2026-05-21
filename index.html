@@ -1645,8 +1645,35 @@ function removerGarcom(index){
     salvarMesaLocal();
 }
 
-function enviarParaCozinha(){
-    let itensParaEnviar = pedidosGarcom.filter(item => !item.enviado);
+function enviarParaCozinha() {
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    if (mesa === "") { alert("Por favor, preencha o número da mesa."); return; }
+    
+    let cliente = document.getElementById("clienteGarcom").value.trim();
+    if (pedidosGarcom.length === 0) { alert("Não há itens no pedido."); return; }
+
+    // CORREÇÃO: Agora exibe explicitamente "MESA 10" em vez de apenas "10"
+    let textoCozinha = `🔥 *PEDIDO COZINHA - MESA ${mesa}* 🔥\n`;
+    if (cliente !== "") {
+        textoCozinha += `👤 Cliente: ${cliente}\n`;
+    }
+    textoCozinha += `-----------------------------\n`;
+
+    pedidosGarcom.forEach((item) => {
+        item.enviado = true; 
+        textoCozinha += `🔸 ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
+    });
+
+    textoCozinha += `-----------------------------\n`;
+    textoCozinha += `🕒 ${new Date().toLocaleTimeString()}`;
+
+    // Altere para o número de WhatsApp da sua cozinha ou use a sua lógica de envio
+    let linkWhatsapp = `https://api.whatsapp.com/send?text=${encodeURIComponent(textoCozinha)}`;
+    window.open(linkWhatsapp, '_blank');
+
+    atualizarGarcom();
+    salvarMesaLocal();
+}    let itensParaEnviar = pedidosGarcom.filter(item => !item.enviado);
     
     if(itensParaEnviar.length <= 0) {
         alert("Não há novos itens pendentes para enviar à cozinha.");
