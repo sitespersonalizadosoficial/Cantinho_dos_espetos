@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressão de Pedido - Cantinho dos Espetos</title>
+    <style>
+        /* Reseta as margens padrão do navegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 12px; 
+            background-color: #f0f0f0; 
+            color: #000;
+            display: flex;
+            flex-direction: column; /* Alinha os itens em coluna */
+            align-items: center; /* Centraliza na tela */
+            padding: 20px;
+        }
+
+        /* Estilo visual do cupom na tela do aparelho */
+        #cupom {
+            background-color: #fff;
+            width: 100%;
+            max-width: 280px; 
+            padding: 15px;
+            border: 1px dashed #aaa; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            white-space: pre-wrap; 
+            word-wrap: break-word; 
+            line-height: 1.5; 
+            margin-bottom: 20px; /* Espaço entre o cupom e o botão */
+        }
+
+        /* Estilo do Botão de Imprimir */
+        .btn-imprimir {
+            background-color: #8b0000; /* Vermelho escuro combinando com o tema do espetinho */
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-imprimir:hover {
+            background-color: #660000;
+        }
+
+        /* ================================================== */
+        /* REGRAS ESPECÍFICAS PARA A MÁQUINA DE IMPRESSÃO     */
+        /* Tudo aqui só é ativado na hora que a impressora lê */
+        /* ================================================== */
+        @media print {
+            body {
+                background-color: transparent;
+                padding: 0;
+                display: block;
+            }
+            #cupom {
+                border: none; 
+                box-shadow: none; 
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            /* Esconde o botão na hora de imprimir no papel */
+            .btn-imprimir {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cupom">
+        Carregando pedido...
+    </div>
+
+    <button class="btn-imprimir" onclick="window.print()">
+        🖨️ Imprimir Pedido
+    </button>
+
+    <script>
+        window.onload = function() {
+            // Pega tudo que vem depois do "?pedido=" na barra de endereços
+            const urlParams = new URLSearchParams(window.location.search);
+            const pedido = urlParams.get('pedido');
+            
+            if(pedido) {
+                // Remove os asteriscos do WhatsApp para a impressão sair limpa
+                let textoLimpo = pedido.replace(/\*/g, ''); 
+                
+                document.getElementById('cupom').textContent = textoLimpo;
+                
+                // Mantive o gatilho automático, mas agora você tem o botão de backup!
+                setTimeout(() => {
+                    window.print();
+                }, 1000);
+            } else {
+                document.getElementById('cupom').textContent = "Nenhum pedido encontrado.\n\nVerifique se o link foi copiado por completo.";
+            }
+        }
+    </script>
+
+</body>
+</html>
