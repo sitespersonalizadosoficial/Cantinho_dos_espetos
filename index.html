@@ -1566,6 +1566,27 @@ function addPedidoGarcom(){
     let nome = partes[0];
     let preco = parseFloat(partes[1]);
 
+    // CORREÇÃO AQUI: Verifica se o texto começa com "Jantinha" para forçar a soma dos R$ 15,00
+    if (nome.startsWith("Jantinha")) {
+        const precoBaseJantinha = 15.00;
+        preco = precoBaseJantinha + preco;
+    }
+
+    // O item nasce não enviado à cozinha e não entregue à mesa
+    pedidosGarcom.push({ nome, preco, enviado: false, entregue: false });
+    
+    atualizarGarcom();
+    salvarMesaLocal();
+}
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    if(mesa === "") { alert("Por favor, informe a mesa ANTES de adicionar produtos."); return; }
+    if(mesa !== mesaAtualGarcom) { mesaAtualGarcom = mesa; }
+
+    let produto = document.getElementById("produtoGarcom").value;
+    let partes = produto.split("|");
+    let nome = partes[0];
+    let preco = parseFloat(partes[1]);
+
     // O item nasce não enviado à cozinha e não entregue à mesa
     pedidosGarcom.push({ nome, preco, enviado: false, entregue: false });
     
