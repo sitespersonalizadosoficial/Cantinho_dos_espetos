@@ -970,10 +970,10 @@ header{
                 <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Medalhão Mandioca c/ Bacon', 7)">+</button></div>
             </div>
 
-             <div class="card-compact">
-                <div class="info"><h3>Medalhão cupim com Queijo</h3></div>
-                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão  cupim com Queijo', 9)">+</button></div>
-            </div>
+            <div class="card-compact">
+    <div class="info"><h3>Medalhão Cupim com Queijo</h3></div>
+    <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão Cupim com Queijo', 9)">+</button></div>
+</div>
 
              <div class="card-compact">
                 <div class="info"><h3>Copa lombo com barbecue</h3></div>
@@ -1385,6 +1385,8 @@ function addCarrinho(nome, preco){
 
 function atualizarCarrinho(){
     let div = document.getElementById("itensCarrinho");
+    if(!div) return; // Evita quebra caso o elemento não exista na tela atual
+    
     let htmlTemp = ""; 
     let total = 0;
     let quantidade = 0;
@@ -1414,12 +1416,15 @@ function atualizarCarrinho(){
     });
 
     div.innerHTML = htmlTemp;
-    document.getElementById("cartCount").innerHTML = quantidade;
+    
+    let cartCountEl = document.getElementById("cartCount");
+    if(cartCountEl) cartCountEl.innerHTML = quantidade;
 
-    let tipo = document.getElementById("tipoPedido").value;
-    if(tipo === "delivery"){ total += 5; } 
+    let tipoEl = document.getElementById("tipoPedido");
+    if(tipoEl && tipoEl.value === "delivery"){ total += 5; } 
 
-    document.getElementById("total").innerHTML = `Total: R$ ${total.toFixed(2)}`;
+    let totalEl = document.getElementById("total");
+    if(totalEl) totalEl.innerHTML = `Total: R$ ${total.toFixed(2)}`;
 }
 
 function aumentar(index){
@@ -1427,21 +1432,32 @@ function aumentar(index){
     atualizarCarrinho();
 }
 
-function diminuir(index){
+function disminuir(index){
     carrinho[index].qtd--;
     if(carrinho[index].qtd <= 0){ carrinho.splice(index,1); }
     atualizarCarrinho();
 }
 
-function abrirCarrinho(){ document.querySelector(".carrinho").classList.add("active"); }
-function fecharCarrinho(){ document.querySelector(".carrinho").classList.remove("active"); }
+function abrirCarrinho(){ 
+    let cartEl = document.querySelector(".carrinho");
+    if(cartEl) cartEl.classList.add("active"); 
+}
+
+function fecharCarrinho(){ 
+    let cartEl = document.querySelector(".carrinho");
+    if(cartEl) cartEl.classList.remove("active"); 
+}
 
 function scrollCategoria(id){
-    document.getElementById(id).scrollIntoView({ behavior:"smooth" });
+    let catEl = document.getElementById(id);
+    if(catEl) catEl.scrollIntoView({ behavior:"smooth" });
 }
 
 function mostrarCampos(){
-    let tipo = document.getElementById("tipoPedido").value;
+    let tipoEl = document.getElementById("tipoPedido");
+    if(!tipoEl) return;
+    
+    let tipo = tipoEl.value;
     document.getElementById("enderecoArea").style.display = "none";
     document.getElementById("mesaArea").style.display = "none";
 
@@ -1497,7 +1513,7 @@ function finalizarPedido(){
     window.open(`https://wa.me/${numero}?text=${textoWhatsApp}`);
 }
 
-/* ================== PAINEL DO GARÇOM (LOCAL COM HISTÓRICO DE ENTREGA) ================== */
+/* ================== PAINEL DO GARÇOM ================== */
 
 function loginGarcom(){
     let senha = document.getElementById("senha").value;
@@ -1535,8 +1551,6 @@ function carregarMesaLocal() {
     atualizarGarcom();
 }
 
-
-// Remove o produto inteiro do carrinho de uma vez só
 function removerDoCarrinho(index) {
     if(confirm("Deseja remover este item do seu carrinho?")) {
         carrinho.splice(index, 1);
@@ -1566,28 +1580,11 @@ function addPedidoGarcom(){
     let nome = partes[0];
     let preco = parseFloat(partes[1]);
 
-    // CORREÇÃO AQUI: Verifica se o texto começa com "Jantinha" para forçar a soma dos R$ 15,00
     if (nome.startsWith("Jantinha")) {
         const precoBaseJantinha = 15.00;
         preco = precoBaseJantinha + preco;
     }
 
-    // O item nasce não enviado à cozinha e não entregue à mesa
-    pedidosGarcom.push({ nome, preco, enviado: false, entregue: false });
-    
-    atualizarGarcom();
-    salvarMesaLocal();
-}
-    let mesa = document.getElementById("mesaGarcom").value.trim();
-    if(mesa === "") { alert("Por favor, informe a mesa ANTES de adicionar produtos."); return; }
-    if(mesa !== mesaAtualGarcom) { mesaAtualGarcom = mesa; }
-
-    let produto = document.getElementById("produtoGarcom").value;
-    let partes = produto.split("|");
-    let nome = partes[0];
-    let preco = parseFloat(partes[1]);
-
-    // O item nasce não enviado à cozinha e não entregue à mesa
     pedidosGarcom.push({ nome, preco, enviado: false, entregue: false });
     
     atualizarGarcom();
@@ -1596,18 +1593,18 @@ function addPedidoGarcom(){
 
 function atualizarGarcom(){
     let div = document.getElementById("listaGarcom");
+    if(!div) return;
+    
     let htmlTemp = ""; 
     let total = 0;
 
     pedidosGarcom.forEach((item, index)=>{
         total += item.preco;
         
-        // Define o texto do status com base nas ações do garçom
         let statusTag = `<span style="color:#ffaa00; font-size:11px;">[Pendente]</span>`;
         if(item.enviado) { statusTag = `<span style="color:#e67e22; font-size:11px;">[Na Cozinha]</span>`; }
         if(item.entregue) { statusTag = `<span style="color:#00ff00; font-size:11px; font-weight:bold;">[✔ Entregue]</span>`; }
 
-        // Estilo visual riscado ou normal para facilitar a leitura rápida
         let textoEstilo = item.entregue ? "text-decoration: line-through; color: #777;" : "color: #fff;";
 
         htmlTemp += `
@@ -1632,7 +1629,6 @@ function atualizarGarcom(){
     document.getElementById("totalGarcom").innerHTML = `Total da Comanda: R$ ${total.toFixed(2)}`;
 }
 
-// NOVA FUNÇÃO: Muda o status de entrega do espeto
 function alternarEntregue(index) {
     pedidosGarcom[index].entregue = !pedidosGarcom[index].entregue;
     atualizarGarcom();
@@ -1646,34 +1642,7 @@ function removerGarcom(index){
 }
 
 function enviarParaCozinha() {
-    let mesa = document.getElementById("mesaGarcom").value.trim();
-    if (mesa === "") { alert("Por favor, preencha o número da mesa."); return; }
-    
-    let cliente = document.getElementById("clienteGarcom").value.trim();
-    if (pedidosGarcom.length === 0) { alert("Não há itens no pedido."); return; }
-
-    // CORREÇÃO: Agora exibe explicitamente "MESA 10" em vez de apenas "10"
-    let textoCozinha = `🔥 *PEDIDO COZINHA - MESA ${mesa}* 🔥\n`;
-    if (cliente !== "") {
-        textoCozinha += `👤 Cliente: ${cliente}\n`;
-    }
-    textoCozinha += `-----------------------------\n`;
-
-    pedidosGarcom.forEach((item) => {
-        item.enviado = true; 
-        textoCozinha += `🔸 ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
-    });
-
-    textoCozinha += `-----------------------------\n`;
-    textoCozinha += `🕒 ${new Date().toLocaleTimeString()}`;
-
-    // Altere para o número de WhatsApp da sua cozinha ou use a sua lógica de envio
-    let linkWhatsapp = `https://api.whatsapp.com/send?text=${encodeURIComponent(textoCozinha)}`;
-    window.open(linkWhatsapp, '_blank');
-
-    atualizarGarcom();
-    salvarMesaLocal();
-}    let itensParaEnviar = pedidosGarcom.filter(item => !item.enviado);
+    let itensParaEnviar = pedidosGarcom.filter(item => !item.enviado);
     
     if(itensParaEnviar.length <= 0) {
         alert("Não há novos itens pendentes para enviar à cozinha.");
@@ -1681,7 +1650,9 @@ function enviarParaCozinha() {
     }
 
     let mesa = document.getElementById("mesaGarcom").value.trim();
-    let message = `🔥 *PEDIDO PARA A COZINHA - ${mesa.toUpperCase()}*\n\n`;
+    if (mesa === "") { alert("Por favor, preencha o número da mesa."); return; }
+
+    let message = `🔥 *PEDIDO PARA A COZINHA - MESA ${mesa.toUpperCase()}*\n\n`;
     
     itensParaEnviar.forEach(item => {
         message += `▫️ 1x ${item.nome}\n`;
