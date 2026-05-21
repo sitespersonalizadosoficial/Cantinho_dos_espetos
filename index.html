@@ -8,9 +8,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+ 
 <style>
-
 /* CONFIGURAÇÕES GERAIS */
 *{
     margin:0;
@@ -178,7 +177,7 @@ header{
     height:350px;
     background:
     linear-gradient(to bottom, rgba(20,12,8,0.3), rgba(20,12,8,1)),
-    url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1400&auto=format&fit=crop');
+    url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
     background-size:cover;
     background-position:center;
     display:flex;
@@ -249,7 +248,7 @@ header{
 /* Cards Tradicionais (Grandes com Imagem) */
 .produtos{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
@@ -267,10 +266,13 @@ header{
     border-color: rgba(255, 204, 112, 0.2);
 }
 
+/* CORREÇÃO DAS FOTOS: Mantém a proporção perfeita sem cortar bizarramente ou achatar */
 .card img{
     width:100%;
-    height:180px;
+    height:220px;
     object-fit:cover;
+    object-position:center;
+    display:block;
 }
 
 .card-content{
@@ -313,6 +315,58 @@ header{
 
 .card button:hover {
     background: #a30000;
+}
+
+/* --- SELETOR PREMIUM DA JANTINHA COMPLETA --- */
+.jantinha-select-container {
+    margin: 15px 0;
+    position: relative;
+}
+
+.select-premium {
+    width: 100%;
+    padding: 14px 16px;
+    background: #140c08;
+    color: #fff;
+    border: 1px solid rgba(255, 204, 112, 0.3);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffcc70' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+.select-premium:focus {
+    border-color: #ffb347;
+    box-shadow: 0 0 10px rgba(255, 179, 71, 0.15);
+}
+
+.select-premium option {
+    background: #1c110b;
+    color: #fff;
+}
+
+.preco-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    background: rgba(255, 204, 112, 0.04);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px dashed rgba(255, 204, 112, 0.15);
+}
+
+.preco-label {
+    font-size: 13px;
+    color: #a0a0a0;
 }
 
 /* Cards Compactos (Para Bebidas e Menu Extenso) */
@@ -659,6 +713,53 @@ header{
 
 .add-garcom:hover { background:#ffcc70; color:#140c08; }
 
+/* AJUSTES NA CAIXA DE LISTAGEM INTERNA DO GARÇOM */
+#listaGarcom {
+    background: #1a0f0a;
+    border-radius: 12px;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+#listaGarcom .item {
+    background: transparent;
+    padding: 12px 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+/* CONTAINER DE BOTÕES DE AÇÃO DO PAINEL DO GARÇOM */
+.painel-botoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* ESTILO GERAL DOS BOTÕES DE ENVIO DO GARÇOM */
+.btn-painel-acao {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-painel-acao:active {
+    transform: scale(0.98);
+}
+
 .fechar{
     background:transparent;
     border:1px solid rgba(255,255,255,0.2);
@@ -667,7 +768,7 @@ header{
     color:#a0a0a0;
     cursor:pointer;
     width:100%;
-    margin-top: 15px;
+    margin-top: 0px;
     transition: 0.3s;
 }
 
@@ -686,9 +787,10 @@ header{
     .carrinho, .painel{ width:100%; }
     .carrinho { right: -100%; }
     .painel { left: -100%; }
+    .card img{ height: 180px; } /* Ajuste de altura menor em telas móveis */
 }
-
 </style>
+
 </head>
 <body>
 
@@ -728,24 +830,42 @@ header{
 
 <div class="produtos-area">
 
-    <div class="categoria" id="jantinhas">
-        <h2>🍛 Jantinhas</h2>
-        
-        <div class="aviso-jantinha">
-            <strong>Atenção:</strong> Servimos jantinha exclusivamente de <strong>segunda a quinta-feira</strong>.
-        </div>
-
-        <div class="produtos">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop">
-                <div class="card-content">
-                    <h3>Jantinha Completa</h3>
-                    <p>Acompanha 1 opção de espeto: Carne, Cafta, Costela, Linguiça ou Codiguim.</p>
-                    <span class="preco">R$ 20,00</span> <button onclick="addCarrinho('Jantinha Completa', 20)">Adicionar ao Pedido</button>
-                </div>
+   <div class="produtos">
+    <div class="card">
+        <img src="WhatsApp Image 2026-05-21 at 13.05.20.jpeg">
+        <div class="card-content">
+            <h3>Jantinha Completa</h3>
+            <p>Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
+            
+            <div class="select-area" style="margin-top: 0; margin-bottom: 10px;">
+                <select id="espetoJantinha" style="padding: 12px; margin-bottom: 10px; background: #23160e; color: white; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <option value="Carne|6.00">Carne (+ R$ 6,00)</option>
+                    <option value="Cafta|6.00">Cafta (+ R$ 6,00)</option>
+                    <option value="Costela|6.00">Costela (+ R$ 6,00)</option>
+                    <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
+                    <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
+                    <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
+                    
+                    <option value="Queijo|7.00">Queijo (+ R$ 7,00)</option>
+                    <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
+                    <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
+                    <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
+                    
+                    <option value="Coração|8.00">Coração (+ R$ 8,00)</option>
+                    
+                    <option value="Kibe com Queijo|9.00">Kibe com Queijo (+ R$ 9,00)</option>
+                    <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
+                    <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
+                    
+                    <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
+                </select>
             </div>
+
+            <span class="preco">R$ 15,00 + Espeto</span> 
+            <button onclick="adicionarJantinhaComEspeto()">Adicionar ao Pedido</button>
         </div>
     </div>
+</div>
 
     <div class="categoria" id="espetos">
         <h2>🍢 Espetos Tradicionais</h2>
@@ -818,6 +938,16 @@ header{
             <div class="card-compact">
                 <div class="info"><h3>Mandioca com Bacon</h3></div>
                 <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Medalhão Mandioca c/ Bacon', 7)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>Medalhão cupim com Queijo</h3></div>
+                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão  cupim com Queijo', 9)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>Copa lombo com barbecue</h3></div>
+                <div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Copa lombo com barbecue', 8)">+</button></div>
             </div>
 
             <div class="card-compact">
@@ -901,6 +1031,26 @@ header{
             <div class="card-compact">
                 <div class="info"><h3>Antártica Zero 600ml</h3></div>
                 <div class="action"><span>R$ 7,50</span><button onclick="addCarrinho('Antártica Zero 600ml', 7.50)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>Antártica 1L </h3></div>
+                <div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Antártica 1L', 8.00)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>Jaboti 2L </h3></div>
+                <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Jaboti 2L', 7.00)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>Poty 2L</h3></div>
+                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Poty 2L', 9.00)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>Roller 2L </h3></div>
+                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Roller 2L ', 9.00)">+</button></div>
             </div>
 
             <div class="card-compact">
@@ -1056,73 +1206,95 @@ header{
     <label>Cliente (Opcional)</label>
     <input type="text" id="clienteGarcom" placeholder="Nome do cliente">
 
-    <label>Selecionar Produto</label>
-   <select id="produtoGarcom">
-    <optgroup label="Jantinhas (Seg a Qui - R$ 20,00)">
-        <option value="Jantinha c/ Carne|20">Jantinha c/ Carne - R$ 20,00</option>
-        <option value="Jantinha c/ Cafta|20">Jantinha c/ Cafta - R$ 20,00</option>
-        <option value="Jantinha c/ Costela|20">Jantinha c/ Costela - R$ 20,00</option>
-        <option value="Jantinha c/ Linguiça|20">Jantinha c/ Linguiça - R$ 20,00</option>
-        <option value="Jantinha c/ Codeguim|20">Jantinha c/ Codeguim - R$ 20,00</option>
+   <label>Selecionar Produto</label>
+<select id="produtoGarcom">
+    <optgroup label="Montar Jantinha Completa (Base R$ 15,00)">
+        <option value="Jantinha Completa (Acomp: Carne)|6.00">Jantinha + Espeto de Carne (+ R$ 6,00)</option>
+        <option value="Jantinha Completa (Acomp: Cafta)|6.00">Jantinha + Espeto de Cafta (+ R$ 6,00)</option>
+        <option value="Jantinha Completa (Acomp: Costela)|6.00">Jantinha + Espeto de Costela (+ R$ 6,00)</option>
+        <option value="Jantinha Completa (Acomp: Codeguim)|6.00">Jantinha + Espeto de Codeguim (+ R$ 6,00)</option>
+        <option value="Jantinha Completa (Acomp: Linguiça c/ Rúcula)|6.00">Jantinha + Espeto de Linguiça c/ Rúcula (+ R$ 6,00)</option>
+        <option value="Jantinha Completa (Acomp: Panceta)|6.00">Jantinha + Espeto de Panceta (+ R$ 6,00)</option>
+        <option value="Jantinha Completa (Acomp: Queijo)|7.00">Jantinha + Espeto de Queijo (+ R$ 7,00)</option>
+        <option value="Jantinha Completa (Acomp: Tulipa)|7.00">Jantinha + Espeto de Tulipa (+ R$ 7,00)</option>
+        <option value="Jantinha Completa (Acomp: Coração)|8.00">Jantinha + Espeto de Coração (+ R$ 8,00)</option>
+        <option value="Jantinha Completa (Acomp: Kibe com Queijo)|9.00">Jantinha + Kibe com Queijo (+ R$ 9,00)</option>
+        <option value="Jantinha Completa (Acomp: Pão de Alho)|4.00">Jantinha + Pão de Alho (+ R$ 4,00)</option>
+        
+        <option value="Jantinha Completa (Acomp: Medalhão Mandioca)|7.00">Jantinha + Medalhão Mandioca (+ R$ 7,00)</option>
+        <option value="Jantinha Completa (Acomp: Medalhão Frango)|7.00">Jantinha + Medalhão Frango (+ R$ 7,00)</option>
+        <option value="Jantinha Completa (Acomp: Medalhão Romeu & Julieta)|9.00">Jantinha + Medalhão Romeu & Julieta (+ R$ 9,00)</option>
+        <option value="Jantinha Completa (Acomp: Medalhão Batata Cheddar)|9.00">Jantinha + Medalhão Batata Cheddar (+ R$ 9,00)</option>
+        <option value="Jantinha Completa (Acomp: Medalhão Cupim c/ Queijo)|9.00">Jantinha + Medalhão Cupim c/ Queijo (+ R$ 9,00)</option>
+        <option value="Jantinha Completa (Acomp: Copa Lombo c/ Barbecue)|8.00">Jantinha + Copa Lombo c/ Barbecue (+ R$ 8,00)</option>
     </optgroup>
 
-    <optgroup label="Espetos & Diversos">
-        <option value="Cafta|6">Cafta - R$ 6,00</option>
-        <option value="Carne|6">Carne - R$ 6,00</option>
-        <option value="Codiguim|6">Codiguim - R$ 6,00</option>
-        <option value="Coração|8">Coração - R$ 8,00</option>
-        <option value="Costela|6">Costela - R$ 6,00</option>
-        <option value="Kibe com Queijo|9">Kibe com Queijo - R$ 9,00</option>
-        <option value="Linguiça com Rúcula e Queijo|6">Linguiça com Rúcula e Queijo - R$ 6,00</option>
-        <option value="Panceta|6">Panceta - R$ 6,00</option>
-        <option value="Pão de Alho|4">Pão de Alho - R$ 4,00</option>
-        <option value="Queijo|7">Queijo - R$ 7,00</option>
-        <option value="Tulipa|7">Tulipa - R$ 7,00</option>
+    <optgroup label="Espetos Tradicionais & Especiais">
+        <option value="Carne|6.00">Carne - R$ 6,00</option>
+        <option value="Cafta|6.00">Cafta - R$ 6,00</option>
+        <option value="Costela|6.00">Costela - R$ 6,00</option>
+        <option value="Codiguim|6.00">Codiguim - R$ 6,00</option>
+        <option value="Linguiça com Rúcula e Queijo|6.00">Linguiça com Rúcula e Queijo - R$ 6,00</option>
+        <option value="Panceta|6.00">Panceta - R$ 6,00</option>
+        <option value="Queijo|7.00">Queijo - R$ 7,00</option>
+        <option value="Tulipa|7.00">Tulipa - R$ 7,00</option>
+        <option value="Coração|8.00">Coração - R$ 8,00</option>
+        <option value="Kibe com Queijo|9.00">Kibe com Queijo - R$ 9,00</option>
+        <option value="Pão de Alho|4.00">Pão de Alho - R$ 4,00</option>
     </optgroup>
 
-    <optgroup label="Medalhões">
-        <option value="Medalhão Mandioca com Bacon|7">Medalhão Mandioca com Bacon - R$ 7,00</option>
-        <option value="Medalhão Frango com Bacon|7">Medalhão Frango com Bacon - R$ 7,00</option>
-        <option value="Medalhão Romeu e Julieta|9">Medalhão Romeu e Julieta - R$ 9,00</option>
-        <option value="Medalhão Batata c/ Cheddar|9">Medalhão de Batata c/ Cheddar e Bacon - R$ 9,00</option>
+    <optgroup label="Medalhões Gourmet & Especiais">
+        <option value="Medalhão Mandioca com Bacon|7.00">Medalhão Mandioca com Bacon - R$ 7,00</option>
+        <option value="Medalhão Frango com Bacon|7.00">Medalhão Frango com Bacon - R$ 7,00</option>
+        <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta - R$ 9,00</option>
+        <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon - R$ 9,00</option>
+        <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo - R$ 9,00</option>
+        <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue - R$ 8,00</option>
     </optgroup>
 
     <optgroup label="Refrigerantes (Lata)">
-        <option value="Coca Lata|5">Coca Lata - R$ 5,00</option>
-        <option value="Sprite Lata|5">Sprite Lata - R$ 5,00</option>
-        <option value="Fanta Lata|5">Fanta Lata - R$ 5,00</option>
-        <option value="Schweppes Lata|5">Schweppes Lata - R$ 5,00</option>
-        <option value="Guaraná Antártica Lata|5">Guaraná Antártica Lata - R$ 5,00</option>
-        <option value="Coca Zero Lata|5">Coca Zero Lata - R$ 5,00</option>
+        <option value="Coca Lata|5.00">Coca Lata - R$ 5,00</option>
+        <option value="Sprite Lata|5.00">Sprite Lata - R$ 5,00</option>
+        <option value="Fanta Lata|5.00">Fanta Lata - R$ 5,00</option>
+        <option value="Schweppes Lata|5.00">Schweppes Lata - R$ 5,00</option>
+        <option value="Guaraná Antártica Lata|5.00">Guaraná Antártica Lata - R$ 5,00</option>
+        <option value="Coca Zero Lata|5.00">Coca Zero Lata - R$ 5,00</option>
     </optgroup>
 
-    <optgroup label="Água, Sucos e Outros">
-        <option value="Água|3">Água - R$ 3,00</option>
-        <option value="Refrigerante Mini|3">Refrigerante Mini - R$ 3,00</option>
-        <option value="Coca KS|5">Coca KS - R$ 5,00</option>
+    <optgroup label="Refrigerantes (Garrafas Grandes)">
+        <option value="Antártica 1L|8.00">Antártica 1L - R$ 8,00</option>
+        <option value="Jaboti 2L|7.00">Jaboti 2L - R$ 7,00</option>
+        <option value="Poty 2L|9.00">Poty 2L - R$ 9,00</option>
+        <option value="Roller 2L|9.00">Roller 2L - R$ 9,00</option>
+    </optgroup>
+
+    <optgroup label="Água, Sucos e Consumo Local">
+        <option value="Água|3.00">Água - R$ 3,00</option>
+        <option value="Refrigerante Mini|3.00">Refrigerante Mini - R$ 3,00</option>
+        <option value="Coca KS|5.00">Coca KS - R$ 5,00</option>
         <option value="Coca 600ml|7.50">Coca 600ml - R$ 7,50</option>
-        <option value="Coca Zero 600ml|7.50">Coca Zero 600ml - R$ 7,50</option>
-        <option value="Antártica Zero 600ml|7.50">Antártica Zero 600ml - R$ 7,50</option>
-        <option value="Suco Laranja 900ml|12">Suco Laranja 900ml - R$ 12,00</option>
-        <option value="Suco Caju 900ml|10">Suco Caju 900ml - R$ 10,00</option>
+        <option value="Coca Zero 600ml|7.50">Coca 600ml Zero - R$ 7,50</option>
+        <option value="Antártica Zero 600ml|7.50">Antártica 600ml Zero - R$ 7,50</option>
+        <option value="Suco Laranja 900ml|12.00">Suco Laranja 900ml - R$ 12,00</option>
+        <option value="Suco Caju 900ml|10.00">Suco Caju 900ml - R$ 10,00</option>
     </optgroup>
 
     <optgroup label="Cervejas (Lata / Latão)">
-        <option value="Skol Lata|5">Skol Lata - R$ 5,00</option>
-        <option value="Boa Lata|5">Boa Lata - R$ 5,00</option>
-        <option value="Brahma Lata|5">Brahma Lata - R$ 5,00</option>
-        <option value="Amstel Lata|5">Amstel Lata - R$ 5,00</option>
-        <option value="Império Ultra Lata|5">Império Ultra Lata - R$ 5,00</option>
-        <option value="Kaiser Latão|6">Kaiser Latão - R$ 6,00</option>
+        <option value="Skol Lata|5.00">Skol - R$ 5,00</option>
+        <option value="Boa Lata|5.00">Boa - R$ 5,00</option>
+        <option value="Brahma Lata|5.00">Brahma - R$ 5,00</option>
+        <option value="Amstel Lata|5.00">Amstel - R$ 5,00</option>
+        <option value="Império Ultra Lata|5.00">Império Ultra - R$ 5,00</option>
+        <option value="Kaiser Latão|6.00">Kaiser Latão - R$ 6,00</option>
     </optgroup>
 
     <optgroup label="Cervejas (Romarinho / 600ml)">
-        <option value="Skol Romarinho|4">Skol Romarinho - R$ 4,00</option>
-        <option value="Boa Romarinho|4">Boa Romarinho - R$ 4,00</option>
-        <option value="Brahma Romarinho|4">Brahma Romarinho - R$ 4,00</option>
+        <option value="Skol Romarinho|4.00">Skol Romarinho - R$ 4,00</option>
+        <option value="Boa Romarinho|4.00">Boa Romarinho - R$ 4,00</option>
+        <option value="Brahma Romarinho|4.00">Brahma Romarinho - R$ 4,00</option>
         <option value="Budweiser Romarinho|4.50">Budweiser Romarinho - R$ 4,50</option>
         <option value="Original Romarinho|4.50">Original Romarinho - R$ 4,50</option>
-        <option value="Heineken 600ml|14">Heineken 600ml - R$ 14,00</option>
+        <option value="Heineken 600ml|14.00">Heineken 600ml - R$ 14,00</option>
     </optgroup>
 </select>
 
@@ -1140,13 +1312,33 @@ header{
         <option>Cartão</option>
     </select>
 
-    <button class="finalizar" onclick="enviarPedidoGarcom()">Enviar Comanda</button>
-    <button class="fechar" onclick="fecharPainel()">Sair do Painel</button>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+        <button class="finalizar" onclick="enviarParaCozinha()" style="background: #e67e22; color: #fff; border: none;">🔥 Mandar para Cozinha</button>
+        <button class="finalizar" onclick="enviarPedidoGarcom()" style="background: #27ae60; color: #fff; border: none;">🛎️ Enviar para o Caixa</button>
+        <button class="fechar" onclick="fecharPainel()">Sair do Painel</button>
+    </div>
 </div>
+
 
 <script>
 let carrinho = [];
 let pedidosGarcom = [];
+let mesaAtualGarcom = ""; 
+
+let comandasSalvas = JSON.parse(localStorage.getItem("comandas_cantinho")) || {};
+
+function adicionarJantinhaComEspeto() {
+    const select = document.getElementById('espetoJantinha');
+    const [nomeEspeto, valorEspeto] = select.value.split('|');
+    
+    const precoBaseJantinha = 15.00;
+    const precoFinal = precoBaseJantinha + parseFloat(valorEspeto);
+    
+    const nomeProdutoCompleto = `Jantinha Completa (Acomp: ${nomeEspeto})`;
+    
+    // Envia para a sua função existente do carrinho
+    addCarrinho(nomeProdutoCompleto, precoFinal);
+}
 
 /* ================== CLIENTE ================== */
 
@@ -1172,12 +1364,17 @@ function atualizarCarrinho(){
         total += item.preco * item.qtd;
 
         htmlTemp += `
-        <div class="item">
-            <div class="item-top">
+        <div class="item" style="position: relative;">
+            <div class="item-top" style="padding-right: 30px;">
                 <strong>${item.nome}</strong>
                 <strong>R$ ${(item.preco * item.qtd).toFixed(2)}</strong>
             </div>
-            <div class="controls">
+            
+            <button onclick="removerDoCarrinho(${index})" title="Remover item" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #ff4d4d; cursor: pointer; font-size: 16px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+                🗑️
+            </button>
+
+            <div class="controls" style="margin-top: 10px;">
                 <button onclick="diminuir(${index})">-</button>
                 <span style="color:#fff; font-weight:bold; min-width: 20px; text-align:center;">${item.qtd}</span>
                 <button onclick="aumentar(${index})">+</button>
@@ -1187,7 +1384,6 @@ function atualizarCarrinho(){
     });
 
     div.innerHTML = htmlTemp;
-
     document.getElementById("cartCount").innerHTML = quantidade;
 
     let tipo = document.getElementById("tipoPedido").value;
@@ -1232,96 +1428,119 @@ function finalizarPedido(){
     let endereco = document.getElementById("endereco").value.trim();
     let mesa = document.getElementById("mesa").value.trim();
 
-    // Validações
-    if(carrinho.length <= 0){
-        alert("Seu carrinho está vazio.");
-        return;
-    }
-    if(cliente === ""){
-        alert("Por favor, informe seu nome.");
-        return;
-    }
-    if(tipo === "delivery" && endereco === ""){
-        alert("Por favor, preencha o endereço de entrega.");
-        return;
-    }
-    if(tipo === "local" && mesa === ""){
-        alert("Por favor, informe o número da sua mesa.");
-        return;
-    }
+    if(carrinho.length <= 0){ alert("Seu carrinho está vazio."); return; }
+    if(cliente === ""){ alert("Por favor, informe seu nome."); return; }
+    if(tipo === "delivery" && endereco === ""){ alert("Por favor, preencha o endereço de entrega."); return; }
+    if(tipo === "local" && mesa === ""){ alert("Por favor, informe o número da sua mesa."); return; }
 
     let total = 0;
-    
-    // Construção da mensagem formatada e limpa
-    let mensagem = `🍢 *NOVO PEDIDO - CANTINHO DOS ESPETOS*\n\n`;
-    mensagem += `👤 *Cliente:* ${cliente}\n`;
-    mensagem += `📦 *Modo:* ${tipo.toUpperCase()}\n`;
+    let message = `🍢 *NOVO PEDIDO - CANTINHO DOS ESPETOS*\n\n`;
+    message += `👤 *Cliente:* ${cliente}\n`;
+    message += `📦 *Modo:* ${tipo.toUpperCase()}\n`;
 
-    if(tipo === "delivery"){ mensagem += `📍 *Endereço:* ${endereco}\n`; }
-    if(tipo === "local"){ mensagem += `🪑 *Mesa:* ${mesa}\n`; }
+    if(tipo === "delivery"){ message += `📍 *Endereço:* ${endereco}\n`; }
+    if(tipo === "local"){ message += `🪑 *Mesa:* ${mesa}\n`; }
 
-    mensagem += `💳 *Pagto:* ${pagamento}\n\n`;
-    mensagem += `📋 *RESUMO DOS ITENS*\n`;
+    message += `💳 *Pagto:* ${pagamento}\n\n`;
+    message += `📋 *RESUMO DOS ITENS*\n`;
 
     carrinho.forEach(item => {
         total += item.preco * item.qtd;
-        mensagem += `▫️ ${item.qtd}x ${item.nome} (R$ ${item.preco.toFixed(2)})\n`;
+        message += `▫️ ${item.qtd}x ${item.nome} (R$ ${item.preco.toFixed(2)})\n`;
     });
 
     if(tipo === "delivery"){ 
         total += 5; 
-        mensagem += `\n🚚 *Taxa Delivery:* R$ 5.00\n`;
+        message += `\n🚚 *Taxa Delivery:* R$ 5.00\n`;
     }
 
-    mensagem += `\n💰 *TOTAL A PAGAR:* R$ ${total.toFixed(2)}\n\n`;
+    message += `\n💰 *TOTAL A PAGAR:* R$ ${total.toFixed(2)}\n\n`;
 
-    // Preparação do link de impressão seguro
     let urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
-    let dadosParaImprimir = encodeURIComponent(mensagem);
+    let dadosParaImprimir = encodeURIComponent(message);
     let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
 
-    mensagem += `🖨️ *CLIQUE AQUI PARA IMPRIMIR:*\n${linkImpressao}`;
+    message += `🖨️ *CLIQUE AQUI PARA IMPRIMIR:*\n${linkImpressao}`;
 
-    // Codifica toda a mensagem para envio no WhatsApp
-    let textoWhatsApp = encodeURIComponent(mensagem);
+    let textoWhatsApp = encodeURIComponent(message);
     let numero = "5517991421893"; 
-    
     window.open(`https://wa.me/${numero}?text=${textoWhatsApp}`);
 }
 
-/* ================== GARÇOM ================== */
-
-function abrirLogin(){ document.getElementById("modal").style.display = "flex"; }
-function fecharLogin(){
-    document.getElementById("modal").style.display = "none";
-    document.getElementById("senha").value = ""; 
-}
-function fecharLoginFora(event){
-    if(event.target.id === "modal"){ fecharLogin(); }
-}
+/* ================== PAINEL DO GARÇOM (LOCAL COM HISTÓRICO DE ENTREGA) ================== */
 
 function loginGarcom(){
     let senha = document.getElementById("senha").value;
-    if(senha === "2026"){
+    if(senha === "3713"){
         document.getElementById("modal").style.display = "none";
         document.getElementById("painel").classList.add("active");
         document.getElementById("senha").value = "";
+        document.getElementById("mesaGarcom").addEventListener("blur", carregarMesaLocal);
     }else{
         alert("Senha de acesso inválida.");
         document.getElementById("senha").value = "";
     }
 }
 
+function abrirLogin(){ document.getElementById("modal").style.display = "flex"; }
+function fecharLogin(){ document.getElementById("modal").style.display = "none"; document.getElementById("senha").value = ""; }
+function fecharLoginFora(event){ if(event.target.id === "modal"){ fecharLogin(); } }
 function fecharPainel(){ document.getElementById("painel").classList.remove("active"); }
 
+function carregarMesaLocal() {
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    if(mesa === "") return;
+    
+    mesaAtualGarcom = mesa;
+
+    if(comandasSalvas[mesaAtualGarcom]) {
+        pedidosGarcom = comandasSalvas[mesaAtualGarcom].itens || [];
+        document.getElementById("clienteGarcom").value = comandasSalvas[mesaAtualGarcom].cliente || "";
+        document.getElementById("pagamentoGarcom").value = comandasSalvas[mesaAtualGarcom].pagamento || "Pendente";
+    } else {
+        pedidosGarcom = [];
+        document.getElementById("clienteGarcom").value = "";
+        document.getElementById("pagamentoGarcom").value = "Pendente";
+    }
+    atualizarGarcom();
+}
+
+
+// Remove o produto inteiro do carrinho de uma vez só
+function removerDoCarrinho(index) {
+    if(confirm("Deseja remover este item do seu carrinho?")) {
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+    }
+}
+
+function salvarMesaLocal() {
+    if(mesaAtualGarcom === "") return;
+
+    comandasSalvas[mesaAtualGarcom] = {
+        cliente: document.getElementById("clienteGarcom").value.trim(),
+        pagamento: document.getElementById("pagamentoGarcom").value,
+        itens: pedidosGarcom
+    };
+
+    localStorage.setItem("comandas_cantinho", JSON.stringify(comandasSalvas));
+}
+
 function addPedidoGarcom(){
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    if(mesa === "") { alert("Por favor, informe a mesa ANTES de adicionar produtos."); return; }
+    if(mesa !== mesaAtualGarcom) { mesaAtualGarcom = mesa; }
+
     let produto = document.getElementById("produtoGarcom").value;
     let partes = produto.split("|");
     let nome = partes[0];
     let preco = parseFloat(partes[1]);
 
-    pedidosGarcom.push({ nome, preco });
+    // O item nasce não enviado à cozinha e não entregue à mesa
+    pedidosGarcom.push({ nome, preco, enviado: false, entregue: false });
+    
     atualizarGarcom();
+    salvarMesaLocal();
 }
 
 function atualizarGarcom(){
@@ -1331,14 +1550,29 @@ function atualizarGarcom(){
 
     pedidosGarcom.forEach((item, index)=>{
         total += item.preco;
+        
+        // Define o texto do status com base nas ações do garçom
+        let statusTag = `<span style="color:#ffaa00; font-size:11px;">[Pendente]</span>`;
+        if(item.enviado) { statusTag = `<span style="color:#e67e22; font-size:11px;">[Na Cozinha]</span>`; }
+        if(item.entregue) { statusTag = `<span style="color:#00ff00; font-size:11px; font-weight:bold;">[✔ Entregue]</span>`; }
+
+        // Estilo visual riscado ou normal para facilitar a leitura rápida
+        let textoEstilo = item.entregue ? "text-decoration: line-through; color: #777;" : "color: #fff;";
+
         htmlTemp += `
-        <div class="item">
+        <div class="item" style="border-bottom: 1px solid #444; padding: 8px 0;">
             <div class="item-top">
-                <strong>${item.nome}</strong>
-                <strong>R$ ${item.preco.toFixed(2)}</strong>
+                <span style="${textoEstilo}"><strong>${item.nome}</strong></span>
+                ${statusTag}
             </div>
-            <div class="controls">
-                <button style="width:auto; padding:0 15px; font-size:12px; font-weight:bold; background:#8b0000; color:#fff;" onclick="removerGarcom(${index})">Remover</button>
+            <div style="font-weight: bold; color: #fff; margin-bottom: 5px;">R$ ${item.preco.toFixed(2)}</div>
+            <div class="controls" style="display: flex; gap: 5px; justify-content: flex-start;">
+                <button style="width:auto; padding:5px 10px; font-size:11px; background:${item.entregue ? '#555' : '#27ae60'}; color:#fff; border:none; border-radius:3px;" onclick="alternarEntregue(${index})">
+                    ${item.entregue ? 'Desfazer' : '✓ Entregue'}
+                </button>
+                <button style="width:auto; padding:5px 10px; font-size:11px; background:#8b0000; color:#fff; border:none; border-radius:3px;" onclick="removerGarcom(${index})">
+                    Remover
+                </button>
             </div>
         </div>`;
     });
@@ -1347,56 +1581,85 @@ function atualizarGarcom(){
     document.getElementById("totalGarcom").innerHTML = `Total da Comanda: R$ ${total.toFixed(2)}`;
 }
 
+// NOVA FUNÇÃO: Muda o status de entrega do espeto
+function alternarEntregue(index) {
+    pedidosGarcom[index].entregue = !pedidosGarcom[index].entregue;
+    atualizarGarcom();
+    salvarMesaLocal();
+}
+
 function removerGarcom(index){
     pedidosGarcom.splice(index,1);
     atualizarGarcom();
+    salvarMesaLocal();
 }
 
-function enviarPedidoGarcom(){
-    if(pedidosGarcom.length <= 0){
-        alert("A comanda está vazia.");
+function enviarParaCozinha(){
+    let itensParaEnviar = pedidosGarcom.filter(item => !item.enviado);
+    
+    if(itensParaEnviar.length <= 0) {
+        alert("Não há novos itens pendentes para enviar à cozinha.");
         return;
     }
 
     let mesa = document.getElementById("mesaGarcom").value.trim();
+    let message = `🔥 *PEDIDO PARA A COZINHA - ${mesa.toUpperCase()}*\n\n`;
+    
+    itensParaEnviar.forEach(item => {
+        message += `▫️ 1x ${item.nome}\n`;
+    });
+
+    pedidosGarcom.forEach(item => item.enviado = true);
+    atualizarGarcom();
+    salvarMesaLocal();
+
+    let textoWhatsApp = encodeURIComponent(message);
+    let numeroCozinha = "5517991421893"; 
+    window.open(`https://wa.me/${numeroCozinha}?text=${textoWhatsApp}`);
+}
+
+function enviarPedidoGarcom(){
+    if(pedidosGarcom.length <= 0){ alert("A comanda está vazia."); return; }
+    let mesa = document.getElementById("mesaGarcom").value.trim();
     let cliente = document.getElementById("clienteGarcom").value.trim();
     let pagamento = document.getElementById("pagamentoGarcom").value;
     
-    if(mesa === ""){
-        alert("Informe o número da mesa antes de enviar a comanda.");
-        return;
-    }
+    if(mesa === ""){ alert("Informe o número da mesa antes de enviar a comanda."); return; }
 
     let total = 0;
+    let message = `🛎️ *FECHAMENTO DE COMANDA - CAIXA*\n\n`;
+    message += `🪑 *Número da Mesa:* ${mesa}\n`;
+    if(cliente) { message += `👤 *Cliente:* ${cliente}\n`; }
     
-    // Construção formatada da mensagem do Garçom
-    let mensagem = `🛎️ *COMANDA DE MESA*\n\n`;
-    mensagem += `🪑 *Número da Mesa:* ${mesa}\n`;
-    if(cliente) { mensagem += `👤 *Cliente:* ${cliente}\n`; }
-    
-    mensagem += `💳 *Status:* ${pagamento}\n\n`;
-    mensagem += `📋 *ITENS LANÇADOS*\n`;
+    message += `💳 *Status:* ${pagamento}\n\n`;
+    message += `📋 *ITENS CONSUMIDOS*\n`;
 
     pedidosGarcom.forEach(item => {
         total += item.preco;
-        mensagem += `▫️ ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
+        message += `▫️ ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
     });
 
-    mensagem += `\n💰 *TOTAL DA MESA:* R$ ${total.toFixed(2)}`;
+    message += `\n💰 *TOTAL DA MESA:* R$ ${total.toFixed(2)}\n\n`;
 
-    // Codifica para a URL do WhatsApp
-    let textoWhatsApp = encodeURIComponent(mensagem);
-    let numero = "5517991421893";
-    
-    window.open(`https://wa.me/${numero}?text=${textoWhatsApp}`);
+    let urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+    let dadosParaImprimir = encodeURIComponent(message);
+    let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
 
-    // Limpa a comanda após envio
+    message += `🖨️ *CLIQUE AQUI PARA IMPRIMIR A CONTA:*\n${linkImpressao}`;
+
+    delete comandasSalvas[mesa];
+    localStorage.setItem("comandas_cantinho", JSON.stringify(comandasSalvas));
+
+    let textoWhatsApp = encodeURIComponent(message);
+    let numeroCaixa = "5517991421893";
+    window.open(`https://wa.me/${numeroCaixa}?text=${textoWhatsApp}`);
+
     pedidosGarcom = [];
+    mesaAtualGarcom = "";
     atualizarGarcom();
     document.getElementById("mesaGarcom").value = "";
     document.getElementById("clienteGarcom").value = "";
 }
 </script>
-
 </body>
 </html>
