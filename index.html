@@ -268,11 +268,35 @@ header{
 
 /* CORREÇÃO DAS FOTOS: Mantém a proporção perfeita sem cortar bizarramente ou achatar */
 .card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    object-position:center;
-    display:block;
+    width: 100%;
+    height: auto;           /* Faz a altura se adaptar sozinha ao tamanho real da foto */
+    max-height: 350px;      /* Define um limite máximo elegante para não esticar demais */
+    object-fit: contain;    /* Força a foto inteira a caber na tela sem remover os lados */
+    display: block;
+    background: #140c08;    /* Fundo escuro idêntico ao site para preencher espaços extras, se houver */
+}
+
+/* Container das duas fotos */
+.card-imagens {
+    display: flex;          /* Alinha lado a lado */
+    gap: 4px;              /* Espaço bem fininho e elegante entre as duas fotos */
+    background: #140c08;   /* Cor de fundo do seu site */
+    width: 100%;
+}
+
+/* Regra específica para quando o card tiver duas fotos */
+.card-imagens img {
+    width: 50%;            /* Cada foto pega metade exata do card */
+    height: 180px;         /* Altura ideal para não ficar gigante no celular */
+    object-fit: cover;     /* Preenche o espaço mantendo o visual bonito */
+    display: block;
+}
+
+/* Pequeno ajuste para telas menores (Celular) */
+@media(max-width:768px){
+    .card-imagens img {
+        height: 140px;     /* Diminui um pouquinho a altura no celular para ficar proporcional */
+    }
 }
 
 .card-content{
@@ -830,9 +854,14 @@ header{
 
 <div class="produtos-area">
 
-   <div class="produtos">
+ <div class="produtos">
     <div class="card">
-        <img src="WhatsApp Image 2026-05-21 at 13.05.20.jpeg">
+        
+        <div class="card-imagens" style="display: flex; gap: 4px; background: #140c08; width: 100%;">
+            <img src="WhatsApp Image 2026-05-21 at 13.05.20.jpeg" alt="Acompanhamentos Jantinha">
+            <img src="WhatsApp Image 2026-05-21 at 13.05.20 (1).jpeg" alt="Espeto na Brasa">
+        </div>
+        
         <div class="card-content">
             <h3>Jantinha Completa</h3>
             <p>Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
@@ -852,10 +881,12 @@ header{
                     <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
                     
                     <option value="Coração|8.00">Coração (+ R$ 8,00)</option>
+                    <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue (+ R$ 8,00)</option>
                     
                     <option value="Kibe com Queijo|9.00">Kibe com Queijo (+ R$ 9,00)</option>
                     <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
                     <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
+                    <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo (+ R$ 9,00)</option>
                     
                     <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
                 </select>
@@ -866,7 +897,6 @@ header{
         </div>
     </div>
 </div>
-
     <div class="categoria" id="espetos">
         <h2>🍢 Espetos Tradicionais</h2>
         
