@@ -1865,6 +1865,13 @@ function enviarParaCozinha() {
         message += `▫️ 1x ${item.nome}\n`;
     });
 
+    // Gera o link de impressão com os dados da Cozinha
+    let urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+    let dadosParaImprimir = encodeURIComponent(message);
+    let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
+
+    message += `\n🖨️ *CLIQUE AQUI PARA IMPRIMIR NA COZINHA:*\n${linkImpressao}`;
+
     pedidosGarcom.forEach(item => item.enviado = true);
     atualizarGarcom();
     salvarMesaLocal();
@@ -1930,7 +1937,7 @@ function mostrarNotificacao(mensagem) {
 
     const toast = document.createElement('div');
     toast.className = 'toast-alerta';
-    toast.innerHTML = mensagem;
+    toast.innerHTML = message = mensagem;
 
     container.appendChild(toast);
 
