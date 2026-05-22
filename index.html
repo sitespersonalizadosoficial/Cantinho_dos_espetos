@@ -295,7 +295,7 @@ header{
     background: #140c08;
 }
 
-/* Container de Duas Imagens no Mesmo Card */
+/* Container de Duas Imagens no Meso Card */
 .card-imagens {
     display: flex;
     gap: 4px;
@@ -867,6 +867,56 @@ header{
 }
 
 .fechar:hover { background: rgba(255,255,255,0.05); color: white; }
+
+/* ==========================================================================
+   SISTEMA DE NOTIFICAÇÃO FLUTUANTE (TOAST GARÇOM)
+   ========================================================================== */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast-alerta {
+    background: #27ae60;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+    animation: fadeInDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.9);
+    }
+}
 
 /* ==========================================================================
    MEDIA QUERIES - RESPONSIVIDADE COMPLETA CELULAR
@@ -1533,7 +1583,7 @@ function aumentar(index){
     atualizarCarrinho();
 }
 
-function diminuir(index){
+function disminuir(index){
     carrinho[index].qtd--;
     if(carrinho[index].qtd <= 0){ carrinho.splice(index,1); }
     atualizarCarrinho();
@@ -1690,6 +1740,9 @@ function addProdutoDiretoGarcom(nome, preco) {
     pedidosGarcom.push({ nome: nome, preco: parseFloat(preco), enviado: false, entregue: false });
     atualizarGarcom();
     salvarMesaLocal();
+
+    // Notificação visual rápida para o garçom
+    mostrarNotificacao(`✅ Adicionado: ${nome}`);
 }
 
 // CAPTURA MONTAGEM DA JANTINHA DO PROPRIO PAINEL DO GARÇOM
@@ -1716,6 +1769,9 @@ function addJantinhaGarcomCardapio() {
     pedidosGarcom.push({ nome: nomeProdutoCompleto, preco: precoFinal, enviado: false, entregue: false });
     atualizarGarcom();
     salvarMesaLocal();
+
+    // Notificação visual rápida para o garçom
+    mostrarNotificacao(`🍢 Jantinha adicionada com sucesso!`);
 }
 
 function atualizarGarcom(){
@@ -1839,6 +1895,31 @@ function enviarPedidoGarcom(){
     atualizarGarcom();
     document.getElementById("mesaGarcom").value = "";
     document.getElementById("clienteGarcom").value = "";
+}
+
+/* ==========================================================================
+   NOVA FUNÇÃO: GERENCIA O TOAST SEM TRAVAR A TELA DO GARÇOM
+   ========================================================================== */
+function mostrarNotificacao(mensagem) {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'toast-alerta';
+    toast.innerHTML = mensagem;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.animation = 'fadeOut 0.4s ease forwards';
+        setTimeout(() => {
+            toast.remove();
+        }, 400);
+    }, 2000);
 }
 </script>
 </body>
