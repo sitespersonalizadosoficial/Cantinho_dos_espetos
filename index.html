@@ -10,30 +10,48 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
  
 <style>
-/* CONFIGURAÇÕES GERAIS */
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html{
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 body{
-    background:#140c08;
-    color:white;
-    overflow-x:hidden;
+    background: #140c08;
+    color: white;
+    overflow-x: hidden;
 }
 
-/* --- HEADER PREMIUM (GLASSMORPHISM) --- */
+/* Customização leve da barra de rolagem geral */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #140c08;
+}
+::-webkit-scrollbar-thumb {
+    background: #2c1a11;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffcc70;
+}
 
+/* ==========================================================================
+   HEADER PREMIUM (GLASSMORPHISM)
+   ========================================================================== */
 header{
-    position:sticky;
-    top:0;
-    z-index:99999;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
     background: rgba(20, 12, 8, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -41,48 +59,48 @@ header{
 }
 
 .top-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-/* ÁREA DO LOGO */
+/* Área do Logo */
 .logo-area{
-    display:flex;
-    align-items:center;
-    gap:15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .logo{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    object-fit:cover;
-    background:#ffb347;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ffb347;
     border: 2px solid #ffcc70;
 }
 
 .logo-text h1{
-    color:#ffcc70;
-    font-size:22px;
+    color: #ffcc70;
+    font-size: 22px;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
 .logo-text span{
-    color:#bcbcbc;
-    font-size:12px;
+    color: #bcbcbc;
+    font-size: 12px;
     font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-/* AÇÕES DO CABEÇALHO */
+/* Ações do Cabeçalho */
 .header-actions{
-    display:flex;
-    align-items:center;
-    gap:12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .icon-btn {
@@ -98,7 +116,7 @@ header{
     transition: all 0.3s ease;
 }
 
-/* BOTÃO GARÇOM */
+/* Botão Garçom */
 .garcom-btn{
     background: transparent;
     border: 1px solid #ffcc70;
@@ -110,11 +128,11 @@ header{
     transform: translateY(-2px);
 }
 
-/* BOTÃO CARRINHO */
+/* Botão Carrinho */
 .cart-btn{
-    background:#ffb347;
-    color:#140c08;
-    position:relative;
+    background: #ffb347;
+    color: #140c08;
+    position: relative;
     box-shadow: 0 4px 15px rgba(255, 179, 71, 0.25);
 }
 
@@ -124,98 +142,99 @@ header{
 }
 
 .cart-btn span{
-    position:absolute;
-    top:-6px;
-    right:-6px;
-    width:22px;
-    height:22px;
-    border-radius:50%;
-    background:#8b0000;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:11px;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #8b0000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
     font-weight: bold;
     border: 2px solid #140c08;
 }
 
-/* --- MENU DE CATEGORIAS --- */
-
+/* ==========================================================================
+   MENU DE CATEGORIAS
+   ========================================================================== */
 .menu-categorias{
-    display:flex;
-    gap:15px;
-    overflow:auto;
-    padding:12px 20px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 12px 20px;
 }
 
 .menu-categorias::-webkit-scrollbar{
-    display:none;
+    display: none;
 }
 
 .menu-categorias button{
     background: transparent;
     border: 1px solid rgba(255, 204, 112, 0.3);
-    color:#ffcc70;
-    padding:10px 20px;
-    border-radius:30px;
-    cursor:pointer;
-    white-space:nowrap;
-    font-weight:500;
+    color: #ffcc70;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .menu-categorias button:hover{
-    background:#8b0000;
+    background: #8b0000;
     border-color: #8b0000;
-    color:white;
+    color: white;
 }
 
-/* --- SEÇÃO HERO --- */
-
+/* ==========================================================================
+   SEÇÃO HERO
+   ========================================================================== */
 .hero{
-    height:350px;
-    background:
-    linear-gradient(to bottom, rgba(20,12,8,0.3), rgba(20,12,8,1)),
-    url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+    height: 350px;
+    background: linear-gradient(to bottom, rgba(20,12,8,0.3), rgba(20,12,8,1)), url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 .hero h1{
-    font-size:50px;
-    color:#ffcc70;
+    font-size: 50px;
+    color: #ffcc70;
     font-weight: 700;
     text-shadow: 2px 4px 10px rgba(0,0,0,0.8);
 }
 
 .hero p{
-    margin-top:10px;
-    font-size:20px;
+    margin-top: 10px;
+    font-size: 20px;
     font-weight: 300;
     color: #e0e0e0;
 }
 
-/* --- ÁREA DE PRODUTOS --- */
-
+/* ==========================================================================
+   ÁREA DE PRODUTOS PRINCIPAL
+   ========================================================================== */
 .produtos-area{
-    padding:30px 20px 100px;
+    padding: 30px 20px 100px;
 }
 
 .categoria{
-    margin-bottom:60px;
+    margin-bottom: 60px;
 }
 
 .categoria h2{
-    color:#ffb347;
-    margin-bottom:25px;
-    font-size:30px;
+    color: #ffb347;
+    margin-bottom: 25px;
+    font-size: 30px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -230,7 +249,7 @@ header{
     margin-left: 10px;
 }
 
-/* Aviso Jantinha */
+/* Aviso Dinâmico da Jantinha */
 .aviso-jantinha {
     background: rgba(255, 204, 112, 0.1);
     border-left: 4px solid #ffcc70;
@@ -245,95 +264,88 @@ header{
     color: #ffcc70;
 }
 
-/* Cards Tradicionais (Grandes com Imagem) */
+/* GRID DOS CARDS PRINCIPAIS */
 .produtos{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 .card{
-    background:#1c110b;
-    border-radius:20px;
+    background: #1c110b;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    overflow:hidden;
+    overflow: hidden;
     transition: all 0.4s ease;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0,0,0,.6);
     border-color: rgba(255, 204, 112, 0.2);
 }
 
-/* CORREÇÃO DAS FOTOS: Mantém a proporção perfeita sem cortar bizarramente ou achatar */
+/* Regra de Imagem Única */
 .card img{
     width: 100%;
-    height: auto;           /* Faz a altura se adaptar sozinha ao tamanho real da foto */
-    max-height: 350px;      /* Define um limite máximo elegante para não esticar demais */
-    object-fit: contain;    /* Força a foto inteira a caber na tela sem remover os lados */
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
     display: block;
-    background: #140c08;    /* Fundo escuro idêntico ao site para preencher espaços extras, se houver */
+    background: #140c08;
 }
 
-/* Container das duas fotos */
+/* Container de Duas Imagens no Mesmo Card */
 .card-imagens {
-    display: flex;          /* Alinha lado a lado */
-    gap: 4px;              /* Espaço bem fininho e elegante entre as duas fotos */
-    background: #140c08;   /* Cor de fundo do seu site */
+    display: flex;
+    gap: 4px;
+    background: #140c08;
     width: 100%;
 }
 
-/* Regra específica para quando o card tiver duas fotos */
 .card-imagens img {
-    width: 50%;            /* Cada foto pega metade exata do card */
-    height: 180px;         /* Altura ideal para não ficar gigante no celular */
-    object-fit: cover;     /* Preenche o espaço mantendo o visual bonito */
+    width: 50%;
+    height: 180px;
+    object-fit: cover;
     display: block;
 }
 
-/* Pequeno ajuste para telas menores (Celular) */
-@media(max-width:768px){
-    .card-imagens img {
-        height: 140px;     /* Diminui um pouquinho a altura no celular para ficar proporcional */
-    }
-}
-
+/* Conteúdo interno do Card */
 .card-content{
-    padding:20px;
+    padding: 20px;
 }
 
 .card h3{
-    margin-bottom:8px;
+    margin-bottom: 8px;
     font-size: 18px;
     font-weight: 600;
 }
 
 .card p{
-    color:#a0a0a0;
+    color: #a0a0a0;
     font-size: 13px;
-    margin-bottom:15px;
+    margin-bottom: 15px;
     line-height: 1.5;
 }
 
 .preco{
-    color:#ffcc70;
-    font-size:20px;
-    font-weight:700;
-    display:block;
-    margin-bottom:15px;
+    color: #ffcc70;
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
 }
 
 .card button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:12px;
-    background:#8b0000;
-    color:white;
-    font-weight:600;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #8b0000;
+    color: white;
+    font-weight: 600;
     font-size: 14px;
-    cursor:pointer;
+    cursor: pointer;
     transition: background 0.3s ease;
 }
 
@@ -341,7 +353,9 @@ header{
     background: #a30000;
 }
 
-/* --- SELETOR PREMIUM DA JANTINHA COMPLETA --- */
+/* ==========================================================================
+   SELETOR PREMIUM DE JANTINHAS COM ESPETOS
+   ========================================================================== */
 .jantinha-select-container {
     margin: 15px 0;
     position: relative;
@@ -393,7 +407,9 @@ header{
     color: #a0a0a0;
 }
 
-/* Cards Compactos (Para Bebidas e Menu Extenso) */
+/* ==========================================================================
+   CARDS COMPACTOS (BEBIDAS E PRODUTOS RÁPIDOS)
+   ========================================================================== */
 .produtos-compactos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -459,48 +475,49 @@ header{
     background: #a30000;
 }
 
-/* --- CARRINHO DO CLIENTE --- */
-
+/* ==========================================================================
+   CARRINHO LATERAL DO CLIENTE
+   ========================================================================== */
 .carrinho{
-    position:fixed;
-    top:0;
-    right:-450px;
-    width:420px;
-    height:100vh;
-    background:#140c08;
-    z-index:999999;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 420px;
+    height: 100vh;
+    background: #140c08;
+    z-index: 999999;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow:auto;
-    padding:30px;
+    overflow-y: auto;
+    padding: 30px;
     box-shadow: -10px 0 30px rgba(0,0,0,0.8);
     border-left: 1px solid rgba(255, 204, 112, 0.1);
 }
 
 .carrinho.active{
-    right:0;
+    right: 0;
 }
 
 .cart-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .cart-header h2{
-    color:#ffcc70;
+    color: #ffcc70;
     font-weight: 600;
 }
 
 .fechar-cart{
-    width:35px;
-    height:35px;
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,0.1);
-    color:white;
-    cursor:pointer;
-    font-size:16px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
     transition: 0.3s;
 }
 
@@ -508,35 +525,36 @@ header{
     background: #8b0000;
 }
 
+/* Itens de listagem padrão dentro das gavetas */
 .item{
-    background:#1c110b;
-    padding:18px;
-    border-radius:16px;
-    margin-bottom:15px;
+    background: #1c110b;
+    padding: 18px;
+    border-radius: 16px;
+    margin-bottom: 15px;
     border: 1px solid rgba(255,255,255,0.03);
 }
 
 .item-top{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
     font-size: 15px;
 }
 
 .controls{
-    display:flex;
-    align-items:center;
-    gap:15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .controls button{
-    width:32px;
-    height:32px;
-    border:none;
-    border-radius:8px;
-    background:rgba(255, 204, 112, 0.1);
-    color:#ffcc70;
-    cursor:pointer;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 204, 112, 0.1);
+    color: #ffcc70;
+    cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
 }
@@ -547,38 +565,37 @@ header{
 }
 
 .total{
-    margin-top:30px;
+    margin-top: 30px;
     padding-top: 20px;
     border-top: 1px dashed rgba(255,255,255,0.2);
-    font-size:24px;
-    color:#ffcc70;
-    font-weight:700;
+    font-size: 24px;
+    color: #ffcc70;
+    font-weight: 700;
     text-align: right;
 }
 
-/* --- FORMULÁRIO --- */
-
+/* Formulário e inputs internos do carrinho */
 .select-area{
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .select-area label{
-    display:block;
-    margin-bottom:8px;
-    color:#bcbcbc;
+    display: block;
+    margin-bottom: 8px;
+    color: #bcbcbc;
     font-size: 14px;
 }
 
 .select-area select,
 .select-area input,
 .select-area textarea{
-    width:100%;
-    padding:15px;
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:12px;
-    margin-bottom:20px;
-    background:#1a0f0a;
-    color:white;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: #1a0f0a;
+    color: white;
     font-size: 15px;
     outline: none;
     transition: border 0.3s;
@@ -591,15 +608,15 @@ header{
 }
 
 .finalizar{
-    width:100%;
-    padding:18px;
-    border:none;
-    border-radius:14px;
-    background:#ffb347;
-    color:#140c08;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    background: #ffb347;
+    color: #140c08;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
     transition: 0.3s;
     margin-top: 10px;
 }
@@ -608,25 +625,26 @@ header{
     background: #ffd699;
 }
 
-/* --- LOGIN DO GARÇOM --- */
-
+/* ==========================================================================
+   MODAL DE LOGIN DO GARÇOM
+   ========================================================================== */
 .modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.9);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
 }
 
 .modal-content{
-    width:340px;
-    background:#1c110b;
-    padding:35px 30px;
-    border-radius:24px;
+    width: 340px;
+    background: #1c110b;
+    padding: 35px 30px;
+    border-radius: 24px;
     border: 1px solid rgba(255, 204, 112, 0.2);
     text-align: center;
     position: relative;
@@ -647,8 +665,8 @@ header{
 .fechar-modal-x:hover { color: #ffb347; }
 
 .modal-content h2{
-    color:#ffcc70;
-    margin-bottom:5px;
+    color: #ffcc70;
+    margin-bottom: 5px;
     font-size: 22px;
 }
 
@@ -659,85 +677,88 @@ header{
 }
 
 .modal-content input{
-    width:100%;
-    padding:16px;
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:12px;
-    margin-bottom:20px;
-    background:#140c08;
-    color:white;
+    width: 100%;
+    padding: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: #140c08;
+    color: white;
     text-align: center;
     font-size: 18px;
     letter-spacing: 5px;
 }
 
 .btn-entrar{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:12px;
-    background:#8b0000;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #8b0000;
     color: white;
-    font-weight:600;
+    font-weight: 600;
     font-size: 16px;
-    cursor:pointer;
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-entrar:hover { background: #a30000; }
 
-/* --- PAINEL DO GARÇOM --- */
-
+/* ==========================================================================
+   PAINEL DO GARÇOM
+   ========================================================================== */
 .painel{
-    position:fixed;
-    left:-450px;
-    top:0;
-    width:420px;
-    height:100vh;
-    background:#140c08;
-    z-index:999999;
+    position: fixed;
+    left: -450px;
+    top: 0;
+    width: 420px;
+    height: 100vh;
+    background: #140c08;
+    z-index: 999999;
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding:30px;
+    padding: 30px;
     border-right: 1px solid rgba(255, 204, 112, 0.1);
-    overflow:auto;
+    overflow-y: auto;
     box-shadow: 10px 0 30px rgba(0,0,0,0.8);
 }
 
-.painel.active{ left:0; }
+.painel.active{ left: 0; }
 
-.painel h2{ color:#ffcc70; margin-bottom:5px; }
+.painel h2{ color: #ffcc70; margin-bottom: 5px; }
 
 .painel p { color: #a0a0a0; font-size: 14px; margin-bottom: 25px; }
 
-.painel label{ display:block; margin-bottom:8px; color:#bcbcbc; font-size: 14px; }
+.painel label{ display: block; margin-bottom: 8px; color: #bcbcbc; font-size: 14px; }
 
 .painel input, .painel select{
-    width:100%;
-    padding:15px;
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:12px;
-    margin-bottom:20px;
-    background:#1a0f0a;
-    color:white;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: #1a0f0a;
+    color: white;
+    font-size: 15px;
+    outline: none;
 }
 
 .add-garcom{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:12px;
-    background:rgba(255, 204, 112, 0.1);
-    color:#ffcc70;
-    font-weight:600;
-    cursor:pointer;
-    margin-bottom:30px;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 204, 112, 0.1);
+    color: #ffcc70;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 30px;
     border: 1px solid rgba(255, 204, 112, 0.3);
     transition: 0.3s;
 }
 
-.add-garcom:hover { background:#ffcc70; color:#140c08; }
+.add-garcom:hover { background: #ffcc70; color: #140c08; }
 
-/* AJUSTES NA CAIXA DE LISTAGEM INTERNA DO GARÇOM */
+/* Lista de Itens internos adicionados na Mesa */
 #listaGarcom {
     background: #1a0f0a;
     border-radius: 12px;
@@ -756,7 +777,57 @@ header{
     border: none;
 }
 
-/* CONTAINER DE BOTÕES DE AÇÃO DO PAINEL DO GARÇOM */
+/* CARDÁPIO COMPACTO DE EMBUTIR (Opcional - Exibição direta dentro do painel do Garçom) */
+.cardapio-interno-garcom {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 204, 112, 0.15);
+    padding: 15px;
+    border-radius: 14px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.cardapio-interno-garcom h3 {
+    font-size: 14px;
+    color: #ffb347;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.grid-itens-garcom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.btn-item-rapido {
+    background: #1c110b;
+    border: 1px solid rgba(255,255,255,0.05);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.2s;
+}
+
+.btn-item-rapido:hover {
+    border-color: #ffcc70;
+    background: #281910;
+}
+
+.btn-item-rapido span.item-preco {
+    color: #ffcc70;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+/* Containers e botões estruturais finais */
 .painel-botoes-container {
     display: flex;
     flex-direction: column;
@@ -764,7 +835,6 @@ header{
     margin-top: 15px;
 }
 
-/* ESTILO GERAL DOS BOTÕES DE ENVIO DO GARÇOM */
 .btn-painel-acao {
     width: 100%;
     padding: 16px;
@@ -785,20 +855,22 @@ header{
 }
 
 .fechar{
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.2);
-    padding:15px;
-    border-radius:12px;
-    color:#a0a0a0;
-    cursor:pointer;
-    width:100%;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 12px;
+    color: #a0a0a0;
+    cursor: pointer;
+    width: 100%;
     margin-top: 0px;
     transition: 0.3s;
 }
 
 .fechar:hover { background: rgba(255,255,255,0.05); color: white; }
 
-/* RESPONSIVO */
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVIDADE COMPLETA CELULAR
+   ========================================================================== */
 @media(max-width:768px){
     .top-header { padding: 12px 15px; }
     .logo { width: 45px; height: 45px; }
@@ -806,12 +878,18 @@ header{
     .logo-text span{ font-size: 10px; }
     .icon-btn { width: 42px; height: 42px; font-size: 18px; }
     .cart-btn span { width: 18px; height: 18px; font-size: 10px; top: -4px; right: -4px; }
-    .hero h1{ font-size:36px; }
-    .hero p{ font-size:16px; }
-    .carrinho, .painel{ width:100%; }
+    .hero h1{ font-size: 36px; }
+    .hero p{ font-size: 16px; }
+    
+    /* Faz as gavetas ocuparem a tela inteira com saída correta para fora da tela */
+    .carrinho, .painel{ width: 100%; }
     .carrinho { right: -100%; }
     .painel { left: -100%; }
-    .card img{ height: 180px; } /* Ajuste de altura menor em telas móveis */
+    .carrinho.active { right: 0; }
+    .painel.active { left: 0; }
+    
+    .card img{ height: 180px; }
+    .card-imagens img { height: 140px; }
 }
 </style>
 
@@ -1226,126 +1304,149 @@ header{
     </div>
 </div>
 
-<div class="painel" id="painel">
+<div class="painel" id="painel" style="overflow-y: auto; max-height: 100vh;">
     <h2>Painel de Serviço</h2>
-    <p>Gerenciamento de mesas e comandas.</p>
+    <p style="color: #bbb; font-size: 13px; margin-bottom: 15px;">Gerenciamento de mesas com cardápio completo integrado.</p>
 
-    <label>Mesa de Atendimento</label>
-    <input type="number" id="mesaGarcom" placeholder="Nº da mesa">
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+        <label>Mesa de Atendimento</label>
+        <input type="number" id="mesaGarcom" placeholder="Nº da mesa" style="font-size: 18px; font-weight: bold; text-align: center;">
 
-    <label>Cliente (Opcional)</label>
-    <input type="text" id="clienteGarcom" placeholder="Nome do cliente">
+        <label style="margin-top: 10px; display: block;">Cliente (Opcional)</label>
+        <input type="text" id="clienteGarcom" placeholder="Nome do cliente">
+    </div>
 
-   <label>Selecionar Produto</label>
-<select id="produtoGarcom">
-    <optgroup label="Montar Jantinha Completa (Base R$ 15,00)">
-        <option value="Jantinha Completa (Acomp: Carne)|6.00">Jantinha + Espeto de Carne (+ R$ 6,00)</option>
-        <option value="Jantinha Completa (Acomp: Cafta)|6.00">Jantinha + Espeto de Cafta (+ R$ 6,00)</option>
-        <option value="Jantinha Completa (Acomp: Costela)|6.00">Jantinha + Espeto de Costela (+ R$ 6,00)</option>
-        <option value="Jantinha Completa (Acomp: Codeguim)|6.00">Jantinha + Espeto de Codeguim (+ R$ 6,00)</option>
-        <option value="Jantinha Completa (Acomp: Linguiça c/ Rúcula)|6.00">Jantinha + Espeto de Linguiça c/ Rúcula (+ R$ 6,00)</option>
-        <option value="Jantinha Completa (Acomp: Panceta)|6.00">Jantinha + Espeto de Panceta (+ R$ 6,00)</option>
-        <option value="Jantinha Completa (Acomp: Queijo)|7.00">Jantinha + Espeto de Queijo (+ R$ 7,00)</option>
-        <option value="Jantinha Completa (Acomp: Tulipa)|7.00">Jantinha + Espeto de Tulipa (+ R$ 7,00)</option>
-        <option value="Jantinha Completa (Acomp: Coração)|8.00">Jantinha + Espeto de Coração (+ R$ 8,00)</option>
-        <option value="Jantinha Completa (Acomp: Kibe com Queijo)|9.00">Jantinha + Kibe com Queijo (+ R$ 9,00)</option>
-        <option value="Jantinha Completa (Acomp: Pão de Alho)|4.00">Jantinha + Pão de Alho (+ R$ 4,00)</option>
+    <div class="produtos-area" style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 12px; margin-bottom: 20px;">
         
-        <option value="Jantinha Completa (Acomp: Medalhão Mandioca)|7.00">Jantinha + Medalhão Mandioca (+ R$ 7,00)</option>
-        <option value="Jantinha Completa (Acomp: Medalhão Frango)|7.00">Jantinha + Medalhão Frango (+ R$ 7,00)</option>
-        <option value="Jantinha Completa (Acomp: Medalhão Romeu & Julieta)|9.00">Jantinha + Medalhão Romeu & Julieta (+ R$ 9,00)</option>
-        <option value="Jantinha Completa (Acomp: Medalhão Batata Cheddar)|9.00">Jantinha + Medalhão Batata Cheddar (+ R$ 9,00)</option>
-        <option value="Jantinha Completa (Acomp: Medalhão Cupim c/ Queijo)|9.00">Jantinha + Medalhão Cupim c/ Queijo (+ R$ 9,00)</option>
-        <option value="Jantinha Completa (Acomp: Copa Lombo c/ Barbecue)|8.00">Jantinha + Copa Lombo c/ Barbecue (+ R$ 8,00)</option>
-    </optgroup>
+        <div class="produtos">
+            <div class="card" style="background: #140c08; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+                <div class="card-imagens" style="display: flex; gap: 4px; background: #140c08; width: 100%;">
+                    <img src="WhatsApp Image 2026-05-21 at 13.05.20.jpeg" alt="Acompanhamentos Jantinha" style="width: 50%; object-fit: cover;">
+                    <img src="WhatsApp Image 2026-05-21 at 13.05.20 (1).jpeg" alt="Espeto na Brasa" style="width: 50%; object-fit: cover;">
+                </div>
+                
+                <div class="card-content" style="padding: 15px;">
+                    <h3>Jantinha Completa</h3>
+                    <p style="font-size: 13px; color: #bbb;">Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
+                    
+                    <div class="select-area" style="margin-top: 0; margin-bottom: 10px;">
+                        <select id="espetoJantinhaGarcom" style="padding: 12px; margin-bottom: 10px; background: #23160e; color: white; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <option value="Carne|6.00">Carne (+ R$ 6,00)</option>
+                            <option value="Cafta|6.00">Cafta (+ R$ 6,00)</option>
+                            <option value="Costela|6.00">Costela (+ R$ 6,00)</option>
+                            <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
+                            <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
+                            <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
+                            <option value="Queijo|7.00">Queijo (+ R$ 7,00)</option>
+                            <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
+                            <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
+                            <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
+                            <option value="Coração|8.00">Coração (+ R$ 8,00)</option>
+                            <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue (+ R$ 8,00)</option>
+                            <option value="Kibe com Queijo|9.00">Kibe com Queijo (+ R$ 9,00)</option>
+                            <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
+                            <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
+                            <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo (+ R$ 9,00)</option>
+                            <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
+                        </select>
+                    </div>
 
-    <optgroup label="Espetos Tradicionais & Especiais">
-        <option value="Carne|6.00">Carne - R$ 6,00</option>
-        <option value="Cafta|6.00">Cafta - R$ 6,00</option>
-        <option value="Costela|6.00">Costela - R$ 6,00</option>
-        <option value="Codiguim|6.00">Codiguim - R$ 6,00</option>
-        <option value="Linguiça com Rúcula e Queijo|6.00">Linguiça com Rúcula e Queijo - R$ 6,00</option>
-        <option value="Panceta|6.00">Panceta - R$ 6,00</option>
-        <option value="Queijo|7.00">Queijo - R$ 7,00</option>
-        <option value="Tulipa|7.00">Tulipa - R$ 7,00</option>
-        <option value="Coração|8.00">Coração - R$ 8,00</option>
-        <option value="Kibe com Queijo|9.00">Kibe com Queijo - R$ 9,00</option>
-        <option value="Pão de Alho|4.00">Pão de Alho - R$ 4,00</option>
-    </optgroup>
+                    <span class="preco" style="display: block; margin-bottom: 10px;">R$ 15,00 + Espeto</span> 
+                    <button onclick="addJantinhaGarcomCardapio()" style="width: 100%; background: #e67e22; color: #fff; border: none; padding: 10px; font-weight: bold; border-radius: 8px;">Adicionar ao Pedido</button>
+                </div>
+            </div>
+        </div>
 
-    <optgroup label="Medalhões Gourmet & Especiais">
-        <option value="Medalhão Mandioca com Bacon|7.00">Medalhão Mandioca com Bacon - R$ 7,00</option>
-        <option value="Medalhão Frango com Bacon|7.00">Medalhão Frango com Bacon - R$ 7,00</option>
-        <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta - R$ 9,00</option>
-        <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon - R$ 9,00</option>
-        <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo - R$ 9,00</option>
-        <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue - R$ 8,00</option>
-    </optgroup>
+        <div class="categoria" id="espetosGarcom">
+            <h2 style="font-size: 18px; margin: 15px 0 10px 0; color: #ffaa00;">🍢 Espetos Tradicionais</h2>
+            <div class="produtos-compactos">
+                <div class="card-compact"><div class="info"><h3>Cafta</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Cafta', 6)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Carne</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Carne', 6)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Codiguim</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Codiguim', 6)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Coração</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addProdutoDiretoGarcom('Coração', 8)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Costela</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Costela', 6)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Kibe com Queijo</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Kibe com Queijo', 9)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Linguiça com Rúcula e Queijo</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Linguiça c/ Rúcula', 6)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Panceta</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Panceta', 6)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Pão de Alho</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addProdutoDiretoGarcom('Pão de Alho', 4)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Queijo</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Queijo', 7)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Tulipa</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Tulipa', 7)">+</button></div></div>
+            </div>
+        </div>
 
-    <optgroup label="Refrigerantes (Lata)">
-        <option value="Coca Lata|5.00">Coca Lata - R$ 5,00</option>
-        <option value="Sprite Lata|5.00">Sprite Lata - R$ 5,00</option>
-        <option value="Fanta Lata|5.00">Fanta Lata - R$ 5,00</option>
-        <option value="Schweppes Lata|5.00">Schweppes Lata - R$ 5,00</option>
-        <option value="Guaraná Antártica Lata|5.00">Guaraná Antártica Lata - R$ 5,00</option>
-        <option value="Coca Zero Lata|5.00">Coca Zero Lata - R$ 5,00</option>
-    </optgroup>
+        <div class="categoria" id="medalhoesGarcom">
+            <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🥓 Medalhões Premium</h2>
+            <div class="produtos-compactos">
+                <div class="card-compact"><div class="info"><h3>Mandioca com Bacon</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Medalhão Mandioca c/ Bacon', 7)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Medalhão Cupim com Queijo</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Medalhão Cupim com Queijo', 9)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Copa lombo com barbecue</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addProdutoDiretoGarcom('Copa lombo com barbecue', 8)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Frango com Bacon</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Medalhão Frango c/ Bacon', 7)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Romeu e Julieta</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Medalhão Romeu e Julieta', 9)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Batata c/ Cheddar e Bacon</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Medalhão Batata Cheddar Bacon', 9)">+</button></div></div>
+            </div>
+        </div>
 
-    <optgroup label="Refrigerantes (Garrafas Grandes)">
-        <option value="Antártica 1L|8.00">Antártica 1L - R$ 8,00</option>
-        <option value="Jaboti 2L|7.00">Jaboti 2L - R$ 7,00</option>
-        <option value="Poty 2L|9.00">Poty 2L - R$ 9,00</option>
-        <option value="Roller 2L|9.00">Roller 2L - R$ 9,00</option>
-    </optgroup>
+        <div class="categoria" id="bebidasGarcom">
+            <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🥤 Sucos & Refrescos</h2>
+            <div class="produtos-compactos">
+                <div class="card-compact"><div class="info"><h3>Coca-Cola (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Coca-Cola Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Sprite (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Sprite Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Fanta (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Fanta Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Schweppes (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Schweppes Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Guaraná Antártica (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Guaraná Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Coca-Cola Zero (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Coca-Cola Zero Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Coca-Cola KS</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Coca-Cola KS', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Refrigerante Mini</h3></div><div class="action"><span>R$ 3,00</span><button onclick="addProdutoDiretoGarcom('Refri Mini', 3)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Água Mineral</h3></div><div class="action"><span>R$ 3,00</span><button onclick="addProdutoDiretoGarcom('Água Mineral', 3)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Coca-Cola 600ml</h3></div><div class="action"><span>R$ 7,50</span><button onclick="addProdutoDiretoGarcom('Coca 600ml', 7.50)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Coca-Cola Zero 600ml</h3></div><div class="action"><span>R$ 7,50</span><button onclick="addProdutoDiretoGarcom('Coca Zero 600ml', 7.50)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Antártica Zero 600ml</h3></div><div class="action"><span>R$ 7,50</span><button onclick="addProdutoDiretoGarcom('Antártica Zero 600ml', 7.50)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Antártica 1L</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addProdutoDiretoGarcom('Antártica 1L', 8.00)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Jaboti 2L</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Jaboti 2L', 7.00)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Poty 2L</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Poty 2L', 9.00)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Roller 2L</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Roller 2L ', 9.00)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Suco de Laranja (900ml)</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addProdutoDiretoGarcom('Suco Laranja 900ml', 12)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Suco de Caju (900ml)</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addProdutoDiretoGarcom('Suco Caju 900ml', 10)">+</button></div></div>
+            </div>
+        </div>
 
-    <optgroup label="Água, Sucos e Consumo Local">
-        <option value="Água|3.00">Água - R$ 3,00</option>
-        <option value="Refrigerante Mini|3.00">Refrigerante Mini - R$ 3,00</option>
-        <option value="Coca KS|5.00">Coca KS - R$ 5,00</option>
-        <option value="Coca 600ml|7.50">Coca 600ml - R$ 7,50</option>
-        <option value="Coca Zero 600ml|7.50">Coca 600ml Zero - R$ 7,50</option>
-        <option value="Antártica Zero 600ml|7.50">Antártica 600ml Zero - R$ 7,50</option>
-        <option value="Suco Laranja 900ml|12.00">Suco Laranja 900ml - R$ 12,00</option>
-        <option value="Suco Caju 900ml|10.00">Suco Caju 900ml - R$ 10,00</option>
-    </optgroup>
+        <div class="categoria" id="cervejasGarcom">
+            <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🍺 Cervejas</h2>
+            <div class="produtos-compactos">
+                <div class="card-compact"><div class="info"><h3>Skol (Romarinho)</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addProdutoDiretoGarcom('Skol Romarinho', 4)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Boa (Romarinho)</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addProdutoDiretoGarcom('Boa Romarinho', 4)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Brahma (Romarinho)</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addProdutoDiretoGarcom('Brahma Romarinho', 4)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Budweiser (Romarinho)</h3></div><div class="action"><span>R$ 4,50</span><button onclick="addProdutoDiretoGarcom('Budweiser Romarinho', 4.50)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Original (Romarinho)</h3></div><div class="action"><span>R$ 4,50</span><button onclick="addProdutoDiretoGarcom('Original Romarinho', 4.50)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Heineken (600ml)</h3></div><div class="action"><span>R$ 14,00</span><button onclick="addProdutoDiretoGarcom('Heineken 600ml', 14)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Skol (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Skol Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Boa (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Boa Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Brahma (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Brahma Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Amistel (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Amistel Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Império Ultra (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Império Ultra Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Kaiser (Latão)</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Kaiser Latão', 6)">+</button></div></div>
+            </div>
+        </div>
+    </div>
+    <hr style="border: 1px solid #444; margin: 20px 0;">
 
-    <optgroup label="Cervejas (Lata / Latão)">
-        <option value="Skol Lata|5.00">Skol - R$ 5,00</option>
-        <option value="Boa Lata|5.00">Boa - R$ 5,00</option>
-        <option value="Brahma Lata|5.00">Brahma - R$ 5,00</option>
-        <option value="Amstel Lata|5.00">Amstel - R$ 5,00</option>
-        <option value="Império Ultra Lata|5.00">Império Ultra - R$ 5,00</option>
-        <option value="Kaiser Latão|6.00">Kaiser Latão - R$ 6,00</option>
-    </optgroup>
+    <h3>🛒 Itens Adicionados na Mesa</h3>
+    <div id="listaGarcom" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; min-height: 50px;"></div>
 
-    <optgroup label="Cervejas (Romarinho / 600ml)">
-        <option value="Skol Romarinho|4.00">Skol Romarinho - R$ 4,00</option>
-        <option value="Boa Romarinho|4.00">Boa Romarinho - R$ 4,00</option>
-        <option value="Brahma Romarinho|4.00">Brahma Romarinho - R$ 4,00</option>
-        <option value="Budweiser Romarinho|4.50">Budweiser Romarinho - R$ 4,50</option>
-        <option value="Original Romarinho|4.50">Original Romarinho - R$ 4,50</option>
-        <option value="Heineken 600ml|14.00">Heineken 600ml - R$ 14,00</option>
-    </optgroup>
-</select>
+    <div class="total" id="totalGarcom" style="margin-top: 15px; font-weight: bold;">Total: R$ 0,00</div>
 
-    <button class="add-garcom" onclick="addPedidoGarcom()">+ Adicionar Item</button>
-
-    <div id="listaGarcom"></div>
-
-    <div class="total" id="totalGarcom">Total: R$ 0,00</div>
-
-    <label>Status de Pagamento</label>
+    <label style="margin-top: 15px; display: block;">Status de Pagamento</label>
     <select id="pagamentoGarcom">
-        <option>Ficará em Aberto na Mesa</option>
-        <option>Dinheiro</option>
-        <option>Pix</option>
-        <option>Cartão</option>
+        <option value="Ficará em Aberto na Mesa">Ficará em Aberto na Mesa</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Pix">Pix</option>
+        <option value="Cartão">Cartão</option>
     </select>
 
     <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-        <button class="finalizar" onclick="enviarParaCozinha()" style="background: #e67e22; color: #fff; border: none;">🔥 Mandar para Cozinha</button>
-        <button class="finalizar" onclick="enviarPedidoGarcom()" style="background: #27ae60; color: #fff; border: none;">🛎️ Enviar para o Caixa</button>
-        <button class="fechar" onclick="fecharPainel()">Sair do Painel</button>
+        <button class="finalizar" onclick="enviarParaCozinha()" style="background: #e67e22; color: #fff; border: none; padding: 12px; font-weight: bold; border-radius: 8px;">🔥 Mandar para Cozinha</button>
+        <button class="finalizar" onclick="enviarPedidoGarcom()" style="background: #27ae60; color: #fff; border: none; padding: 12px; font-weight: bold; border-radius: 8px;">🛎️ Enviar para o Caixa</button>
+        <button class="fechar" onclick="fecharPainel()" style="padding: 10px; border-radius: 8px;">Sair do Painel</button>
     </div>
 </div>
 
@@ -1366,7 +1467,7 @@ function adicionarJantinhaComEspeto() {
     
     const nomeProdutoCompleto = `Jantinha Completa (Acomp: ${nomeEspeto})`;
     
-    // Envia para a sua função existente do carrinho
+    // Envia para a sua função existente do carrinho (Cliente)
     addCarrinho(nomeProdutoCompleto, precoFinal);
 }
 
@@ -1432,7 +1533,7 @@ function aumentar(index){
     atualizarCarrinho();
 }
 
-function disminuir(index){
+function diminuir(index){
     carrinho[index].qtd--;
     if(carrinho[index].qtd <= 0){ carrinho.splice(index,1); }
     atualizarCarrinho();
@@ -1521,7 +1622,11 @@ function loginGarcom(){
         document.getElementById("modal").style.display = "none";
         document.getElementById("painel").classList.add("active");
         document.getElementById("senha").value = "";
-        document.getElementById("mesaGarcom").addEventListener("blur", carregarMesaLocal);
+        
+        // Remove ouvintes duplicados se houverem e anexa o ouvinte de mesa
+        let inputMesa = document.getElementById("mesaGarcom");
+        inputMesa.removeEventListener("blur", carregarMesaLocal);
+        inputMesa.addEventListener("blur", carregarMesaLocal);
     }else{
         alert("Senha de acesso inválida.");
         document.getElementById("senha").value = "";
@@ -1542,11 +1647,11 @@ function carregarMesaLocal() {
     if(comandasSalvas[mesaAtualGarcom]) {
         pedidosGarcom = comandasSalvas[mesaAtualGarcom].itens || [];
         document.getElementById("clienteGarcom").value = comandasSalvas[mesaAtualGarcom].cliente || "";
-        document.getElementById("pagamentoGarcom").value = comandasSalvas[mesaAtualGarcom].pagamento || "Pendente";
+        document.getElementById("pagamentoGarcom").value = comandasSalvas[mesaAtualGarcom].pagamento || "Ficará em Aberto na Mesa";
     } else {
         pedidosGarcom = [];
         document.getElementById("clienteGarcom").value = "";
-        document.getElementById("pagamentoGarcom").value = "Pendente";
+        document.getElementById("pagamentoGarcom").value = "Ficará em Aberto na Mesa";
     }
     atualizarGarcom();
 }
@@ -1570,23 +1675,45 @@ function salvarMesaLocal() {
     localStorage.setItem("comandas_cantinho", JSON.stringify(comandasSalvas));
 }
 
-function addPedidoGarcom(){
+// CAPTURA CLIQUES DOS PRODUTOS COMPACTOS DO INTERIOR DO PAINEL DO GARÇOM
+function addProdutoDiretoGarcom(nome, preco) {
     let mesa = document.getElementById("mesaGarcom").value.trim();
-    if(mesa === "") { alert("Por favor, informe a mesa ANTES de adicionar produtos."); return; }
-    if(mesa !== mesaAtualGarcom) { mesaAtualGarcom = mesa; }
-
-    let produto = document.getElementById("produtoGarcom").value;
-    let partes = produto.split("|");
-    let nome = partes[0];
-    let preco = parseFloat(partes[1]);
-
-    if (nome.startsWith("Jantinha")) {
-        const precoBaseJantinha = 15.00;
-        preco = precoBaseJantinha + preco;
+    if(mesa === "") { 
+        alert("Por favor, digite o número da mesa ANTES de escolher o produto."); 
+        return; 
+    }
+    if(mesa !== mesaAtualGarcom) { 
+        mesaAtualGarcom = mesa; 
+        carregarMesaLocal();
     }
 
-    pedidosGarcom.push({ nome, preco, enviado: false, entregue: false });
+    pedidosGarcom.push({ nome: nome, preco: parseFloat(preco), enviado: false, entregue: false });
+    atualizarGarcom();
+    salvarMesaLocal();
+}
+
+// CAPTURA MONTAGEM DA JANTINHA DO PROPRIO PAINEL DO GARÇOM
+function addJantinhaGarcomCardapio() {
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    if(mesa === "") { 
+        alert("Por favor, digite o número da mesa ANTES de escolher o produto."); 
+        return; 
+    }
+    if(mesa !== mesaAtualGarcom) { 
+        mesaAtualGarcom = mesa; 
+        carregarMesaLocal();
+    }
+
+    const select = document.getElementById('espetoJantinhaGarcom');
+    if(!select) return;
     
+    const [nomeEspeto, valorEspeto] = select.value.split('|');
+    
+    const precoBaseJantinha = 15.00;
+    const precoFinal = precoBaseJantinha + parseFloat(valorEspeto);
+    const nomeProdutoCompleto = `Jantinha Completa (Acomp: ${nomeEspeto})`;
+
+    pedidosGarcom.push({ nome: nomeProdutoCompleto, preco: precoFinal, enviado: false, entregue: false });
     atualizarGarcom();
     salvarMesaLocal();
 }
@@ -1626,7 +1753,11 @@ function atualizarGarcom(){
     });
     
     div.innerHTML = htmlTemp;
-    document.getElementById("totalGarcom").innerHTML = `Total da Comanda: R$ ${total.toFixed(2)}`;
+    
+    let totalGarcomEl = document.getElementById("totalGarcom");
+    if(totalGarcomEl) {
+        totalGarcomEl.innerHTML = `Total da Comanda: R$ ${total.toFixed(2)}`;
+    }
 }
 
 function alternarEntregue(index) {
