@@ -25,8 +25,8 @@ html{
 }
 
 body{
-    background: #140c08;
-    color: white;
+    background: #ebdcd0; /* Tom marrom-pastel/café-com-leite confortável e mais escuro */
+    color: #26160d;     /* Texto marrom bem escuro para legibilidade perfeita */
     overflow-x: hidden;
 }
 
@@ -35,27 +35,27 @@ body{
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #140c08;
+    background: #ebdcd0;
 }
 ::-webkit-scrollbar-thumb {
-    background: #2c1a11;
+    background: #cfbeaf;
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #ffcc70;
+    background: #ffb347;
 }
 
 /* ==========================================================================
-   HEADER PREMIUM (GLASSMORPHISM)
+   HEADER PREMIUM (TIRANDO O BRILHO ACESO)
    ========================================================================== */
 header{
     position: sticky;
     top: 0;
     z-index: 99999;
-    background: rgba(20, 12, 8, 0.85);
+    background: rgba(223, 206, 191, 0.96); /* Bege médio fechado e fosco */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 204, 112, 0.1);
+    border-bottom: 1px solid rgba(38, 22, 13, 0.12);
 }
 
 .top-header{
@@ -78,20 +78,20 @@ header{
     border-radius: 50%;
     object-fit: cover;
     background: #ffb347;
-    border: 2px solid #ffcc70;
+    border: 2px solid #8b0000;
 }
 
 .logo-text h1{
-    color: #ffcc70;
+    color: #8b0000;
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
 .logo-text span{
-    color: #bcbcbc;
+    color: #59473c;
     font-size: 12px;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -119,21 +119,21 @@ header{
 /* Botão Garçom */
 .garcom-btn{
     background: transparent;
-    border: 1px solid #ffcc70;
-    color: #ffcc70;
+    border: 1px solid #8b0000;
+    color: #8b0000;
 }
 
 .garcom-btn:hover{
-    background: rgba(255, 204, 112, 0.1);
+    background: rgba(139, 0, 0, 0.08);
     transform: translateY(-2px);
 }
 
 /* Botão Carrinho */
 .cart-btn{
     background: #ffb347;
-    color: #140c08;
+    color: #26160d;
     position: relative;
-    box-shadow: 0 4px 15px rgba(255, 179, 71, 0.25);
+    box-shadow: 0 4px 15px rgba(223, 206, 191, 0.4);
 }
 
 .cart-btn:hover {
@@ -155,7 +155,7 @@ header{
     justify-content: center;
     font-size: 11px;
     font-weight: bold;
-    border: 2px solid #140c08;
+    border: 2px solid #ebdcd0;
 }
 
 /* ==========================================================================
@@ -173,9 +173,9 @@ header{
 }
 
 .menu-categorias button{
-    background: transparent;
-    border: 1px solid rgba(255, 204, 112, 0.3);
-    color: #ffcc70;
+    background: #dfcebf; /* Botões acompanham o tom médio fosco */
+    border: 1px solid rgba(38, 22, 13, 0.1);
+    color: #26160d;
     padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
@@ -195,7 +195,7 @@ header{
    ========================================================================== */
 .hero{
     height: 350px;
-    background: linear-gradient(to bottom, rgba(20,12,8,0.3), rgba(20,12,8,1)), url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
+    background: linear-gradient(to bottom, rgba(235,220,208,0.1), rgba(235,220,208,1)), url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -208,16 +208,16 @@ header{
 
 .hero h1{
     font-size: 50px;
-    color: #ffcc70;
+    color: #8b0000;
     font-weight: 700;
-    text-shadow: 2px 4px 10px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
 }
 
 .hero p{
     margin-top: 10px;
     font-size: 20px;
-    font-weight: 300;
-    color: #e0e0e0;
+    font-weight: 500;
+    color: #26160d;
 }
 
 /* ==========================================================================
@@ -232,7 +232,7 @@ header{
 }
 
 .categoria h2{
-    color: #ffb347;
+    color: #8b0000;
     margin-bottom: 25px;
     font-size: 30px;
     font-weight: 600;
@@ -245,23 +245,23 @@ header{
     content: "";
     flex-grow: 1;
     height: 1px;
-    background: rgba(255, 204, 112, 0.2);
+    background: rgba(38, 22, 13, 0.15);
     margin-left: 10px;
 }
 
 /* Aviso Dinâmico da Jantinha */
 .aviso-jantinha {
-    background: rgba(255, 204, 112, 0.1);
-    border-left: 4px solid #ffcc70;
+    background: #dfcdbf;
+    border-left: 4px solid #ffb347;
     padding: 15px;
     margin-bottom: 25px;
     border-radius: 0 12px 12px 0;
-    color: #e0e0e0;
+    color: #3d2d24;
     font-size: 14px;
 }
 
 .aviso-jantinha strong {
-    color: #ffcc70;
+    color: #8b0000;
 }
 
 /* GRID DOS CARDS PRINCIPAIS */
@@ -272,17 +272,18 @@ header{
 }
 
 .card{
-    background: #1c110b;
+    background: #fcf8f5; /* Off-white bem sutil para o card não estourar na tela */
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(38, 22, 13, 0.08);
     overflow: hidden;
     transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(38,22,13,0.05);
 }
 
 .card:hover{
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,.6);
-    border-color: rgba(255, 204, 112, 0.2);
+    box-shadow: 0 12px 30px rgba(38,22,13,0.12);
+    border-color: rgba(139, 0, 0, 0.2);
 }
 
 /* Regra de Imagem Única */
@@ -292,14 +293,14 @@ header{
     max-height: 350px;
     object-fit: contain;
     display: block;
-    background: #140c08;
+    background: #ebdcd0;
 }
 
-/* Container de Duas Imagens no Meso Card */
+/* Container de Duas Imagens no Mesmo Card */
 .card-imagens {
     display: flex;
     gap: 4px;
-    background: #140c08;
+    background: #ebdcd0;
     width: 100%;
 }
 
@@ -319,17 +320,18 @@ header{
     margin-bottom: 8px;
     font-size: 18px;
     font-weight: 600;
+    color: #26160d;
 }
 
 .card p{
-    color: #a0a0a0;
+    color: #59473c;
     font-size: 13px;
     margin-bottom: 15px;
     line-height: 1.5;
 }
 
 .preco{
-    color: #ffcc70;
+    color: #8b0000;
     font-size: 20px;
     font-weight: 700;
     display: block;
@@ -364,9 +366,9 @@ header{
 .select-premium {
     width: 100%;
     padding: 14px 16px;
-    background: #140c08;
-    color: #fff;
-    border: 1px solid rgba(255, 204, 112, 0.3);
+    background: #ebdcd0;
+    color: #26160d;
+    border: 1px solid rgba(38, 22, 13, 0.18);
     border-radius: 12px;
     font-size: 14px;
     font-weight: 500;
@@ -375,20 +377,20 @@ header{
     transition: all 0.3s ease;
     appearance: none;
     -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffcc70' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238b0000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 18px;
 }
 
 .select-premium:focus {
-    border-color: #ffb347;
-    box-shadow: 0 0 10px rgba(255, 179, 71, 0.15);
+    border-color: #8b0000;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.05);
 }
 
 .select-premium option {
-    background: #1c110b;
-    color: #fff;
+    background: #fcf8f5;
+    color: #26160d;
 }
 
 .preco-container {
@@ -396,15 +398,15 @@ header{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
-    background: rgba(255, 204, 112, 0.04);
+    background: rgba(139, 0, 0, 0.04);
     padding: 10px 15px;
     border-radius: 10px;
-    border: 1px dashed rgba(255, 204, 112, 0.15);
+    border: 1px dashed rgba(139, 0, 0, 0.18);
 }
 
 .preco-label {
     font-size: 13px;
-    color: #a0a0a0;
+    color: #59473c;
 }
 
 /* ==========================================================================
@@ -417,9 +419,9 @@ header{
 }
 
 .card-compact {
-    background: #1c110b;
+    background: #fcf8f5;
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(38, 22, 13, 0.08);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -428,20 +430,20 @@ header{
 }
 
 .card-compact:hover {
-    border-color: rgba(255, 204, 112, 0.2);
-    background: #23160e;
+    border-color: rgba(139, 0, 0, 0.18);
+    background: #f5ede6;
 }
 
 .card-compact .info h3 {
     font-size: 16px;
     font-weight: 600;
-    color: #fff;
+    color: #26160d;
     margin-bottom: 3px;
 }
 
 .card-compact .info p {
     font-size: 12px;
-    color: #a0a0a0;
+    color: #59473c;
 }
 
 .card-compact .action {
@@ -451,7 +453,7 @@ header{
 }
 
 .card-compact .action span {
-    color: #ffcc70;
+    color: #8b0000;
     font-weight: 700;
     font-size: 16px;
 }
@@ -484,13 +486,13 @@ header{
     right: -450px;
     width: 420px;
     height: 100vh;
-    background: #140c08;
+    background: #dfcebf; /* Fundo mais escuro e fosco */
     z-index: 999999;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
     padding: 30px;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-    border-left: 1px solid rgba(255, 204, 112, 0.1);
+    box-shadow: -10px 0 30px rgba(38,22,13,0.12);
+    border-left: 1px solid rgba(38, 22, 13, 0.08);
 }
 
 .carrinho.active{
@@ -505,7 +507,7 @@ header{
 }
 
 .cart-header h2{
-    color: #ffcc70;
+    color: #8b0000;
     font-weight: 600;
 }
 
@@ -514,8 +516,8 @@ header{
     height: 35px;
     border: none;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    color: white;
+    background: rgba(38, 22, 13, 0.08);
+    color: #26160d;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
@@ -523,15 +525,16 @@ header{
 
 .fechar-cart:hover {
     background: #8b0000;
+    color: white;
 }
 
 /* Itens de listagem padrão dentro das gavetas */
 .item{
-    background: #1c110b;
+    background: #fcf8f5;
     padding: 18px;
     border-radius: 16px;
     margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.03);
+    border: 1px solid rgba(38, 22, 13, 0.05);
 }
 
 .item-top{
@@ -539,6 +542,7 @@ header{
     justify-content: space-between;
     margin-bottom: 15px;
     font-size: 15px;
+    color: #26160d;
 }
 
 .controls{
@@ -552,24 +556,24 @@ header{
     height: 32px;
     border: none;
     border-radius: 8px;
-    background: rgba(255, 204, 112, 0.1);
-    color: #ffcc70;
+    background: rgba(38, 22, 13, 0.06);
+    color: #26160d;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
 }
 
 .controls button:hover {
-    background: #ffcc70;
-    color: #140c08;
+    background: #ffb347;
+    color: #26160d;
 }
 
 .total{
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px dashed rgba(255,255,255,0.2);
+    border-top: 1px dashed rgba(38, 22, 13, 0.18);
     font-size: 24px;
-    color: #ffcc70;
+    color: #8b0000;
     font-weight: 700;
     text-align: right;
 }
@@ -582,7 +586,7 @@ header{
 .select-area label{
     display: block;
     margin-bottom: 8px;
-    color: #bcbcbc;
+    color: #59473c;
     font-size: 14px;
 }
 
@@ -591,20 +595,19 @@ header{
 .select-area textarea{
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(38, 22, 13, 0.12);
     border-radius: 12px;
     margin-bottom: 20px;
-    background: #1a0f0a;
-    color: white;
+    background: #fcf8f5;
+    color: #26160d;
     font-size: 15px;
     outline: none;
-    transition: border 0.3s;
 }
 
 .select-area select:focus,
 .select-area input:focus,
 .select-area textarea:focus {
-    border-color: #ffb347;
+    border-color: #8b0000;
 }
 
 .finalizar{
@@ -613,12 +616,13 @@ header{
     border: none;
     border-radius: 14px;
     background: #ffb347;
-    color: #140c08;
+    color: #26160d;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
     margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(255, 179, 71, 0.15);
 }
 
 .finalizar:hover {
@@ -631,7 +635,7 @@ header{
 .modal{
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.9);
+    background: rgba(38, 22, 13, 0.55);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     display: none;
@@ -642,12 +646,13 @@ header{
 
 .modal-content{
     width: 340px;
-    background: #1c110b;
+    background: #dfcebf;
     padding: 35px 30px;
     border-radius: 24px;
-    border: 1px solid rgba(255, 204, 112, 0.2);
+    border: 1px solid rgba(38, 22, 13, 0.1);
     text-align: center;
     position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
 }
 
 .fechar-modal-x {
@@ -656,22 +661,22 @@ header{
     right: 15px;
     background: transparent;
     border: none;
-    color: #a0a0a0;
+    color: #59473c;
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.fechar-modal-x:hover { color: #ffb347; }
+.fechar-modal-x:hover { color: #8b0000; }
 
 .modal-content h2{
-    color: #ffcc70;
+    color: #8b0000;
     margin-bottom: 5px;
     font-size: 22px;
 }
 
 .modal-content p.aviso-restrito {
-    color: #a0a0a0;
+    color: #59473c;
     font-size: 13px;
     margin-bottom: 25px;
 }
@@ -679,11 +684,11 @@ header{
 .modal-content input{
     width: 100%;
     padding: 16px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(38, 22, 13, 0.12);
     border-radius: 12px;
     margin-bottom: 20px;
-    background: #140c08;
-    color: white;
+    background: #fcf8f5;
+    color: #26160d;
     text-align: center;
     font-size: 18px;
     letter-spacing: 5px;
@@ -713,31 +718,31 @@ header{
     top: 0;
     width: 420px;
     height: 100vh;
-    background: #140c08;
+    background: #dfcebf;
     z-index: 999999;
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 30px;
-    border-right: 1px solid rgba(255, 204, 112, 0.1);
+    border-right: 1px solid rgba(38, 22, 13, 0.08);
     overflow-y: auto;
-    box-shadow: 10px 0 30px rgba(0,0,0,0.8);
+    box-shadow: 10px 0 30px rgba(38,22,13,0.12);
 }
 
 .painel.active{ left: 0; }
 
-.painel h2{ color: #ffcc70; margin-bottom: 5px; }
+.painel h2{ color: #8b0000; margin-bottom: 5px; }
 
-.painel p { color: #a0a0a0; font-size: 14px; margin-bottom: 25px; }
+.painel p { color: #59473c; font-size: 14px; margin-bottom: 25px; }
 
-.painel label{ display: block; margin-bottom: 8px; color: #bcbcbc; font-size: 14px; }
+.painel label{ display: block; margin-bottom: 8px; color: #59473c; font-size: 14px; }
 
 .painel input, .painel select{
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(38, 22, 13, 0.12);
     border-radius: 12px;
     margin-bottom: 20px;
-    background: #1a0f0a;
-    color: white;
+    background: #fcf8f5;
+    color: #26160d;
     font-size: 15px;
     outline: none;
 }
@@ -747,24 +752,24 @@ header{
     padding: 16px;
     border: none;
     border-radius: 12px;
-    background: rgba(255, 204, 112, 0.1);
-    color: #ffcc70;
+    background: rgba(38, 22, 13, 0.05);
+    color: #26160d;
     font-weight: 600;
     cursor: pointer;
     margin-bottom: 30px;
-    border: 1px solid rgba(255, 204, 112, 0.3);
+    border: 1px solid rgba(38, 22, 13, 0.12);
     transition: 0.3s;
 }
 
-.add-garcom:hover { background: #ffcc70; color: #140c08; }
+.add-garcom:hover { background: #ffb347; border-color: #ffb347; color: #26160d; }
 
 /* Lista de Itens internos adicionados na Mesa */
 #listaGarcom {
-    background: #1a0f0a;
+    background: #fcf8f5;
     border-radius: 12px;
     padding: 5px 15px;
     margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(38, 22, 13, 0.08);
     max-height: 280px;
     overflow-y: auto;
 }
@@ -777,10 +782,10 @@ header{
     border: none;
 }
 
-/* CARDÁPIO COMPACTO DE EMBUTIR (Opcional - Exibição direta dentro do painel do Garçom) */
+/* CARDÁPIO COMPACTO DE EMBUTIR */
 .cardapio-interno-garcom {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px dashed rgba(255, 204, 112, 0.15);
+    background: rgba(38, 22, 13, 0.03);
+    border: 1px dashed rgba(38, 22, 13, 0.15);
     padding: 15px;
     border-radius: 14px;
     margin-top: 10px;
@@ -789,7 +794,7 @@ header{
 
 .cardapio-interno-garcom h3 {
     font-size: 14px;
-    color: #ffb347;
+    color: #8b0000;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -802,9 +807,9 @@ header{
 }
 
 .btn-item-rapido {
-    background: #1c110b;
-    border: 1px solid rgba(255,255,255,0.05);
-    color: #fff;
+    background: #fcf8f5;
+    border: 1px solid rgba(38, 22, 13, 0.08);
+    color: #26160d;
     padding: 10px;
     border-radius: 8px;
     font-size: 12px;
@@ -817,12 +822,12 @@ header{
 }
 
 .btn-item-rapido:hover {
-    border-color: #ffcc70;
-    background: #281910;
+    border-color: #8b0000;
+    background: #f5ede6;
 }
 
 .btn-item-rapido span.item-preco {
-    color: #ffcc70;
+    color: #8b0000;
     font-weight: bold;
     margin-top: 4px;
 }
@@ -856,17 +861,17 @@ header{
 
 .fechar{
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(38, 22, 13, 0.18);
     padding: 15px;
     border-radius: 12px;
-    color: #a0a0a0;
+    color: #59473c;
     cursor: pointer;
     width: 100%;
     margin-top: 0px;
     transition: 0.3s;
 }
 
-.fechar:hover { background: rgba(255,255,255,0.05); color: white; }
+.fechar:hover { background: rgba(38, 22, 13, 0.05); color: #26160d; }
 
 /* ==========================================================================
    SISTEMA DE NOTIFICAÇÃO FLUTUANTE (TOAST GARÇOM)
@@ -890,7 +895,7 @@ header{
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     white-space: nowrap;
     animation: fadeInDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -928,10 +933,10 @@ header{
     .logo-text span{ font-size: 10px; }
     .icon-btn { width: 42px; height: 42px; font-size: 18px; }
     .cart-btn span { width: 18px; height: 18px; font-size: 10px; top: -4px; right: -4px; }
-    .hero h1{ font-size: 36px; }
+    .hero h1{ font-size: 36px; text-shadow: 1px 1px 1px rgba(255,255,255,0.4); }
     .hero p{ font-size: 16px; }
     
-    /* Faz as gavetas ocuparem a tela inteira com saída correta para fora da tela */
+    /* Faz as gavetas ocuparem a tela inteira */
     .carrinho, .painel{ width: 100%; }
     .carrinho { right: -100%; }
     .painel { left: -100%; }
@@ -1134,6 +1139,16 @@ header{
             <div class="card-compact">
                 <div class="info"><h3>Coca-Cola (Lata)</h3></div>
                 <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Coca-Cola Lata', 5)">+</button></div>
+            </div>
+
+              <div class="card-compact">
+                <div class="info"><h3>Coca-Cola 2L </h3></div>
+                <div class="action"><span>R$ 12,00</span><button onclick="addCarrinho('Coca-Cola 2L', 12)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>H20 </h3></div>
+                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('H20', 6)">+</button></div>
             </div>
 
             <div class="card-compact">
@@ -1457,6 +1472,9 @@ header{
                 <div class="card-compact"><div class="info"><h3>Roller 2L</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Roller 2L ', 9.00)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Suco de Laranja (900ml)</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addProdutoDiretoGarcom('Suco Laranja 900ml', 12)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Suco de Caju (900ml)</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addProdutoDiretoGarcom('Suco Caju 900ml', 10)">+</button></div></div>
+                                <div class="card-compact"><div class="info"><h3>Coca Cola 2L</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addProdutoDiretoGarcom('Coca Cola 2L', 12)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>H20</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('H20', 6)">+</button></div></div>
+
             </div>
         </div>
 
@@ -1531,7 +1549,9 @@ function addCarrinho(nome, preco){
         carrinho.push({ nome, preco, qtd:1 });
     }
     atualizarCarrinho();
-    abrirCarrinho();
+    
+    // MENSAGEM DINÂMICA: Mostra exatamente o produto que foi adicionado!
+    mostrarNotificacao(`🛒 Adicionado: ${nome}`);
 }
 
 function atualizarCarrinho(){
@@ -1583,7 +1603,7 @@ function aumentar(index){
     atualizarCarrinho();
 }
 
-function disminuir(index){
+function diminuir(index){
     carrinho[index].qtd--;
     if(carrinho[index].qtd <= 0){ carrinho.splice(index,1); }
     atualizarCarrinho();
@@ -1898,7 +1918,7 @@ function enviarPedidoGarcom(){
 }
 
 /* ==========================================================================
-   NOVA FUNÇÃO: GERENCIA O TOAST SEM TRAVAR A TELA DO GARÇOM
+   FUNÇÃO DE NOTIFICAÇÃO TOAST (CLIENTE E GARÇOM)
    ========================================================================== */
 function mostrarNotificacao(mensagem) {
     let container = document.getElementById('toast-container');
