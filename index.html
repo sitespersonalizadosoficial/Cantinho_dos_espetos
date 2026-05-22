@@ -25,8 +25,8 @@ html{
 }
 
 body{
-    background: #ebdcd0; /* Tom marrom-pastel/café-com-leite confortável e mais escuro */
-    color: #26160d;     /* Texto marrom bem escuro para legibilidade perfeita */
+    background: #fbf5e6; /* Creme/Bege Palha Suave da Logo - Quente e Confortável */
+    color: #4a3629;     /* Marrom Terra Queimado - Texto Principal Baseado na Logo */
     overflow-x: hidden;
 }
 
@@ -35,7 +35,7 @@ body{
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #ebdcd0;
+    background: #fbf5e6;
 }
 ::-webkit-scrollbar-thumb {
     background: #cfbeaf;
@@ -46,16 +46,16 @@ body{
 }
 
 /* ==========================================================================
-   HEADER PREMIUM (TIRANDO O BRILHO ACESO)
+   HEADER PREMIUM (GLASSMORPHISM MAIS FECHADO E QUENTE)
    ========================================================================== */
 header{
     position: sticky;
     top: 0;
     z-index: 99999;
-    background: rgba(223, 206, 191, 0.96); /* Bege médio fechado e fosco */
+    background: rgba(223, 206, 191, 0.98); /* Bege/Marrom Suave para o Header */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(38, 22, 13, 0.12);
+    border-bottom: 2px solid rgba(139, 0, 0, 0.15); /* Linha sutil em Vermelho Premium */
 }
 
 .top-header{
@@ -77,22 +77,22 @@ header{
     height: 55px;
     border-radius: 50%;
     object-fit: cover;
-    background: #ffb347;
-    border: 2px solid #8b0000;
+    background: #ffb347; /* Laranja Brasa para a Borda da Logo */
+    border: 3px solid #8b0000; /* Vermelho Premium para a Borda da Logo */
 }
 
 .logo-text h1{
-    color: #8b0000;
-    font-size: 22px;
-    font-weight: 600;
+    color: #8b0000; /* Vermelho Premium para o Nome Principal - Diretamente da Logo */
+    font-size: 24px;
+    font-weight: 700;
     letter-spacing: 0.5px;
 }
 
 .logo-text span{
-    color: #59473c;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    color: #e3a637; /* Laranja Brasa para o Subtítulo - Diretamente da Logo */
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
@@ -111,34 +111,34 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Botão Garçom */
+/* Botão Garçom - Estilo Raiz em Marrom Queimado */
 .garcom-btn{
-    background: transparent;
-    border: 1px solid #8b0000;
-    color: #8b0000;
+    background: #4a3629; /* Marrom Terra Queimado para o Garçom */
+    color: #fbf5e6;     /* Texto Creme Palha Suave */
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .garcom-btn:hover{
-    background: rgba(139, 0, 0, 0.08);
+    background: #59473c;
     transform: translateY(-2px);
 }
 
-/* Botão Carrinho */
+/* Botão Carrinho - Vermelho Premium com Brilho */
 .cart-btn{
-    background: #ffb347;
-    color: #26160d;
+    background: #8b0000; /* Vermelho Premium para o Carrinho */
+    color: white;
     position: relative;
-    box-shadow: 0 4px 15px rgba(223, 206, 191, 0.4);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3); /* Brilho sutil em Vermelho Premium */
 }
 
 .cart-btn:hover {
     transform: translateY(-2px);
-    background: #ffd699;
+    background: #a30000;
 }
 
 .cart-btn span{
@@ -148,18 +148,18 @@ header{
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #8b0000;
-    color: white;
+    background: #ffb347; /* Laranja Brasa para o Contador */
+    color: #26160d;     /* Texto Marrom Terra Queimado */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 11px;
     font-weight: bold;
-    border: 2px solid #ebdcd0;
+    border: 2px solid #dfcebf; /* Borda Creme/Marrom Suave para o Contador */
 }
 
 /* ==========================================================================
-   MENU DE CATEGORIAS
+   MENU DE CATEGORIAS - MARROM E VERMELHO
    ========================================================================== */
 .menu-categorias{
     display: flex;
@@ -173,9 +173,9 @@ header{
 }
 
 .menu-categorias button{
-    background: #dfcebf; /* Botões acompanham o tom médio fosco */
+    background: #dfcebf; /* Fundo Bege/Marrom Suave */
     border: 1px solid rgba(38, 22, 13, 0.1);
-    color: #26160d;
+    color: #26160d;     /* Texto Marrom Terra Queimado */
     padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
@@ -185,17 +185,17 @@ header{
 }
 
 .menu-categorias button:hover{
-    background: #8b0000;
+    background: #8b0000; /* Vermelho Premium no Hover */
     border-color: #8b0000;
     color: white;
 }
 
 /* ==========================================================================
-   SEÇÃO HERO
+   SEÇÃO HERO - QUENTE E ACONCHEGANTE
    ========================================================================== */
 .hero{
     height: 350px;
-    background: linear-gradient(to bottom, rgba(235,220,208,0.1), rgba(235,220,208,1)), url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
+    background: linear-gradient(to bottom, rgba(235,220,208,0.1), rgba(251,245,230,1)), url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -207,21 +207,21 @@ header{
 }
 
 .hero h1{
-    font-size: 50px;
-    color: #8b0000;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+    font-size: 55px;
+    color: #8b0000; /* Vermelho Premium para o Título Principal - Diretamente da Logo */
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(251,245,230,0.8); /* Brilho Creme/Bege Palha Suave */
 }
 
 .hero p{
     margin-top: 10px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #26160d;
+    font-size: 22px;
+    font-weight: 600;
+    color: #4a3629;     /* Marrom Terra Queimado - Diretamente da Logo */
 }
 
 /* ==========================================================================
-   ÁREA DE PRODUTOS PRINCIPAL
+   ÁREA DE PRODUTOS PRINCIPAL - MARROM E VERMELHO
    ========================================================================== */
 .produtos-area{
     padding: 30px 20px 100px;
@@ -232,36 +232,36 @@ header{
 }
 
 .categoria h2{
-    color: #8b0000;
+    color: #8b0000; /* Vermelho Premium para o Título da Categoria - Diretamente da Logo */
     margin-bottom: 25px;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .categoria h2::after {
     content: "";
     flex-grow: 1;
-    height: 1px;
-    background: rgba(38, 22, 13, 0.15);
-    margin-left: 10px;
+    height: 2px;
+    background: rgba(139, 0, 0, 0.2); /* Linha sutil em Vermelho Premium */
+    margin-left: 12px;
 }
 
 /* Aviso Dinâmico da Jantinha */
 .aviso-jantinha {
-    background: #dfcdbf;
-    border-left: 4px solid #ffb347;
+    background: #dfcdbf; /* Fundo Creme/Marrom Suave */
+    border-left: 5px solid #ffb347; /* Linha sutil em Laranja Brasa */
     padding: 15px;
     margin-bottom: 25px;
     border-radius: 0 12px 12px 0;
-    color: #3d2d24;
-    font-size: 14px;
+    color: #3d2d24;     /* Texto Marrom Terra Queimado */
+    font-size: 15px;
 }
 
 .aviso-jantinha strong {
-    color: #8b0000;
+    color: #8b0000;     /* Vermelho Premium para o destaque */
 }
 
 /* GRID DOS CARDS PRINCIPAIS */
@@ -272,18 +272,18 @@ header{
 }
 
 .card{
-    background: #fcf8f5; /* Off-white bem sutil para o card não estourar na tela */
+    background: #fcf8f5; /* Off-white bem sutil */
     border-radius: 20px;
-    border: 1px solid rgba(38, 22, 13, 0.08);
+    border: 1px solid rgba(74, 54, 41, 0.08); /* Borda Marrom Terra Queimado */
     overflow: hidden;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 12px rgba(38,22,13,0.05);
+    box-shadow: 0 4px 12px rgba(74,54,41,0.05); /* Sombra sutil em Marrom Terra Queimado */
 }
 
 .card:hover{
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(38,22,13,0.12);
-    border-color: rgba(139, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(74,54,41,0.12);
+    border-color: rgba(139, 0, 0, 0.2); /* Borda Vermelho Premium no Hover */
 }
 
 /* Regra de Imagem Única */
@@ -293,7 +293,7 @@ header{
     max-height: 350px;
     object-fit: contain;
     display: block;
-    background: #ebdcd0;
+    background: #ebdcd0; /* Fundo Marrom-Pastel/Café-com-Leite */
 }
 
 /* Container de Duas Imagens no Mesmo Card */
@@ -318,35 +318,35 @@ header{
 
 .card h3{
     margin-bottom: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #26160d;
+    font-size: 19px;
+    font-weight: 700;
+    color: #26160d;     /* Marrom Terra Queimado - Diretamente da Logo */
 }
 
 .card p{
-    color: #59473c;
-    font-size: 13px;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
+    font-size: 14px;
     margin-bottom: 15px;
     line-height: 1.5;
 }
 
 .preco{
-    color: #8b0000;
-    font-size: 20px;
-    font-weight: 700;
+    color: #8b0000;     /* Vermelho Premium para o Preço - Diretamente da Logo */
+    font-size: 21px;
+    font-weight: 800;
     display: block;
     margin-bottom: 15px;
 }
 
 .card button{
     width: 100%;
-    padding: 12px;
+    padding: 13px;
     border: none;
     border-radius: 12px;
-    background: #8b0000;
+    background: #8b0000; /* Vermelho Premium para o Botão - Diretamente da Logo */
     color: white;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 15px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -366,12 +366,12 @@ header{
 .select-premium {
     width: 100%;
     padding: 14px 16px;
-    background: #ebdcd0;
-    color: #26160d;
-    border: 1px solid rgba(38, 22, 13, 0.18);
+    background: #ebdcd0; /* Fundo Marrom-Pastel/Café-com-Leite */
+    color: #26160d;     /* Texto Marrom Terra Queimado */
+    border: 1px solid rgba(74, 54, 41, 0.18); /* Borda Marrom Terra Queimado */
     border-radius: 12px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     outline: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -384,7 +384,7 @@ header{
 }
 
 .select-premium:focus {
-    border-color: #8b0000;
+    border-color: #8b0000; /* Vermelho Premium no Focus */
     box-shadow: 0 0 10px rgba(139, 0, 0, 0.05);
 }
 
@@ -398,15 +398,15 @@ header{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
-    background: rgba(139, 0, 0, 0.04);
+    background: rgba(139, 0, 0, 0.04); /* Fundo sutil em Vermelho Premium */
     padding: 10px 15px;
     border-radius: 10px;
     border: 1px dashed rgba(139, 0, 0, 0.18);
 }
 
 .preco-label {
-    font-size: 13px;
-    color: #59473c;
+    font-size: 14px;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
 }
 
 /* ==========================================================================
@@ -419,9 +419,9 @@ header{
 }
 
 .card-compact {
-    background: #fcf8f5;
+    background: #fcf8f5; /* Off-white bem sutil */
     border-radius: 16px;
-    border: 1px solid rgba(38, 22, 13, 0.08);
+    border: 1px solid rgba(74, 54, 41, 0.08);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -431,19 +431,19 @@ header{
 
 .card-compact:hover {
     border-color: rgba(139, 0, 0, 0.18);
-    background: #f5ede6;
+    background: #f5ede6; /* Fundo sutil em Vermelho Premium no Hover */
 }
 
 .card-compact .info h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #26160d;
+    font-size: 17px;
+    font-weight: 700;
+    color: #26160d;     /* Marrom Terra Queimado - Diretamente da Logo */
     margin-bottom: 3px;
 }
 
 .card-compact .info p {
-    font-size: 12px;
-    color: #59473c;
+    font-size: 13px;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
 }
 
 .card-compact .action {
@@ -453,13 +453,13 @@ header{
 }
 
 .card-compact .action span {
-    color: #8b0000;
-    font-weight: 700;
-    font-size: 16px;
+    color: #8b0000;     /* Vermelho Premium para o Preço - Diretamente da Logo */
+    font-weight: 800;
+    font-size: 17px;
 }
 
 .card-compact .action button {
-    background: #8b0000;
+    background: #8b0000; /* Vermelho Premium para o Botão - Diretamente da Logo */
     color: white;
     border: none;
     width: 35px;
@@ -478,7 +478,7 @@ header{
 }
 
 /* ==========================================================================
-   CARRINHO LATERAL DO CLIENTE
+   CARRINHO LATERAL DO CLIENTE - QUENTE E ACONCHEGANTE
    ========================================================================== */
 .carrinho{
     position: fixed;
@@ -486,13 +486,13 @@ header{
     right: -450px;
     width: 420px;
     height: 100vh;
-    background: #dfcebf; /* Fundo mais escuro e fosco */
+    background: #dfcebf; /* Fundo Creme/Marrom Suave - Quente e Aconchegante */
     z-index: 999999;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
     padding: 30px;
-    box-shadow: -10px 0 30px rgba(38,22,13,0.12);
-    border-left: 1px solid rgba(38, 22, 13, 0.08);
+    box-shadow: -10px 0 30px rgba(74,54,41,0.12); /* Sombra sutil em Marrom Terra Queimado */
+    border-left: 2px solid rgba(139, 0, 0, 0.15); /* Linha sutil em Vermelho Premium */
 }
 
 .carrinho.active{
@@ -507,8 +507,8 @@ header{
 }
 
 .cart-header h2{
-    color: #8b0000;
-    font-weight: 600;
+    color: #8b0000;     /* Vermelho Premium para o Título do Carrinho - Diretamente da Logo */
+    font-weight: 700;
 }
 
 .fechar-cart{
@@ -516,25 +516,25 @@ header{
     height: 35px;
     border: none;
     border-radius: 50%;
-    background: rgba(38, 22, 13, 0.08);
-    color: #26160d;
+    background: rgba(74, 54, 41, 0.08); /* Fundo sutil em Marrom Terra Queimado */
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
 }
 
 .fechar-cart:hover {
-    background: #8b0000;
+    background: #8b0000; /* Vermelho Premium no Hover */
     color: white;
 }
 
 /* Itens de listagem padrão dentro das gavetas */
 .item{
-    background: #fcf8f5;
+    background: #fcf8f5; /* Off-white bem sutil */
     padding: 18px;
     border-radius: 16px;
     margin-bottom: 15px;
-    border: 1px solid rgba(38, 22, 13, 0.05);
+    border: 1px solid rgba(74, 54, 41, 0.05);
 }
 
 .item-top{
@@ -542,7 +542,7 @@ header{
     justify-content: space-between;
     margin-bottom: 15px;
     font-size: 15px;
-    color: #26160d;
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
 }
 
 .controls{
@@ -556,25 +556,25 @@ header{
     height: 32px;
     border: none;
     border-radius: 8px;
-    background: rgba(38, 22, 13, 0.06);
-    color: #26160d;
+    background: rgba(74, 54, 41, 0.05); /* Fundo sutil em Marrom Terra Queimado */
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
 }
 
 .controls button:hover {
-    background: #ffb347;
+    background: #ffb347; /* Laranja Brasa no Hover */
     color: #26160d;
 }
 
 .total{
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px dashed rgba(38, 22, 13, 0.18);
+    border-top: 2px dashed rgba(139, 0, 0, 0.15); /* Linha sutil em Vermelho Premium */
     font-size: 24px;
-    color: #8b0000;
-    font-weight: 700;
+    color: #8b0000;     /* Vermelho Premium para o Total - Diretamente da Logo */
+    font-weight: 800;
     text-align: right;
 }
 
@@ -586,8 +586,9 @@ header{
 .select-area label{
     display: block;
     margin-bottom: 8px;
-    color: #59473c;
-    font-size: 14px;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .select-area select,
@@ -595,19 +596,20 @@ header{
 .select-area textarea{
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(38, 22, 13, 0.12);
+    border: 2px solid rgba(74, 54, 41, 0.12); /* Borda Marrom Terra Queimado */
     border-radius: 12px;
     margin-bottom: 20px;
     background: #fcf8f5;
-    color: #26160d;
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
     font-size: 15px;
+    font-weight: 500;
     outline: none;
 }
 
 .select-area select:focus,
 .select-area input:focus,
 .select-area textarea:focus {
-    border-color: #8b0000;
+    border-color: #8b0000; /* Vermelho Premium no Focus */
 }
 
 .finalizar{
@@ -615,14 +617,14 @@ header{
     padding: 18px;
     border: none;
     border-radius: 14px;
-    background: #ffb347;
-    color: #26160d;
-    font-size: 16px;
+    background: #ffb347; /* Laranja Brasa para o Botão Finalizar */
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
+    font-size: 17px;
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
     margin-top: 10px;
-    box-shadow: 0 4px 15px rgba(255, 179, 71, 0.15);
+    box-shadow: 0 4px 15px rgba(255, 179, 71, 0.3); /* Brilho sutil em Laranja Brasa */
 }
 
 .finalizar:hover {
@@ -630,12 +632,12 @@ header{
 }
 
 /* ==========================================================================
-   MODAL DE LOGIN DO GARÇOM
+   MODAL DE LOGIN DO GARÇOM - QUENTE E ACONCHEGANTE
    ========================================================================== */
 .modal{
     position: fixed;
     inset: 0;
-    background: rgba(38, 22, 13, 0.55);
+    background: rgba(74, 54, 41, 0.6); /* Overlay sutil em Marrom Terra Queimado */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     display: none;
@@ -646,10 +648,10 @@ header{
 
 .modal-content{
     width: 340px;
-    background: #dfcebf;
+    background: #dfcebf; /* Fundo Creme/Marrom Suave */
     padding: 35px 30px;
     border-radius: 24px;
-    border: 1px solid rgba(38, 22, 13, 0.1);
+    border: 1px solid rgba(74, 54, 41, 0.1);
     text-align: center;
     position: relative;
     box-shadow: 0 10px 40px rgba(0,0,0,0.12);
@@ -661,7 +663,7 @@ header{
     right: 15px;
     background: transparent;
     border: none;
-    color: #59473c;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
@@ -670,27 +672,29 @@ header{
 .fechar-modal-x:hover { color: #8b0000; }
 
 .modal-content h2{
-    color: #8b0000;
+    color: #8b0000;     /* Vermelho Premium para o Título - Diretamente da Logo */
     margin-bottom: 5px;
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .modal-content p.aviso-restrito {
-    color: #59473c;
-    font-size: 13px;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
+    font-size: 14px;
     margin-bottom: 25px;
 }
 
 .modal-content input{
     width: 100%;
     padding: 16px;
-    border: 1px solid rgba(38, 22, 13, 0.12);
+    border: 2px solid rgba(74, 54, 41, 0.12); /* Borda Marrom Terra Queimado */
     border-radius: 12px;
     margin-bottom: 20px;
     background: #fcf8f5;
-    color: #26160d;
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
     text-align: center;
     font-size: 18px;
+    font-weight: 700;
     letter-spacing: 5px;
 }
 
@@ -699,9 +703,9 @@ header{
     padding: 16px;
     border: none;
     border-radius: 12px;
-    background: #8b0000;
+    background: #8b0000; /* Vermelho Premium para o Botão Entrar */
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
@@ -710,7 +714,7 @@ header{
 .btn-entrar:hover { background: #a30000; }
 
 /* ==========================================================================
-   PAINEL DO GARÇOM
+   PAINEL DO GARÇOM - QUENTE E ACONCHEGANTE
    ========================================================================== */
 .painel{
     position: fixed;
@@ -718,32 +722,46 @@ header{
     top: 0;
     width: 420px;
     height: 100vh;
-    background: #dfcebf;
+    background: #dfcebf; /* Fundo Creme/Marrom Suave */
     z-index: 999999;
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 30px;
-    border-right: 1px solid rgba(38, 22, 13, 0.08);
+    border-right: 2px solid rgba(139, 0, 0, 0.08); /* Linha sutil em Vermelho Premium */
     overflow-y: auto;
-    box-shadow: 10px 0 30px rgba(38,22,13,0.12);
+    box-shadow: 10px 0 30px rgba(74,54,41,0.12);
 }
 
 .painel.active{ left: 0; }
 
-.painel h2{ color: #8b0000; margin-bottom: 5px; }
+.painel h2{
+    color: #8b0000;     /* Vermelho Premium para o Título - Diretamente da Logo */
+    font-weight: 700;
+}
 
-.painel p { color: #59473c; font-size: 14px; margin-bottom: 25px; }
+.painel p {
+    color: #59473c;     /* Texto Marrom Terra Queimado */
+    font-size: 14px;
+    margin-bottom: 25px;
+}
 
-.painel label{ display: block; margin-bottom: 8px; color: #59473c; font-size: 14px; }
+.painel label{
+    display: block;
+    margin-bottom: 8px;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
+    font-size: 15px;
+    font-weight: 600;
+}
 
 .painel input, .painel select{
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(38, 22, 13, 0.12);
+    border: 2px solid rgba(74, 54, 41, 0.12); /* Borda Marrom Terra Queimado */
     border-radius: 12px;
     margin-bottom: 20px;
     background: #fcf8f5;
-    color: #26160d;
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
     font-size: 15px;
+    font-weight: 500;
     outline: none;
 }
 
@@ -752,16 +770,20 @@ header{
     padding: 16px;
     border: none;
     border-radius: 12px;
-    background: rgba(38, 22, 13, 0.05);
-    color: #26160d;
-    font-weight: 600;
+    background: #ebdcd0; /* Fundo Marrom-Pastel/Café-com-Leite */
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
+    font-weight: 700;
     cursor: pointer;
     margin-bottom: 30px;
-    border: 1px solid rgba(38, 22, 13, 0.12);
+    border: 2px solid rgba(74, 54, 41, 0.1);
     transition: 0.3s;
 }
 
-.add-garcom:hover { background: #ffb347; border-color: #ffb347; color: #26160d; }
+.add-garcom:hover {
+    background: #ffb347; /* Laranja Brasa no Hover */
+    border-color: #ffb347;
+    color: #26160d;
+}
 
 /* Lista de Itens internos adicionados na Mesa */
 #listaGarcom {
@@ -769,7 +791,7 @@ header{
     border-radius: 12px;
     padding: 5px 15px;
     margin-bottom: 20px;
-    border: 1px solid rgba(38, 22, 13, 0.08);
+    border: 1px solid rgba(74, 54, 41, 0.08);
     max-height: 280px;
     overflow-y: auto;
 }
@@ -784,8 +806,8 @@ header{
 
 /* CARDÁPIO COMPACTO DE EMBUTIR */
 .cardapio-interno-garcom {
-    background: rgba(38, 22, 13, 0.03);
-    border: 1px dashed rgba(38, 22, 13, 0.15);
+    background: rgba(74, 54, 41, 0.03); /* Fundo sutil em Marrom Terra Queimado */
+    border: 2px dashed rgba(74, 54, 41, 0.15);
     padding: 15px;
     border-radius: 14px;
     margin-top: 10px;
@@ -793,8 +815,8 @@ header{
 }
 
 .cardapio-interno-garcom h3 {
-    font-size: 14px;
-    color: #8b0000;
+    font-size: 15px;
+    color: #8b0000;     /* Vermelho Premium para o Título - Diretamente da Logo */
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -808,11 +830,11 @@ header{
 
 .btn-item-rapido {
     background: #fcf8f5;
-    border: 1px solid rgba(38, 22, 13, 0.08);
-    color: #26160d;
+    border: 1px solid rgba(74, 54, 41, 0.08);
+    color: #26160d;     /* Marrom Terra Queimado - Texto Principal */
     padding: 10px;
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 13px;
     cursor: pointer;
     text-align: left;
     display: flex;
@@ -822,13 +844,13 @@ header{
 }
 
 .btn-item-rapido:hover {
-    border-color: #8b0000;
+    border-color: #8b0000; /* Vermelho Premium no Hover */
     background: #f5ede6;
 }
 
 .btn-item-rapido span.item-preco {
-    color: #8b0000;
-    font-weight: bold;
+    color: #8b0000;     /* Vermelho Premium para o Preço - Diretamente da Logo */
+    font-weight: 800;
     margin-top: 4px;
 }
 
@@ -845,7 +867,7 @@ header{
     padding: 16px;
     border: none;
     border-radius: 12px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -861,17 +883,20 @@ header{
 
 .fechar{
     background: transparent;
-    border: 1px solid rgba(38, 22, 13, 0.18);
+    border: 2px solid rgba(74, 54, 41, 0.18);
     padding: 15px;
     border-radius: 12px;
-    color: #59473c;
+    color: #59473c;     /* Texto Marrom Terra Queimado */
     cursor: pointer;
     width: 100%;
     margin-top: 0px;
     transition: 0.3s;
 }
 
-.fechar:hover { background: rgba(38, 22, 13, 0.05); color: #26160d; }
+.fechar:hover {
+    background: rgba(74, 54, 41, 0.05);
+    color: #2c1a11;
+}
 
 /* ==========================================================================
    SISTEMA DE NOTIFICAÇÃO FLUTUANTE (TOAST GARÇOM)
@@ -889,14 +914,14 @@ header{
 }
 
 .toast-alerta {
-    background: #27ae60;
+    background: #27ae60; /* Verde Dinâmico para Notificações */
     color: white;
     padding: 12px 24px;
     border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     white-space: nowrap;
     animation: fadeInDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -928,15 +953,16 @@ header{
    ========================================================================== */
 @media(max-width:768px){
     .top-header { padding: 12px 15px; }
-    .logo { width: 45px; height: 45px; }
-    .logo-text h1{ font-size: 18px; }
-    .logo-text span{ font-size: 10px; }
-    .icon-btn { width: 42px; height: 42px; font-size: 18px; }
+    .logo { width: 45px; height: 45px; border-width: 2px; }
+    .logo-text h1{ font-size: 20px; }
+    .logo-text span{ font-size: 11px; letter-spacing: 1.2px; }
+    .icon-btn { width: 45px; height: 45px; font-size: 20px; }
     .cart-btn span { width: 18px; height: 18px; font-size: 10px; top: -4px; right: -4px; }
-    .hero h1{ font-size: 36px; text-shadow: 1px 1px 1px rgba(255,255,255,0.4); }
-    .hero p{ font-size: 16px; }
+    .hero h1{ font-size: 38px; text-shadow: 1px 1px 1px rgba(251,245,230,0.4); }
+    .hero p{ font-size: 18px; }
+    .categoria h2{ font-size: 28px; }
     
-    /* Faz as gavetas ocuparem a tela inteira */
+    /* Faz as gavetas ocuparem a tela inteira com saída correta para fora da tela */
     .carrinho, .painel{ width: 100%; }
     .carrinho { right: -100%; }
     .painel { left: -100%; }
