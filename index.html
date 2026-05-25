@@ -195,7 +195,7 @@ header{
    ========================================================================== */
 .hero{
     height: 350px;
-    background: linear-gradient(to bottom, rgba(235,220,208,0.1), rgba(251,245,230,1)), url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
+    background: url('WhatsApp Image 2026-05-21 at 13.06.16.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -208,16 +208,17 @@ header{
 
 .hero h1{
     font-size: 55px;
-    color: #8b0000; /* Vermelho Premium para o Título Principal - Diretamente da Logo */
+    color: #ffffff; /* Texto branco para contrastar com o fundo escurecido */
     font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(251,245,230,0.8); /* Brilho Creme/Bege Palha Suave */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra escura para destacar a letra */
 }
 
 .hero p{
     margin-top: 10px;
     font-size: 22px;
     font-weight: 600;
-    color: #4a3629;     /* Marrom Terra Queimado - Diretamente da Logo */
+    color: #ffffff; /* Texto branco também no parágrafo */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================
@@ -1103,7 +1104,7 @@ header{
 
             <div class="card-compact">
                 <div class="info"><h3>Pão de Alho</h3></div>
-                <div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Pão de Alho', 4)">+</button></div>
+                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Pão de Alho', 5)">+</button></div>
             </div>
 
             <div class="card-compact">
@@ -1170,6 +1171,11 @@ header{
               <div class="card-compact">
                 <div class="info"><h3>Coca-Cola 2L </h3></div>
                 <div class="action"><span>R$ 12,00</span><button onclick="addCarrinho('Coca-Cola 2L', 12)">+</button></div>
+            </div>
+
+              <div class="card-compact">
+                <div class="info"><h3>Coca-Cola 1L </h3></div>
+                <div class="action"><span>R$ 10,00</span><button onclick="addCarrinho('Coca-Cola 1L', 10)">+</button></div>
             </div>
 
              <div class="card-compact">
@@ -1438,7 +1444,7 @@ header{
                             <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
                             <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
                             <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo (+ R$ 9,00)</option>
-                            <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
+                            <option value="Pão de Alho|5.00">Pão de Alho (+ R$ 5,00)</option>
                         </select>
                     </div>
 
@@ -1459,7 +1465,7 @@ header{
                 <div class="card-compact"><div class="info"><h3>Kibe com Queijo</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Kibe com Queijo', 9)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Linguiça com Rúcula e Queijo</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Linguiça c/ Rúcula', 6)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Panceta</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Panceta', 6)">+</button></div></div>
-                <div class="card-compact"><div class="info"><h3>Pão de Alho</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addProdutoDiretoGarcom('Pão de Alho', 4)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Pão de Alho</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Pão de Alho', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Queijo</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Queijo', 7)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Tulipa</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Tulipa', 7)">+</button></div></div>
             </div>
@@ -1500,6 +1506,7 @@ header{
                 <div class="card-compact"><div class="info"><h3>Suco de Caju (900ml)</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addProdutoDiretoGarcom('Suco Caju 900ml', 10)">+</button></div></div>
                                 <div class="card-compact"><div class="info"><h3>Coca Cola 2L</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addProdutoDiretoGarcom('Coca Cola 2L', 12)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>H20</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('H20', 6)">+</button></div></div>
+                   <div class="card-compact"><div class="info"><h3>Coca Cola 1L</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addProdutoDiretoGarcom('Coca Cola 1L', 10)">+</button></div></div>
 
             </div>
         </div>
