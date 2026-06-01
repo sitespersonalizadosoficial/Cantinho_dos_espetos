@@ -1281,6 +1281,16 @@ header{
                 <div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Skol Romarinho', 4)">+</button></div>
             </div>
 
+             <div class="card-compact">
+                <div class="info"><h3>Corona long zero</h3></div>
+                <div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Corona long zero', 8)">+</button></div>
+            </div>
+
+             <div class="card-compact">
+                <div class="info"><h3>Brahma zero lata </h3></div>
+                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Brahma zero lata', 5)">+</button></div>
+            </div>
+
             <div class="card-compact">
                 <div class="info"><h3>Boa (Romarinho)</h3></div>
                 <div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Boa Romarinho', 4)">+</button></div>
@@ -1504,10 +1514,9 @@ header{
                 <div class="card-compact"><div class="info"><h3>Roller 2L</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addProdutoDiretoGarcom('Roller 2L ', 9.00)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Suco de Laranja (900ml)</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addProdutoDiretoGarcom('Suco Laranja 900ml', 12)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Suco de Caju (900ml)</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addProdutoDiretoGarcom('Suco Caju 900ml', 10)">+</button></div></div>
-                                <div class="card-compact"><div class="info"><h3>Coca Cola 2L</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addProdutoDiretoGarcom('Coca Cola 2L', 12)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Coca Cola 2L</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addProdutoDiretoGarcom('Coca Cola 2L', 12)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>H20</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('H20', 6)">+</button></div></div>
-                   <div class="card-compact"><div class="info"><h3>Coca Cola 1L</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addProdutoDiretoGarcom('Coca Cola 1L', 10)">+</button></div></div>
-
+                <div class="card-compact"><div class="info"><h3>Coca Cola 1L</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addProdutoDiretoGarcom('Coca Cola 1L', 10)">+</button></div></div>
             </div>
         </div>
 
@@ -1525,10 +1534,30 @@ header{
                 <div class="card-compact"><div class="info"><h3>Brahma (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Brahma Lata', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Amistel (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Amistel Lata', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Império Ultra (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Império Ultra Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Corona long Zero</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addProdutoDiretoGarcom('Corona long Zero', 8)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Brahma zero lata</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Brahma zero lata', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Kaiser (Latão)</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Kaiser Latão', 6)">+</button></div></div>
             </div>
         </div>
     </div>
+    
+    <hr style="border: 1px solid #444; margin: 20px 0;">
+
+    <h3 style="color: #ffaa00; font-size: 16px; margin-bottom: 10px;">📝 Item Adicional / Observação com Valor</h3>
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div>
+            <label style="font-size: 13px; display: block; margin-bottom: 4px;">O que o cliente deseja?</label>
+            <input type="text" id="obsNomeItem" placeholder="Ex: Mandioca extra, Sem gelo, etc.">
+        </div>
+        <div style="display: flex; gap: 10px; align-items: flex-end;">
+            <div style="flex: 1;">
+                <label style="font-size: 13px; display: block; margin-bottom: 4px;">Valor Cobrado (R$)</label>
+                <input type="number" id="obsValorItem" placeholder="0.00" step="0.01">
+            </div>
+            <button onclick="addObservacaoComValor()" style="background: #27ae60; color: white; border: none; padding: 12px 20px; font-weight: bold; border-radius: 12px; cursor: pointer; height: 48px;">+ Adicionar</button>
+        </div>
+    </div>
+
     <hr style="border: 1px solid #444; margin: 20px 0;">
 
     <h3>🛒 Itens Adicionados na Mesa</h3>
@@ -1550,7 +1579,6 @@ header{
         <button class="fechar" onclick="fecharPainel()" style="padding: 10px; border-radius: 8px;">Sair do Painel</button>
     </div>
 </div>
-
 
 <script>
 let carrinho = [];
@@ -1636,7 +1664,7 @@ function aumentar(index){
     atualizarCarrinho();
 }
 
-function diminuir(index){
+function disminuir(index){
     carrinho[index].qtd--;
     if(carrinho[index].qtd <= 0){ carrinho.splice(index,1); }
     atualizarCarrinho();
@@ -1827,6 +1855,50 @@ function addJantinhaGarcomCardapio() {
     mostrarNotificacao(`🍢 Jantinha adicionada com sucesso!`);
 }
 
+/* ==========================================================================
+   NOVA FUNÇÃO: ADICIONAR ITEM PERSONALIZADO / OBSERVACAO COM VALOR
+   ========================================================================== */
+function addObservacaoComValor() {
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    if(mesa === "") { 
+        alert("Por favor, digite o número da mesa ANTES de adicionar o item."); 
+        return; 
+    }
+    if(mesa !== mesaAtualGarcom) { 
+        mesaAtualGarcom = mesa; 
+        carregarMesaLocal();
+    }
+
+    const nomeInput = document.getElementById('obsNomeItem');
+    const valorInput = document.getElementById('obsValorItem');
+
+    const nomeItem = nomeInput.value.trim();
+    const valorItem = parseFloat(valorInput.value);
+
+    if (nomeItem === "") {
+        alert("Por favor, digite a descrição do item ou observação.");
+        return;
+    }
+    if (isNaN(valorItem) || valorItem < 0) {
+        alert("Por favor, insira um valor válido. Use ponto em vez de vírgula (Ex: 4.50).");
+        return;
+    }
+
+    // Formata o nome para deixar explícito na comanda física e digital que é um item extra
+    const nomeFinal = `Obs: ${nomeItem}`;
+
+    // Insere o item dinâmico no array da mesa atual
+    pedidosGarcom.push({ nome: nomeFinal, preco: valorItem, enviado: false, entregue: false });
+    
+    atualizarGarcom();
+    salvarMesaLocal();
+
+    // Feedback visual para o garçom e limpa os campos para o próximo lançamento
+    mostrarNotificacao(`📝 Adicionado: ${nomeFinal}`);
+    nomeInput.value = "";
+    valorInput.value = "";
+}
+
 function atualizarGarcom(){
     let div = document.getElementById("listaGarcom");
     if(!div) return;
@@ -1970,7 +2042,7 @@ function mostrarNotificacao(mensagem) {
 
     const toast = document.createElement('div');
     toast.className = 'toast-alerta';
-    toast.innerHTML = message = mensagem;
+    toast.innerHTML = mensagem;
 
     container.appendChild(toast);
 
