@@ -985,7 +985,12 @@ header{
             <img src="image.png" class="logo">
             <div class="logo-text">
                 <h1>Cantinho dos Espetos</h1>
-                <span>Espetaria Viradouro-SP</span>
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                    <span style="color: #fff; font-size: 14px;">Espetaria Viradouro-SP</span>
+                    <span style="color: #ffaa00; font-size: 12px; font-weight: bold; display: flex; align-items: center; gap: 4px;">
+                        📅 Atendimento: Seg a Sexta
+                    </span>
+                </div>
             </div>
         </div>
 
@@ -1014,7 +1019,7 @@ header{
 
 <div class="produtos-area">
 
- <div class="produtos">
+ <div class="produtos" id="jantinhas">
     <div class="card">
         
         <div class="card-imagens" style="display: flex; gap: 4px; background: #140c08; width: 100%;">
@@ -1022,7 +1027,7 @@ header{
             <img src="WhatsApp Image 2026-05-21 at 13.05.20 (1).jpeg" alt="Espeto na Brasa">
         </div>
         
-        <div class="card-content">
+        <div class="card-content" id="jantinhas">
             <h3>Jantinha Completa</h3>
             <p>Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
             
@@ -1415,16 +1420,47 @@ header{
     <h2>Painel de Serviço</h2>
     <p style="color: #bbb; font-size: 13px; margin-bottom: 15px;">Gerenciamento de mesas com cardápio completo integrado.</p>
 
+    <!-- CONTAINER MESA DE ATENDIMENTO (BOTÕES DE 1 A 30) -->
     <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
-        <label>Mesa de Atendimento</label>
-        <input type="number" id="mesaGarcom" placeholder="Nº da mesa" style="font-size: 18px; font-weight: bold; text-align: center;">
+        <label style="display: block; margin-bottom: 10px; font-weight: bold; color: #ffaa00;">Mesa de Atendimento</label>
+        
+        <!-- Input invisível para garantir compatibilidade com as suas funções JavaScript antigas -->
+        <input type="hidden" id="mesaGarcom" value="">
 
-        <label style="margin-top: 10px; display: block;">Cliente (Opcional)</label>
+        <!-- Grade interativa de botões -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 8px; margin-bottom: 15px; max-height: 180px; overflow-y: auto; padding-right: 5px;">
+            <script>
+                for (let i = 1; i <= 30; i++) {
+                    document.write(`
+                        <button type="button" class="btn-mesa" id="btnMesa_${i}" onclick="selecionarMesa(${i})" style="
+                            background: #23160e; 
+                            color: white; 
+                            border: 1px solid rgba(255,255,255,0.1); 
+                            padding: 10px 0; 
+                            font-weight: bold; 
+                            font-size: 16px;
+                            border-radius: 8px; 
+                            cursor: pointer;
+                            transition: all 0.2s ease;
+                        ">${i}</button>
+                    `);
+                }
+            </script>
+        </div>
+
+        <!-- Indicador visual de status da mesa ativa -->
+        <div id="statusMesaSelecionada" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; color: #bbb; border: 1px dashed rgba(255,255,255,0.15); transition: all 0.3s;">
+            Nenhuma mesa selecionada
+        </div>
+
+        <label style="margin-top: 15px; display: block;">Cliente (Opcional)</label>
         <input type="text" id="clienteGarcom" placeholder="Nome do cliente">
     </div>
 
+    <!-- ÁREA COMPLETA DO CARDÁPIO -->
     <div class="produtos-area" style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 12px; margin-bottom: 20px;">
         
+        <!-- Bloco Jantinha Completa -->
         <div class="produtos">
             <div class="card" style="background: #140c08; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
                 <div class="card-imagens" style="display: flex; gap: 4px; background: #140c08; width: 100%;">
@@ -1464,6 +1500,7 @@ header{
             </div>
         </div>
 
+        <!-- Categoria: Espetos Tradicionais -->
         <div class="categoria" id="espetosGarcom">
             <h2 style="font-size: 18px; margin: 15px 0 10px 0; color: #ffaa00;">🍢 Espetos Tradicionais</h2>
             <div class="produtos-compactos">
@@ -1481,6 +1518,7 @@ header{
             </div>
         </div>
 
+        <!-- Categoria: Medalhões Premium -->
         <div class="categoria" id="medalhoesGarcom">
             <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🥓 Medalhões Premium</h2>
             <div class="produtos-compactos">
@@ -1493,6 +1531,7 @@ header{
             </div>
         </div>
 
+        <!-- Categoria: Sucos & Refrescos (TOTALMENTE COMPLETO SEM CORTES) -->
         <div class="categoria" id="bebidasGarcom">
             <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🥤 Sucos & Refrescos</h2>
             <div class="produtos-compactos">
@@ -1520,6 +1559,7 @@ header{
             </div>
         </div>
 
+        <!-- Categoria: Cervejas -->
         <div class="categoria" id="cervejasGarcom">
             <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🍺 Cervejas</h2>
             <div class="produtos-compactos">
@@ -1543,6 +1583,7 @@ header{
     
     <hr style="border: 1px solid #444; margin: 20px 0;">
 
+    <!-- BLOCO: ITEM ADICIONAL / OBSERVAÇÃO COM VALOR -->
     <h3 style="color: #ffaa00; font-size: 16px; margin-bottom: 10px;">📝 Item Adicional / Observação com Valor</h3>
     <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
         <div>
@@ -1560,6 +1601,7 @@ header{
 
     <hr style="border: 1px solid #444; margin: 20px 0;">
 
+    <!-- ITENS ADICIONADOS E BOTÕES DE FINALIZAÇÃO -->
     <h3>🛒 Itens Adicionados na Mesa</h3>
     <div id="listaGarcom" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; min-height: 50px;"></div>
 
@@ -1650,7 +1692,7 @@ function atualizarCarrinho(){
     div.innerHTML = htmlTemp;
     
     let cartCountEl = document.getElementById("cartCount");
-    if(cartCountEl) cartCountEl.innerHTML = quantidade;
+    if(cartCountEl) cartCountEl.innerHTML = viewModel .quantidade;
 
     let tipoEl = document.getElementById("tipoPedido");
     if(tipoEl && tipoEl.value === "delivery"){ total += 5; } 
@@ -1756,8 +1798,10 @@ function loginGarcom(){
         
         // Remove ouvintes duplicados se houverem e anexa o ouvinte de mesa
         let inputMesa = document.getElementById("mesaGarcom");
-        inputMesa.removeEventListener("blur", carregarMesaLocal);
-        inputMesa.addEventListener("blur", carregarMesaLocal);
+        if(inputMesa) {
+            inputMesa.removeEventListener("blur", carregarMesaLocal);
+            inputMesa.addEventListener("blur", carregarMesaLocal);
+        }
     }else{
         alert("Senha de acesso inválida.");
         document.getElementById("senha").value = "";
@@ -1768,6 +1812,44 @@ function abrirLogin(){ document.getElementById("modal").style.display = "flex"; 
 function fecharLogin(){ document.getElementById("modal").style.display = "none"; document.getElementById("senha").value = ""; }
 function fecharLoginFora(event){ if(event.target.id === "modal"){ fecharLogin(); } }
 function fecharPainel(){ document.getElementById("painel").classList.remove("active"); }
+
+// NOVA FUNÇÃO INTERATIVA PARA SELEÇÃO DE MESA POR CLIQUE
+function selecionarMesa(numeroMesa) {
+    // 1. Atualiza o valor do input oculto
+    const inputMesa = document.getElementById('mesaGarcom');
+    if (inputMesa) {
+        inputMesa.value = numeroMesa;
+    }
+
+    // 2. Modifica dinamicamente a barra de status visual
+    const statusDiv = document.getElementById('statusMesaSelecionada');
+    if (statusDiv) {
+        statusDiv.innerHTML = `Mesa <span style="color: #e67e22; font-size: 18px;">${numeroMesa}</span> Selecionada`;
+        statusDiv.style.border = "1px solid #e67e22";
+        statusDiv.style.background = "rgba(230, 126, 34, 0.1)";
+    }
+
+    // 3. Remove o destaque visual ativo de todas as outras mesas da lista
+    const botoes = document.querySelectorAll('.btn-mesa');
+    botoes.forEach(btn => {
+        btn.style.background = "#23160e";
+        btn.style.borderColor = "rgba(255,255,255,0.1)";
+        btn.style.color = "white";
+        btn.style.boxShadow = "none";
+    });
+
+    // 4. Aplica o destaque na mesa selecionada atualmente
+    const botaoClicado = document.getElementById(`btnMesa_${numeroMesa}`);
+    if (botaoClicado) {
+        botaoClicado.style.background = "#e67e22";
+        botaoClicado.style.borderColor = "#ffaa00";
+        botaoClicado.style.color = "#fff";
+        botaoClicado.style.boxShadow = "0 0 8px rgba(230, 126, 34, 0.5)";
+    }
+
+    // 5. Executa automaticamente o carregamento dos dados da mesa clicada
+    carregarMesaLocal();
+}
 
 function carregarMesaLocal() {
     let mesa = document.getElementById("mesaGarcom").value.trim();
@@ -1810,7 +1892,7 @@ function salvarMesaLocal() {
 function addProdutoDiretoGarcom(nome, preco) {
     let mesa = document.getElementById("mesaGarcom").value.trim();
     if(mesa === "") { 
-        alert("Por favor, digite o número da mesa ANTES de escolher o produto."); 
+        alert("Por favor, selecione uma mesa na grade ANTES de escolher o produto."); 
         return; 
     }
     if(mesa !== mesaAtualGarcom) { 
@@ -1830,7 +1912,7 @@ function addProdutoDiretoGarcom(nome, preco) {
 function addJantinhaGarcomCardapio() {
     let mesa = document.getElementById("mesaGarcom").value.trim();
     if(mesa === "") { 
-        alert("Por favor, digite o número da mesa ANTES de escolher o produto."); 
+        alert("Por favor, selecione uma mesa na grade ANTES de escolher o produto."); 
         return; 
     }
     if(mesa !== mesaAtualGarcom) { 
@@ -1856,12 +1938,12 @@ function addJantinhaGarcomCardapio() {
 }
 
 /* ==========================================================================
-   NOVA FUNÇÃO: ADICIONAR ITEM PERSONALIZADO / OBSERVACAO COM VALOR
+   FUNÇÃO: ADICIONAR ITEM PERSONALIZADO / OBSERVACAO COM VALOR
    ========================================================================== */
 function addObservacaoComValor() {
     let mesa = document.getElementById("mesaGarcom").value.trim();
     if(mesa === "") { 
-        alert("Por favor, digite o número da mesa ANTES de adicionar o item."); 
+        alert("Por favor, selecione uma mesa na grade ANTES de adicionar o item."); 
         return; 
     }
     if(mesa !== mesaAtualGarcom) { 
@@ -1962,7 +2044,7 @@ function enviarParaCozinha() {
     }
 
     let mesa = document.getElementById("mesaGarcom").value.trim();
-    if (mesa === "") { alert("Por favor, preencha o número da mesa."); return; }
+    if (mesa === "") { alert("Por favor, selecione uma mesa."); return; }
 
     let message = `🔥 *PEDIDO PARA A COZINHA - MESA ${mesa.toUpperCase()}*\n\n`;
     
@@ -1992,7 +2074,7 @@ function enviarPedidoGarcom(){
     let cliente = document.getElementById("clienteGarcom").value.trim();
     let pagamento = document.getElementById("pagamentoGarcom").value;
     
-    if(mesa === ""){ alert("Informe o número da mesa antes de enviar a comanda."); return; }
+    if(mesa === ""){ alert("Selecione uma mesa antes de enviar a comanda."); return; }
 
     let total = 0;
     let message = `🛎️ *FECHAMENTO DE COMANDA - CAIXA*\n\n`;
@@ -2027,6 +2109,23 @@ function enviarPedidoGarcom(){
     atualizarGarcom();
     document.getElementById("mesaGarcom").value = "";
     document.getElementById("clienteGarcom").value = "";
+    
+    // Limpa a borda e o texto de status de mesa ativa após fechar a conta
+    const statusDiv = document.getElementById('statusMesaSelecionada');
+    if (statusDiv) {
+        statusDiv.innerHTML = "Nenhuma mesa selecionada";
+        statusDiv.style.border = "1px dashed rgba(255,255,255,0.15)";
+        statusDiv.style.background = "rgba(0,0,0,0.2)";
+    }
+    
+    // Limpa a seleção visual dos botões
+    const botoes = document.querySelectorAll('.btn-mesa');
+    botoes.forEach(btn => {
+        btn.style.background = "#23160e";
+        btn.style.borderColor = "rgba(255,255,255,0.1)";
+        btn.style.color = "white";
+        btn.style.boxShadow = "none";
+    });
 }
 
 /* ==========================================================================
