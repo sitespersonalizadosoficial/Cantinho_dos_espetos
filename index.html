@@ -1005,6 +1005,7 @@ header{
     <div class="menu-categorias">
         <button onclick="scrollCategoria('jantinhas')">Jantinhas</button>
         <button onclick="scrollCategoria('espetos')">Espetos</button>
+        <button onclick="scrollCategoria('Queijos')">Queijos</button>
         <button onclick="scrollCategoria('medalhoes')">Medalhões</button>
         <button onclick="scrollCategoria('bebidas')">Sucos & Refrescos</button>
         <button onclick="scrollCategoria('cervejas')">Cervejas</button>
@@ -1017,358 +1018,141 @@ header{
     <p>Experiência premium em cada espeto.</p>
 </section>
 
+<!-- DIV PRINCIPAL ABERTA -->
 <div class="produtos-area">
 
- <div class="produtos" id="jantinhas">
-    <div class="card">
-        
-        <div class="card-imagens" style="display: flex; gap: 4px; background: #140c08; width: 100%;">
-            <img src="WhatsApp Image 2026-05-21 at 13.05.20.jpeg" alt="Acompanhamentos Jantinha">
-            <img src="WhatsApp Image 2026-05-21 at 13.05.20 (1).jpeg" alt="Espeto na Brasa">
+    <!-- Seção de Jantinhas -->
+    <div class="produtos" id="jantinhas">
+        <div class="card">
+            <div class="card-imagens" style="display: flex; gap: 4px; background: #140c08; width: 100%;">
+                <img src="WhatsApp Image 2026-05-21 at 13.05.20.jpeg" alt="Acompanhamentos Jantinha">
+                <img src="WhatsApp Image 2026-05-21 at 13.05.20 (1).jpeg" alt="Espeto na Brasa">
+            </div>
+            
+            <!-- ID duplicado corrigido para class -->
+            <div class="card-content-jantinha"> 
+                <h3>Jantinha Completa</h3>
+                <p>Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
+                
+                <div class="select-area" style="margin-top: 0; margin-bottom: 10px;">
+                    <select id="espetoJantinha" style="padding: 12px; margin-bottom: 10px; background: #23160e; color: white; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <option value="Carne|6.00">Carne (+ R$ 6,00)</option>
+                        <option value="Cafta|6.00">Cafta (+ R$ 6,00)</option>
+                        <option value="Costela|6.00">Costela (+ R$ 6,00)</option>
+                        <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
+                        <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
+                        <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
+                        <option value="Queijo Coalho|7.00">Queijo Coalho (+ R$ 7,00)</option>
+                        <option value="Queijo Mussarela|8.00">Queijo Mussarela (+ R$ 8,00)</option>
+                        <option value="Queijo Provolone|8.00">Queijo Provolone (+ R$ 8,00)</option>
+                        <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
+                        <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
+                        <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
+                        <option value="Coração|8.00">Coração (+ R$ 8,00)</option>
+                        <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue (+ R$ 8,00)</option>
+                        <option value="Kibe com Queijo|9.00">Kibe com Queijo (+ R$ 9,00)</option>
+                        <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
+                        <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
+                        <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo (+ R$ 9,00)</option>
+                        <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
+                    </select>
+                </div>
+                <span class="preco">R$ 15,00 + Espeto</span> 
+                <button onclick="adicionarJantinhaComEspeto()">Adicionar ao Pedido</button>
+            </div>
         </div>
-        
-      <div class="card-content" id="jantinhas">
-    <h3>Jantinha Completa</h3>
-    <p>Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
-    
-    <div class="select-area" style="margin-top: 0; margin-bottom: 10px;">
-        <select id="espetoJantinha" style="padding: 12px; margin-bottom: 10px; background: #23160e; color: white; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-            <option value="Carne|6.00">Carne (+ R$ 6,00)</option>
-            <option value="Cafta|6.00">Cafta (+ R$ 6,00)</option>
-            <option value="Costela|6.00">Costela (+ R$ 6,00)</option>
-            <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
-            <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
-            <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
-            
-            <option value="Queijo Coalho|7.00">Queijo Coalho (+ R$ 7,00)</option>
-            <option value="Queijo Mussarela|8.00">Queijo Mussarela (+ R$ 8,00)</option>
-            <option value="Queijo Provolone|8.00">Queijo Provolone (+ R$ 8,00)</option>
-            
-            <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
-            <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
-            <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
-            <option value="Coração|8.00">Coração (+ R$ 8,00)</option>
-            <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue (+ R$ 8,00)</option>
-            
-            <option value="Kibe com Queijo|9.00">Kibe com Queijo (+ R$ 9,00)</option>
-            <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
-            <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
-            <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo (+ R$ 9,00)</option>
-            
-            <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
-        </select>
     </div>
 
-    <span class="preco">R$ 15,00 + Espeto</span> 
-    <button onclick="adicionarJantinhaComEspeto()">Adicionar ao Pedido</button>
-</div>
-    </div>
-</div>
+    <!-- Categoria: Espetos Tradicionais -->
     <div class="categoria" id="espetos">
         <h2>🍢 Espetos Tradicionais</h2>
-        
         <div class="produtos-compactos">
-            
-            <div class="card-compact">
-                <div class="info"><h3>Cafta</h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Cafta', 6)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Carne</h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Carne', 6)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Codiguim</h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Codiguim', 6)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Coração</h3></div>
-                <div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Coração', 8)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Costela</h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Costela', 6)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Kibe com Queijo</h3></div>
-                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Kibe com Queijo', 9)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Linguiça com Rúcula e Queijo</h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Linguiça c/ Rúcula', 6)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Panceta</h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Panceta', 6)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Pão de Alho</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Pão de Alho', 5)">+</button></div>
-            </div>
-
-         <div class="card-compact" style="flex-direction: column; align-items: flex-start; gap: 8px; padding: 15px 20px;">
-    <div class="info" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
-        <h3>Espeto de Queijo</h3>
-        <span style="color: #8b0000; font-weight: 800; font-size: 16px; margin-bottom: 0;">R$ 7,00 a R$ 8,00</span>
-    </div>
-    
-    <div style="width: 100%; display: flex; gap: 10px; align-items: center;">
-        <select id="saborQueijoCliente" style="flex-grow: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(74,54,41,0.2); background: #ebdcd0; font-weight: 600; font-size: 14px; color: #26160d; outline: none;">
-            <option value="Mussarela|8.00">Queijo Mussarela (R$ 8,00)</option>
-            <option value="Coalho|7.00">Queijo Coalho (R$ 7,00)</option>
-            <option value="Provolone|8.00">Queijo Provolone (R$ 8,00)</option>
-        </select>
-        
-        <button onclick="adicionarQueijoCliente()" style="background: #8b0000; color: white; border: none; width: 38px; height: 38px; border-radius: 10px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;">+</button>
-    </div>
-</div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Tulipa</h3></div>
-                <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Tulipa', 7)">+</button></div>
-            </div>
-
+            <div class="card-compact"><div class="info"><h3>Cafta</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Cafta', 6)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Carne</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Carne', 6)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Codiguim</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Codiguim', 6)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Coração</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Coração', 8)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Costela</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Costela', 6)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Kibe com Queijo</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Kibe com Queijo', 9)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Linguiça com Rúcula e Queijo</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Linguiça c/ Rúcula', 6)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Panceta</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Panceta', 6)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Pão de Alho</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Pão de Alho', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Tulipa</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Tulipa', 7)">+</button></div></div>
         </div>
     </div>
 
+    <!-- Categoria: Medalhões Premium -->
     <div class="categoria" id="medalhoes">
         <h2>🥓 Medalhões Premium</h2>
-        
         <div class="produtos-compactos">
-            
-            <div class="card-compact">
-                <div class="info"><h3>Mandioca com Bacon</h3></div>
-                <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Medalhão Mandioca c/ Bacon', 7)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-    <div class="info"><h3>Medalhão Cupim com Queijo</h3></div>
-    <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão Cupim com Queijo', 9)">+</button></div>
-</div>
-
-             <div class="card-compact">
-                <div class="info"><h3>Copa lombo com barbecue</h3></div>
-                <div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Copa lombo com barbecue', 8)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Frango com Bacon</h3></div>
-                <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Medalhão Frango c/ Bacon', 7)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Romeu e Julieta</h3></div>
-                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão Romeu e Julieta', 9)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Batata c/ Cheddar e Bacon</h3></div>
-                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão Batata Cheddar Bacon', 9)">+</button></div>
-            </div>
-
+            <div class="card-compact"><div class="info"><h3>Mandioca com Bacon</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Medalhão Mandioca c/ Bacon', 7)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Medalhão Cupim com Queijo</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão Cupim com Queijo', 9)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Copa lombo com barbecue</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Copa lombo com barbecue', 8)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Frango com Bacon</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Medalhão Frango c/ Bacon', 7)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Romeu e Julieta</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão Romeu e Julieta', 9)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Batata c/ Cheddar e Bacon</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Medalhão Batata Cheddar Bacon', 9)">+</button></div></div>
         </div>
     </div>
 
+    <!-- Categoria: Queijos -->
+    <div class="categoria" id="Queijos">
+        <h2>🧀 Queijos</h2>
+        <div class="produtos-compactos">
+            <div class="card-compact"><div class="info"><h3>Queijo Provolone</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Queijo Provolone', 8)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Queijo Mussarela</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Queijo Mussarela', 8)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Queijo Coalho</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Queijo Coalho', 7)">+</button></div></div>
+        </div>
+    </div>
+
+    <!-- Categoria: Sucos e Refrescos -->
     <div class="categoria" id="bebidas">
         <h2>🥤 Sucos & Refrescos</h2>
-        
         <div class="produtos-compactos">
-
-            <div class="card-compact">
-                <div class="info"><h3>Coca-Cola (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Coca-Cola Lata', 5)">+</button></div>
-            </div>
-
-              <div class="card-compact">
-                <div class="info"><h3>Coca-Cola 2L </h3></div>
-                <div class="action"><span>R$ 12,00</span><button onclick="addCarrinho('Coca-Cola 2L', 12)">+</button></div>
-            </div>
-
-              <div class="card-compact">
-                <div class="info"><h3>Coca-Cola 1L </h3></div>
-                <div class="action"><span>R$ 10,00</span><button onclick="addCarrinho('Coca-Cola 1L', 10)">+</button></div>
-            </div>
-
-             <div class="card-compact">
-                <div class="info"><h3>H20 </h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('H20', 6)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Sprite (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Sprite Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Fanta (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Fanta Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Schweppes (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Schweppes Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Guaraná Antártica (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Guaraná Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Coca-Cola Zero (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Coca-Cola Zero Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Coca-Cola KS</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Coca-Cola KS', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Refrigerante Mini</h3></div>
-                <div class="action"><span>R$ 3,00</span><button onclick="addCarrinho('Refri Mini', 3)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Água Mineral</h3></div>
-                <div class="action"><span>R$ 3,00</span><button onclick="addCarrinho('Água Mineral', 3)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Coca-Cola 600ml</h3></div>
-                <div class="action"><span>R$ 7,50</span><button onclick="addCarrinho('Coca 600ml', 7.50)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Coca-Cola Zero 600ml</h3></div>
-                <div class="action"><span>R$ 7,50</span><button onclick="addCarrinho('Coca Zero 600ml', 7.50)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Antártica Zero 600ml</h3></div>
-                <div class="action"><span>R$ 7,50</span><button onclick="addCarrinho('Antártica Zero 600ml', 7.50)">+</button></div>
-            </div>
-
-             <div class="card-compact">
-                <div class="info"><h3>Antártica 1L </h3></div>
-                <div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Antártica 1L', 8.00)">+</button></div>
-            </div>
-
-             <div class="card-compact">
-                <div class="info"><h3>Jaboti 2L </h3></div>
-                <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Jaboti 2L', 7.00)">+</button></div>
-            </div>
-
-             <div class="card-compact">
-                <div class="info"><h3>Poty 2L</h3></div>
-                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Poty 2L', 9.00)">+</button></div>
-            </div>
-
-             <div class="card-compact">
-                <div class="info"><h3>Roller 2L </h3></div>
-                <div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Roller 2L ', 9.00)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Suco de Laranja (900ml)</h3></div>
-                <div class="action"><span>R$ 12,00</span><button onclick="addCarrinho('Suco Laranja 900ml', 12)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Suco de Caju (900ml)</h3></div>
-                <div class="action"><span>R$ 10,00</span><button onclick="addCarrinho('Suco Caju 900ml', 10)">+</button></div>
-            </div>
-
+            <div class="card-compact"><div class="info"><h3>Coca-Cola (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Coca-Cola Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Coca-Cola 2L</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addCarrinho('Coca-Cola 2L', 12)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Coca-Cola 1L</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addCarrinho('Coca-Cola 1L', 10)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>H20</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('H20', 6)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Sprite (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Sprite Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Fanta (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Fanta Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Schweppes (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Schweppes Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Guaraná Antártica (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Guaraná Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Coca-Cola Zero (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Coca-Cola Zero Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Coca-Cola KS</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Coca-Cola KS', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Refrigerante Mini</h3></div><div class="action"><span>R$ 3,00</span><button onclick="addCarrinho('Refri Mini', 3)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Água Mineral</h3></div><div class="action"><span>R$ 3,00</span><button onclick="addCarrinho('Água Mineral', 3)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Coca-Cola 600ml</h3></div><div class="action"><span>R$ 7,50</span><button onclick="addCarrinho('Coca 600ml', 7.50)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Coca-Cola Zero 600ml</h3></div><div class="action"><span>R$ 7,50</span><button onclick="addCarrinho('Coca Zero 600ml', 7.50)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Antártica Zero 600ml</h3></div><div class="action"><span>R$ 7,50</span><button onclick="addCarrinho('Antártica Zero 600ml', 7.50)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Antártica 1L</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Antártica 1L', 8.00)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Jaboti 2L</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Jaboti 2L', 7.00)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Poty 2L</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Poty 2L', 9.00)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Roller 2L</h3></div><div class="action"><span>R$ 9,00</span><button onclick="addCarrinho('Roller 2L ', 9.00)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Suco de Laranja (900ml)</h3></div><div class="action"><span>R$ 12,00</span><button onclick="addCarrinho('Suco Laranja 900ml', 12)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Suco de Caju (900ml)</h3></div><div class="action"><span>R$ 10,00</span><button onclick="addCarrinho('Suco Caju 900ml', 10)">+</button></div></div>
         </div>
     </div>
 
+    <!-- Categoria: Cervejas -->
     <div class="categoria" id="cervejas">
         <h2>🍺 Cervejas</h2>
-        
         <div class="produtos-compactos">
-
-            <div class="card-compact">
-                <div class="info"><h3>Skol (Romarinho)</h3></div>
-                <div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Skol Romarinho', 4)">+</button></div>
-            </div>
-
-             <div class="card-compact">
-                <div class="info"><h3>Corona long zero</h3></div>
-                <div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Corona long zero', 8)">+</button></div>
-            </div>
-
-             <div class="card-compact">
-                <div class="info"><h3>Brahma zero lata </h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Brahma zero lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Boa (Romarinho)</h3></div>
-                <div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Boa Romarinho', 4)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Brahma (Romarinho)</h3></div>
-                <div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Brahma Romarinho', 4)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Budweiser (Romarinho)</h3></div>
-                <div class="action"><span>R$ 4,50</span><button onclick="addCarrinho('Budweiser Romarinho', 4.50)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Original (Romarinho)</h3></div>
-                <div class="action"><span>R$ 4,50</span><button onclick="addCarrinho('Original Romarinho', 4.50)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Heineken (600ml)</h3></div>
-                <div class="action"><span>R$ 14,00</span><button onclick="addCarrinho('Heineken 600ml', 14)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Skol (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Skol Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Boa (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Boa Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Brahma (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Brahma Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Amistel (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Amistel Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Império Ultra (Lata)</h3></div>
-                <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Império Ultra Lata', 5)">+</button></div>
-            </div>
-
-            <div class="card-compact">
-                <div class="info"><h3>Kaiser (Latão)</h3></div>
-                <div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Kaiser Latão', 6)">+</button></div>
-            </div>
-
+            <div class="card-compact"><div class="info"><h3>Skol (Romarinho)</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Skol Romarinho', 4)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Corona long zero</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addCarrinho('Corona long zero', 8)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Brahma zero lata</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Brahma zero lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Boa (Romarinho)</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Boa Romarinho', 4)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Brahma (Romarinho)</h3></div><div class="action"><span>R$ 4,00</span><button onclick="addCarrinho('Brahma Romarinho', 4)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Budweiser (Romarinho)</h3></div><div class="action"><span>R$ 4,50</span><button onclick="addCarrinho('Budweiser Romarinho', 4.50)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Original (Romarinho)</h3></div><div class="action"><span>R$ 4,50</span><button onclick="addCarrinho('Original Romarinho', 4.50)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Heineken (600ml)</h3></div><div class="action"><span>R$ 14,00</span><button onclick="addCarrinho('Heineken 600ml', 14)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Skol (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Skol Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Boa (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Boa Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Brahma (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Brahma Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Amstel (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Amstel Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Império Ultra (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Império Ultra Lata', 5)">+</button></div></div>
+            <div class="card-compact"><div class="info"><h3>Kaiser (Latão)</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addCarrinho('Kaiser Latão', 6)">+</button></div></div>
         </div>
     </div>
 
-</div>
+</div> 
 
 <div class="carrinho">
 
@@ -1434,14 +1218,11 @@ header{
     <h2>Painel de Serviço</h2>
     <p style="color: #bbb; font-size: 13px; margin-bottom: 15px;">Gerenciamento de mesas com cardápio completo integrado.</p>
 
-    <!-- CONTAINER MESA DE ATENDIMENTO (BOTÕES DE 1 A 30) -->
     <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
         <label style="display: block; margin-bottom: 10px; font-weight: bold; color: #ffaa00;">Mesa de Atendimento</label>
         
-        <!-- Input invisível para garantir compatibilidade com as suas funções JavaScript antigas -->
         <input type="hidden" id="mesaGarcom" value="">
 
-        <!-- Grade interativa de botões -->
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 8px; margin-bottom: 15px; max-height: 180px; overflow-y: auto; padding-right: 5px;">
             <script>
                 for (let i = 1; i <= 30; i++) {
@@ -1462,7 +1243,6 @@ header{
             </script>
         </div>
 
-        <!-- Indicador visual de status da mesa ativa -->
         <div id="statusMesaSelecionada" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; color: #bbb; border: 1px dashed rgba(255,255,255,0.15); transition: all 0.3s;">
             Nenhuma mesa selecionada
         </div>
@@ -1471,10 +1251,8 @@ header{
         <input type="text" id="clienteGarcom" placeholder="Nome do cliente">
     </div>
 
-    <!-- ÁREA COMPLETA DO CARDÁPIO -->
     <div class="produtos-area" style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 12px; margin-bottom: 20px;">
         
-        <!-- Bloco Jantinha Completa -->
         <div class="produtos">
             <div class="card" style="background: #140c08; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
                 <div class="card-imagens" style="display: flex; gap: 4px; background: #140c08; width: 100%;">
@@ -1494,9 +1272,9 @@ header{
                             <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
                             <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
                             <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
-                          <option value="Jantinha c/ Queijo Mussarela|7.00">Queijo Mussarela (+ R$ 8,00)</option>
-                           <option value="Jantinha c/ Queijo Coalho|7.00">Queijo Coalho (+ R$ 7,00)</option>
-                          <option value="Jantinha c/ Queijo Provolone|7.00">Queijo Provolone (+ R$ 8,00)</option>
+                            <option value="Queijo Coalho|7.00">Queijo Coalho (+ R$ 7,00)</option>
+                            <option value="Queijo Mussarela|8.00">Queijo Mussarela (+ R$ 8,00)</option>
+                            <option value="Queijo Provolone|8.00">Queijo Provolone (+ R$ 8,00)</option>
                             <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
                             <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
                             <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
@@ -1516,7 +1294,6 @@ header{
             </div>
         </div>
 
-        <!-- Categoria: Espetos Tradicionais -->
         <div class="categoria" id="espetosGarcom">
             <h2 style="font-size: 18px; margin: 15px 0 10px 0; color: #ffaa00;">🍢 Espetos Tradicionais</h2>
             <div class="produtos-compactos">
@@ -1529,27 +1306,10 @@ header{
                 <div class="card-compact"><div class="info"><h3>Linguiça com Rúcula e Queijo</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Linguiça c/ Rúcula', 6)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Panceta</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Panceta', 6)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Pão de Alho</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Pão de Alho', 5)">+</button></div></div>
-      <div class="card-compact" style="flex-direction: column; align-items: flex-start; gap: 8px; padding: 15px 20px;">
-    <div class="info" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
-        <h3>Espeto de Queijo (Garçom)</h3>
-        <span style="color: #8b0000; font-weight: 800; font-size: 16px; margin-bottom: 0;">R$ 7,00 a R$ 8,00</span>
-    </div>
-    
-    <div style="width: 100%; display: flex; gap: 10px; align-items: center;">
-        <select id="saborQueijoGarcomDireto" style="flex-grow: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(74,54,41,0.2); background: #ebdcd0; font-weight: 600; font-size: 14px; color: #26160d; outline: none;">
-            <option value="Mussarela|8.00">Queijo Mussarela (R$ 8,00)</option>
-            <option value="Coalho|7.00">Queijo Coalho (R$ 7,00)</option>
-            <option value="Provolone|8.00">Queijo Provolone (R$ 8,00)</option>
-        </select>
-        
-        <button onclick="lancarQueijoDiretoGarcom()" style="background: #8b0000; color: white; border: none; width: 38px; height: 38px; border-radius: 10px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;">+</button>
-    </div>
-</div>
                 <div class="card-compact"><div class="info"><h3>Tulipa</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Tulipa', 7)">+</button></div></div>
             </div>
         </div>
 
-        <!-- Categoria: Medalhões Premium -->
         <div class="categoria" id="medalhoesGarcom">
             <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🥓 Medalhões Premium</h2>
             <div class="produtos-compactos">
@@ -1562,7 +1322,15 @@ header{
             </div>
         </div>
 
-        <!-- Categoria: Sucos & Refrescos (TOTALMENTE COMPLETO SEM CORTES) -->
+        <div class="categoria" id="queijosGarcom">
+            <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🧀 Queijos</h2>
+            <div class="produtos-compactos">
+                <div class="card-compact"><div class="info"><h3>Queijo Provolone</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addProdutoDiretoGarcom('Queijo Provolone', 8)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Queijo Mussarela</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addProdutoDiretoGarcom('Queijo Mussarela', 8)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Queijo Coalho</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Queijo Coalho', 7)">+</button></div></div>
+            </div>
+        </div>
+
         <div class="categoria" id="bebidasGarcom">
             <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🥤 Sucos & Refrescos</h2>
             <div class="produtos-compactos">
@@ -1590,7 +1358,6 @@ header{
             </div>
         </div>
 
-        <!-- Categoria: Cervejas -->
         <div class="categoria" id="cervejasGarcom">
             <h2 style="font-size: 18px; margin: 20px 0 10px 0; color: #ffaa00;">🍺 Cervejas</h2>
             <div class="produtos-compactos">
@@ -1603,7 +1370,7 @@ header{
                 <div class="card-compact"><div class="info"><h3>Skol (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Skol Lata', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Boa (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Boa Lata', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Brahma (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Brahma Lata', 5)">+</button></div></div>
-                <div class="card-compact"><div class="info"><h3>Amistel (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Amistel Lata', 5)">+</button></div></div>
+                <div class="card-compact"><div class="info"><h3>Amstel (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Amstel Lata', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Império Ultra (Lata)</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Império Ultra Lata', 5)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Corona long Zero</h3></div><div class="action"><span>R$ 8,00</span><button onclick="addProdutoDiretoGarcom('Corona long Zero', 8)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Brahma zero lata</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Brahma zero lata', 5)">+</button></div></div>
@@ -1614,7 +1381,6 @@ header{
     
     <hr style="border: 1px solid #444; margin: 20px 0;">
 
-    <!-- BLOCO: ITEM ADICIONAL / OBSERVAÇÃO COM VALOR -->
     <h3 style="color: #ffaa00; font-size: 16px; margin-bottom: 10px;">📝 Item Adicional / Observação com Valor</h3>
     <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
         <div>
@@ -1632,7 +1398,6 @@ header{
 
     <hr style="border: 1px solid #444; margin: 20px 0;">
 
-    <!-- ITENS ADICIONADOS E BOTÕES DE FINALIZAÇÃO -->
     <h3>🛒 Itens Adicionados na Mesa</h3>
     <div id="listaGarcom" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; min-height: 50px;"></div>
 
