@@ -1027,39 +1027,41 @@ header{
             <img src="WhatsApp Image 2026-05-21 at 13.05.20 (1).jpeg" alt="Espeto na Brasa">
         </div>
         
-        <div class="card-content" id="jantinhas">
-            <h3>Jantinha Completa</h3>
-            <p>Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
+      <div class="card-content" id="jantinhas">
+    <h3>Jantinha Completa</h3>
+    <p>Escolha o espeto que vai acompanhar sua jantinha base (R$ 15,00):</p>
+    
+    <div class="select-area" style="margin-top: 0; margin-bottom: 10px;">
+        <select id="espetoJantinha" style="padding: 12px; margin-bottom: 10px; background: #23160e; color: white; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+            <option value="Carne|6.00">Carne (+ R$ 6,00)</option>
+            <option value="Cafta|6.00">Cafta (+ R$ 6,00)</option>
+            <option value="Costela|6.00">Costela (+ R$ 6,00)</option>
+            <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
+            <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
+            <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
             
-            <div class="select-area" style="margin-top: 0; margin-bottom: 10px;">
-                <select id="espetoJantinha" style="padding: 12px; margin-bottom: 10px; background: #23160e; color: white; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                    <option value="Carne|6.00">Carne (+ R$ 6,00)</option>
-                    <option value="Cafta|6.00">Cafta (+ R$ 6,00)</option>
-                    <option value="Costela|6.00">Costela (+ R$ 6,00)</option>
-                    <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
-                    <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
-                    <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
-                    
-                    <option value="Queijo|7.00">Queijo (+ R$ 7,00)</option>
-                    <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
-                    <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
-                    <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
-                    
-                    <option value="Coração|8.00">Coração (+ R$ 8,00)</option>
-                    <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue (+ R$ 8,00)</option>
-                    
-                    <option value="Kibe com Queijo|9.00">Kibe com Queijo (+ R$ 9,00)</option>
-                    <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
-                    <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
-                    <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo (+ R$ 9,00)</option>
-                    
-                    <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
-                </select>
-            </div>
+            <option value="Queijo Coalho|7.00">Queijo Coalho (+ R$ 7,00)</option>
+            <option value="Queijo Mussarela|8.00">Queijo Mussarela (+ R$ 8,00)</option>
+            <option value="Queijo Provolone|8.00">Queijo Provolone (+ R$ 8,00)</option>
+            
+            <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
+            <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
+            <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
+            <option value="Coração|8.00">Coração (+ R$ 8,00)</option>
+            <option value="Copa Lombo com Barbecue|8.00">Copa Lombo com Barbecue (+ R$ 8,00)</option>
+            
+            <option value="Kibe com Queijo|9.00">Kibe com Queijo (+ R$ 9,00)</option>
+            <option value="Medalhão Romeu e Julieta|9.00">Medalhão Romeu e Julieta (+ R$ 9,00)</option>
+            <option value="Medalhão Batata Cheddar Bacon|9.00">Medalhão Batata Cheddar Bacon (+ R$ 9,00)</option>
+            <option value="Medalhão Cupim com Queijo|9.00">Medalhão Cupim com Queijo (+ R$ 9,00)</option>
+            
+            <option value="Pão de Alho|4.00">Pão de Alho (+ R$ 4,00)</option>
+        </select>
+    </div>
 
-            <span class="preco">R$ 15,00 + Espeto</span> 
-            <button onclick="adicionarJantinhaComEspeto()">Adicionar ao Pedido</button>
-        </div>
+    <span class="preco">R$ 15,00 + Espeto</span> 
+    <button onclick="adicionarJantinhaComEspeto()">Adicionar ao Pedido</button>
+</div>
     </div>
 </div>
     <div class="categoria" id="espetos">
@@ -1112,10 +1114,22 @@ header{
                 <div class="action"><span>R$ 5,00</span><button onclick="addCarrinho('Pão de Alho', 5)">+</button></div>
             </div>
 
-            <div class="card-compact">
-                <div class="info"><h3>Queijo</h3></div>
-                <div class="action"><span>R$ 7,00</span><button onclick="addCarrinho('Queijo', 7)">+</button></div>
-            </div>
+         <div class="card-compact" style="flex-direction: column; align-items: flex-start; gap: 8px; padding: 15px 20px;">
+    <div class="info" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+        <h3>Espeto de Queijo</h3>
+        <span style="color: #8b0000; font-weight: 800; font-size: 16px; margin-bottom: 0;">R$ 7,00 a R$ 8,00</span>
+    </div>
+    
+    <div style="width: 100%; display: flex; gap: 10px; align-items: center;">
+        <select id="saborQueijoCliente" style="flex-grow: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(74,54,41,0.2); background: #ebdcd0; font-weight: 600; font-size: 14px; color: #26160d; outline: none;">
+            <option value="Mussarela|8.00">Queijo Mussarela (R$ 8,00)</option>
+            <option value="Coalho|7.00">Queijo Coalho (R$ 7,00)</option>
+            <option value="Provolone|8.00">Queijo Provolone (R$ 8,00)</option>
+        </select>
+        
+        <button onclick="adicionarQueijoCliente()" style="background: #8b0000; color: white; border: none; width: 38px; height: 38px; border-radius: 10px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;">+</button>
+    </div>
+</div>
 
             <div class="card-compact">
                 <div class="info"><h3>Tulipa</h3></div>
@@ -1480,7 +1494,9 @@ header{
                             <option value="Codiguim|6.00">Codiguim (+ R$ 6,00)</option>
                             <option value="Linguiça c/ Rúcula|6.00">Linguiça c/ Rúcula e Queijo (+ R$ 6,00)</option>
                             <option value="Panceta|6.00">Panceta (+ R$ 6,00)</option>
-                            <option value="Queijo|7.00">Queijo (+ R$ 7,00)</option>
+                          <option value="Jantinha c/ Queijo Mussarela|7.00">Queijo Mussarela (+ R$ 8,00)</option>
+                           <option value="Jantinha c/ Queijo Coalho|7.00">Queijo Coalho (+ R$ 7,00)</option>
+                          <option value="Jantinha c/ Queijo Provolone|7.00">Queijo Provolone (+ R$ 8,00)</option>
                             <option value="Tulipa|7.00">Tulipa (+ R$ 7,00)</option>
                             <option value="Medalhão Mandioca c/ Bacon|7.00">Medalhão Mandioca c/ Bacon (+ R$ 7,00)</option>
                             <option value="Medalhão Frango c/ Bacon|7.00">Medalhão Frango c/ Bacon (+ R$ 7,00)</option>
@@ -1513,7 +1529,22 @@ header{
                 <div class="card-compact"><div class="info"><h3>Linguiça com Rúcula e Queijo</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Linguiça c/ Rúcula', 6)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Panceta</h3></div><div class="action"><span>R$ 6,00</span><button onclick="addProdutoDiretoGarcom('Panceta', 6)">+</button></div></div>
                 <div class="card-compact"><div class="info"><h3>Pão de Alho</h3></div><div class="action"><span>R$ 5,00</span><button onclick="addProdutoDiretoGarcom('Pão de Alho', 5)">+</button></div></div>
-                <div class="card-compact"><div class="info"><h3>Queijo</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Queijo', 7)">+</button></div></div>
+      <div class="card-compact" style="flex-direction: column; align-items: flex-start; gap: 8px; padding: 15px 20px;">
+    <div class="info" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+        <h3>Espeto de Queijo (Garçom)</h3>
+        <span style="color: #8b0000; font-weight: 800; font-size: 16px; margin-bottom: 0;">R$ 7,00 a R$ 8,00</span>
+    </div>
+    
+    <div style="width: 100%; display: flex; gap: 10px; align-items: center;">
+        <select id="saborQueijoGarcomDireto" style="flex-grow: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(74,54,41,0.2); background: #ebdcd0; font-weight: 600; font-size: 14px; color: #26160d; outline: none;">
+            <option value="Mussarela|8.00">Queijo Mussarela (R$ 8,00)</option>
+            <option value="Coalho|7.00">Queijo Coalho (R$ 7,00)</option>
+            <option value="Provolone|8.00">Queijo Provolone (R$ 8,00)</option>
+        </select>
+        
+        <button onclick="lancarQueijoDiretoGarcom()" style="background: #8b0000; color: white; border: none; width: 38px; height: 38px; border-radius: 10px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;">+</button>
+    </div>
+</div>
                 <div class="card-compact"><div class="info"><h3>Tulipa</h3></div><div class="action"><span>R$ 7,00</span><button onclick="addProdutoDiretoGarcom('Tulipa', 7)">+</button></div></div>
             </div>
         </div>
@@ -1627,7 +1658,19 @@ let carrinho = [];
 let pedidosGarcom = [];
 let mesaAtualGarcom = ""; 
 
+// Carrega as comandas salvas do LocalStorage
 let comandasSalvas = JSON.parse(localStorage.getItem("comandas_cantinho")) || {};
+
+// Executa assim que a página carrega para desenhar o estado inicial das mesas do garçom
+window.addEventListener("DOMContentLoaded", () => {
+    // Se houver uma mesa selecionada anteriormente por digitação, recarrega ela
+    let inputMesa = document.getElementById("mesaGarcom");
+    if(inputMesa) {
+        inputMesa.addEventListener("blur", carregarMesaLocal);
+    }
+    // Atualiza o visual dos botões de mesa baseado no que está salvo no banco local
+    atualizarGradeMesasVisual();
+});
 
 function adicionarJantinhaComEspeto() {
     const select = document.getElementById('espetoJantinha');
@@ -1638,7 +1681,6 @@ function adicionarJantinhaComEspeto() {
     
     const nomeProdutoCompleto = `Jantinha Completa (Acomp: ${nomeEspeto})`;
     
-    // Envia para a sua função existente do carrinho (Cliente)
     addCarrinho(nomeProdutoCompleto, precoFinal);
 }
 
@@ -1653,13 +1695,24 @@ function addCarrinho(nome, preco){
     }
     atualizarCarrinho();
     
-    // MENSAGEM DINÂMICA: Mostra exatamente o produto que foi adicionado!
     mostrarNotificacao(`🛒 Adicionado: ${nome}`);
+}
+
+// CAPTURA SABOR E PREÇO DO QUEIJO (CLIENTE)
+function adicionarQueijoCliente() {
+    const select = document.getElementById('saborQueijoCliente');
+    if(!select) return;
+    const [sabor, precoQueijo] = select.value.split('|');
+    
+    const nomeCompleto = `Espeto Queijo ${sabor}`;
+    const precoFinal = parseFloat(precoQueijo);
+    
+    addCarrinho(nomeCompleto, precoFinal);
 }
 
 function atualizarCarrinho(){
     let div = document.getElementById("itensCarrinho");
-    if(!div) return; // Evita quebra caso o elemento não exista na tela atual
+    if(!div) return; 
     
     let htmlTemp = ""; 
     let total = 0;
@@ -1692,7 +1745,7 @@ function atualizarCarrinho(){
     div.innerHTML = htmlTemp;
     
     let cartCountEl = document.getElementById("cartCount");
-    if(cartCountEl) cartCountEl.innerHTML = viewModel .quantidade;
+    if(cartCountEl) cartCountEl.innerHTML = quantidade; 
 
     let tipoEl = document.getElementById("tipoPedido");
     if(tipoEl && tipoEl.value === "delivery"){ total += 5; } 
@@ -1706,7 +1759,7 @@ function aumentar(index){
     atualizarCarrinho();
 }
 
-function disminuir(index){
+function diminuir(index){
     carrinho[index].qtd--;
     if(carrinho[index].qtd <= 0){ carrinho.splice(index,1); }
     atualizarCarrinho();
@@ -1780,7 +1833,7 @@ function finalizarPedido(){
     let dadosParaImprimir = encodeURIComponent(message);
     let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
 
-    message += `🖨️ *CLIQUE AQUI PARA IMPRIMIR:*\n${linkImpressao}`;
+    message += `𖨨️ *CLIQUE AQUI PARA IMPRIMIR:*\n${linkImpressao}`;
 
     let textoWhatsApp = encodeURIComponent(message);
     let numero = "5517991421893"; 
@@ -1796,12 +1849,12 @@ function loginGarcom(){
         document.getElementById("painel").classList.add("active");
         document.getElementById("senha").value = "";
         
-        // Remove ouvintes duplicados se houverem e anexa o ouvinte de mesa
         let inputMesa = document.getElementById("mesaGarcom");
         if(inputMesa) {
             inputMesa.removeEventListener("blur", carregarMesaLocal);
             inputMesa.addEventListener("blur", carregarMesaLocal);
         }
+        atualizarGradeMesasVisual();
     }else{
         alert("Senha de acesso inválida.");
         document.getElementById("senha").value = "";
@@ -1813,15 +1866,12 @@ function fecharLogin(){ document.getElementById("modal").style.display = "none";
 function fecharLoginFora(event){ if(event.target.id === "modal"){ fecharLogin(); } }
 function fecharPainel(){ document.getElementById("painel").classList.remove("active"); }
 
-// NOVA FUNÇÃO INTERATIVA PARA SELEÇÃO DE MESA POR CLIQUE
 function selecionarMesa(numeroMesa) {
-    // 1. Atualiza o valor do input oculto
     const inputMesa = document.getElementById('mesaGarcom');
     if (inputMesa) {
         inputMesa.value = numeroMesa;
     }
 
-    // 2. Modifica dinamicamente a barra de status visual
     const statusDiv = document.getElementById('statusMesaSelecionada');
     if (statusDiv) {
         statusDiv.innerHTML = `Mesa <span style="color: #e67e22; font-size: 18px;">${numeroMesa}</span> Selecionada`;
@@ -1829,25 +1879,6 @@ function selecionarMesa(numeroMesa) {
         statusDiv.style.background = "rgba(230, 126, 34, 0.1)";
     }
 
-    // 3. Remove o destaque visual ativo de todas as outras mesas da lista
-    const botoes = document.querySelectorAll('.btn-mesa');
-    botoes.forEach(btn => {
-        btn.style.background = "#23160e";
-        btn.style.borderColor = "rgba(255,255,255,0.1)";
-        btn.style.color = "white";
-        btn.style.boxShadow = "none";
-    });
-
-    // 4. Aplica o destaque na mesa selecionada atualmente
-    const botaoClicado = document.getElementById(`btnMesa_${numeroMesa}`);
-    if (botaoClicado) {
-        botaoClicado.style.background = "#e67e22";
-        botaoClicado.style.borderColor = "#ffaa00";
-        botaoClicado.style.color = "#fff";
-        botaoClicado.style.boxShadow = "0 0 8px rgba(230, 126, 34, 0.5)";
-    }
-
-    // 5. Executa automaticamente o carregamento dos dados da mesa clicada
     carregarMesaLocal();
 }
 
@@ -1867,6 +1898,7 @@ function carregarMesaLocal() {
         document.getElementById("pagamentoGarcom").value = "Ficará em Aberto na Mesa";
     }
     atualizarGarcom();
+    atualizarGradeMesasVisual();
 }
 
 function removerDoCarrinho(index) {
@@ -1886,9 +1918,9 @@ function salvarMesaLocal() {
     };
 
     localStorage.setItem("comandas_cantinho", JSON.stringify(comandasSalvas));
+    atualizarGradeMesasVisual();
 }
 
-// CAPTURA CLIQUES DOS PRODUTOS COMPACTOS DO INTERIOR DO PAINEL DO GARÇOM
 function addProdutoDiretoGarcom(nome, preco) {
     let mesa = document.getElementById("mesaGarcom").value.trim();
     if(mesa === "") { 
@@ -1904,11 +1936,35 @@ function addProdutoDiretoGarcom(nome, preco) {
     atualizarGarcom();
     salvarMesaLocal();
 
-    // Notificação visual rápida para o garçom
     mostrarNotificacao(`✅ Adicionado: ${nome}`);
 }
 
-// CAPTURA MONTAGEM DA JANTINHA DO PROPRIO PAINEL DO GARÇOM
+// CAPTURA SABOR E PREÇO DO QUEIJO (GARÇOM)
+function lancarQueijoDiretoGarcom() {
+    let mesa = document.getElementById("mesaGarcom").value.trim();
+    if(mesa === "") { 
+        alert("Por favor, selecione uma mesa na grade ANTES de escolher o produto."); 
+        return; 
+    }
+    if(mesa !== mesaAtualGarcom) { 
+        mesaAtualGarcom = mesa; 
+        carregarMesaLocal();
+    }
+
+    const select = document.getElementById('saborQueijoGarcomDireto');
+    if(!select) return;
+    const [sabor, precoQueijo] = select.value.split('|');
+    
+    const nomeCompleto = `Espeto Queijo ${sabor}`;
+    const precoFinal = parseFloat(precoQueijo);
+
+    pedidosGarcom.push({ nome: nomeCompleto, preco: precoFinal, enviado: false, entregue: false });
+    atualizarGarcom();
+    salvarMesaLocal();
+
+    mostrarNotificacao(`✅ Adicionado: ${nomeCompleto} - R$ ${precoFinal.toFixed(2)}`);
+}
+
 function addJantinhaGarcomCardapio() {
     let mesa = document.getElementById("mesaGarcom").value.trim();
     if(mesa === "") { 
@@ -1933,13 +1989,9 @@ function addJantinhaGarcomCardapio() {
     atualizarGarcom();
     salvarMesaLocal();
 
-    // Notificação visual rápida para o garçom
     mostrarNotificacao(`🍢 Jantinha adicionada com sucesso!`);
 }
 
-/* ==========================================================================
-   FUNÇÃO: ADICIONAR ITEM PERSONALIZADO / OBSERVACAO COM VALOR
-   ========================================================================== */
 function addObservacaoComValor() {
     let mesa = document.getElementById("mesaGarcom").value.trim();
     if(mesa === "") { 
@@ -1966,16 +2018,13 @@ function addObservacaoComValor() {
         return;
     }
 
-    // Formata o nome para deixar explícito na comanda física e digital que é um item extra
     const nomeFinal = `Obs: ${nomeItem}`;
 
-    // Insere o item dinâmico no array da mesa atual
     pedidosGarcom.push({ nome: nomeFinal, preco: valorItem, enviado: false, entregue: false });
     
     atualizarGarcom();
     salvarMesaLocal();
 
-    // Feedback visual para o garçom e limpa os campos para o próximo lançamento
     mostrarNotificacao(`📝 Adicionado: ${nomeFinal}`);
     nomeInput.value = "";
     valorInput.value = "";
@@ -2023,6 +2072,37 @@ function atualizarGarcom(){
     }
 }
 
+// ATUALIZA A COR DOS BOTÕES DAS MESAS DINAMICAMENTE
+function atualizarGradeMesasVisual() {
+    let mesaSelecionadaAgora = document.getElementById("mesaGarcom") ? document.getElementById("mesaGarcom").value.trim() : "";
+    
+    const botoes = document.querySelectorAll('.btn-mesa');
+    botoes.forEach(btn => {
+        // Pega o número de id do botão (Ex: btnMesa_5 -> obtém "5")
+        let numMesa = btn.id.replace("btnMesa_", "");
+        
+        if (numMesa === mesaSelecionadaAgora && mesaSelecionadaAgora !== "") {
+            // Mesa selecionada ativa no momento
+            btn.style.background = "#e67e22";
+            btn.style.borderColor = "#ffaa00";
+            btn.style.color = "#fff";
+            btn.style.boxShadow = "0 0 8px rgba(230, 126, 34, 0.5)";
+        } else if (comandasSalvas[numMesa] && comandasSalvas[numMesa].itens.length > 0) {
+            // Tem comanda aberta/salva localmente nesta mesa (Fica Vermelho/Bordô indicando ocupada)
+            btn.style.background = "#8b0000";
+            btn.style.borderColor = "#ff4d4d";
+            btn.style.color = "#fff";
+            btn.style.boxShadow = "none";
+        } else {
+            // Mesa totalmente livre e limpa
+            btn.style.background = "#23160e";
+            btn.style.borderColor = "rgba(255,255,255,0.1)";
+            btn.style.color = "white";
+            btn.style.boxShadow = "none";
+        }
+    });
+}
+
 function alternarEntregue(index) {
     pedidosGarcom[index].entregue = !pedidosGarcom[index].entregue;
     atualizarGarcom();
@@ -2052,12 +2132,11 @@ function enviarParaCozinha() {
         message += `▫️ 1x ${item.nome}\n`;
     });
 
-    // Gera o link de impressão com os dados da Cozinha
     let urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
     let dadosParaImprimir = encodeURIComponent(message);
     let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
 
-    message += `\n🖨️ *CLIQUE AQUI PARA IMPRIMIR NA COZINHA:*\n${linkImpressao}`;
+    message += `\n𖨨️ *CLIQUE AQUI PARA IMPRIMIR NA COZINHA:*\n${linkImpressao}`;
 
     pedidosGarcom.forEach(item => item.enviado = true);
     atualizarGarcom();
@@ -2095,8 +2174,9 @@ function enviarPedidoGarcom(){
     let dadosParaImprimir = encodeURIComponent(message);
     let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
 
-    message += `🖨️ *CLIQUE AQUI PARA IMPRIMIR A CONTA:*\n${linkImpressao}`;
+    message += `𖨨️ *CLIQUE AQUI PARA IMPRIMIR A CONTA:*\n${linkImpressao}`;
 
+    // Limpa a mesa do armazenamento
     delete comandasSalvas[mesa];
     localStorage.setItem("comandas_cantinho", JSON.stringify(comandasSalvas));
 
@@ -2107,10 +2187,10 @@ function enviarPedidoGarcom(){
     pedidosGarcom = [];
     mesaAtualGarcom = "";
     atualizarGarcom();
-    document.getElementById("mesaGarcom").value = "";
-    document.getElementById("clienteGarcom").value = "";
     
-    // Limpa a borda e o texto de status de mesa ativa após fechar a conta
+    if(document.getElementById("mesaGarcom")) document.getElementById("mesaGarcom").value = "";
+    if(document.getElementById("clienteGarcom")) document.getElementById("clienteGarcom").value = "";
+    
     const statusDiv = document.getElementById('statusMesaSelecionada');
     if (statusDiv) {
         statusDiv.innerHTML = "Nenhuma mesa selecionada";
@@ -2118,14 +2198,7 @@ function enviarPedidoGarcom(){
         statusDiv.style.background = "rgba(0,0,0,0.2)";
     }
     
-    // Limpa a seleção visual dos botões
-    const botoes = document.querySelectorAll('.btn-mesa');
-    botoes.forEach(btn => {
-        btn.style.background = "#23160e";
-        btn.style.borderColor = "rgba(255,255,255,0.1)";
-        btn.style.color = "white";
-        btn.style.boxShadow = "none";
-    });
+    atualizarGradeMesasVisual();
 }
 
 /* ==========================================================================
@@ -2141,7 +2214,7 @@ function mostrarNotificacao(mensagem) {
 
     const toast = document.createElement('div');
     toast.className = 'toast-alerta';
-    toast.innerHTML = mensagem;
+    toast.innerHTML = mensagem; 
 
     container.appendChild(toast);
 
