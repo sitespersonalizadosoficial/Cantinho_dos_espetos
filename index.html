@@ -1881,29 +1881,57 @@ function removerGarcom(index){
 
 function enviarParaCozinha() {
     let itensParaEnviar = pedidosGarcom.filter(item => (item.qtd || 1) > (item.qtdEnviada || 0));
-    if(itensParaEnviar.length <= 0) {
+    
+    if (itensParaEnviar.length <= 0) {
         alert("Não há novos itens pendentes para enviar à cozinha.");
         return;
     }
-    let mesa = document.getElementById("mesaGarcom").value.trim();
-    if (mesa === "") { alert("Por favor, selecione uma mesa."); return; }
-    let message = `🔥 *PEDIDO PARA A COZINHA - MESA ${mesa.toUpperCase()}*\n\n`;
+
+    let mesa = document.getElementById("mesaGarcom") ? document.getElementById("mesaGarcom").value.trim() : "";
+    if (mesa === "") { 
+        alert("Por favor, selecione uma mesa."); 
+        return; 
+    }
+
+    // Captura do nome do cliente
+    let clienteEl = document.getElementById("clienteGarcom");
+    let cliente = clienteEl ? clienteEl.value.trim() : "";
+
+    // Cabeçalho da mensagem
+    let message = `🔥 *PEDIDO PARA A COZINHA - MESA ${mesa.toUpperCase()}*\n`;
+    if (cliente !== "") {
+        message += `👤 *Cliente:* ${cliente}\n`;
+    }
+    message += `\n`;
+
+    // Lista de itens
     itensParaEnviar.forEach(item => {
         let qtd = item.qtd || 1;
         let qtdEnviada = item.qtdEnviada || 0;
         let quantidadeNova = qtd - qtdEnviada;
         message += `▫️ ${quantidadeNova}x ${item.nome}\n`;
     });
+
+    // Link para a tela de impressão
     let urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
     let dadosParaImprimir = encodeURIComponent(message);
     let linkImpressao = `${urlBase}imprimir.html?pedido=${dadosParaImprimir}`;
-    message += `\n𖨨️ *CLIQUE AQUI PARA IMPRIMIR NA COZINHA:*\n${linkImpressao}`;
-    pedidosGarcom.forEach(item => { item.qtdEnviada = item.qtd || 1; item.enviado = true; });
+    
+    message += `\n🖨️ *CLIQUE AQUI PARA IMPRIMIR NA COZINHA:*\n${linkImpressao}`;
+
+    // Atualiza status interno dos itens
+    pedidosGarcom.forEach(item => { 
+        item.qtdEnviada = item.qtd || 1; 
+        item.enviado = true; 
+    });
+
     atualizarGarcom();
     salvarMesaLocal();
+
+    // Redirecionamento para WhatsApp
     let textoWhatsApp = encodeURIComponent(message);
     let numeroCozinha = "5517991421893"; 
-    window.open(`https://wa.me/${numeroCozinha}?text=${textoWhatsApp}`);
+    window.open(`https://wa.me/${numeroCozinha}?text=${textoWhatsApp}`, '_blank');
 }
 
 function enviarPedidoGarcom(){
